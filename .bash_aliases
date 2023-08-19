@@ -4,7 +4,7 @@
 # TODO do sth. similar in Windows cmd and Windows PowerShell?
 # TODO add alias for git switch
 # TODO think about commands that could use a capitalized version
-# TODO consider using Bash command keyword in front of the alias definitions
+# TODO consider using Bash `command` keyword in front of the alias definitions
 # as is done e.g. in oh-my-bash https://github.com/ohmybash/oh-my-bash/blob/master/plugins/git/git.plugin.sh
 
 # version control of dotfiles, see: https://www.atlassian.com/git/tutorials/dotfiles
@@ -29,6 +29,12 @@ alias i='git add --all && git commit --verbose'
 alias ca='git commit --amend --no-edit'
 alias ch='git checkout'
 alias d='git diff'
+alias dos='dot status'
+alias dod='dot diff'
+alias dob='dot branch'
+alias dol='dot log'
+alias dopl='dot pull'
+# dot push is omitted on purpose
 alias e='echo'
 alias f='find'
 alias g='git'
