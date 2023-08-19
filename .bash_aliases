@@ -60,7 +60,11 @@ alias r.='git reset HEAD~1'
 alias r..='git reset HEAD~2'
 alias s='git status'
 # alias ss='git status --short' todo conflict on Ubuntu
-alias t='batcat'
+if batcat &> /dev/null; then
+    alias t='batcat'
+else
+    alias t='bat'
+fi
 alias v='nvim'
 
 # alias dl="cd ~/Downloads"
