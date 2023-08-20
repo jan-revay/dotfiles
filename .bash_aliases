@@ -29,6 +29,7 @@ alias i='git add --all && git commit --verbose'
 alias ca='git commit --amend --no-edit'
 alias ch='git checkout'
 alias d='git diff'
+alias doi='dot commit --all --verbose'
 alias dos='dot status'
 alias dod='dot diff'
 alias dob='dot branch'
@@ -60,6 +61,7 @@ alias r.='git reset HEAD~1'
 alias r..='git reset HEAD~2'
 alias s='git status'
 # alias ss='git status --short' todo conflict on Ubuntu
+alias sss='. ~/.bashrc'
 if batcat &> /dev/null; then
     alias t='batcat'
 else
