@@ -63,7 +63,7 @@ alias r='git reset'
 # TODO add alias for git reset all (similar to aa)
 alias r.='git reset HEAD~1'
 alias r..='git reset HEAD~2'
-alias s='git status'
+alias s='git status --show-stash'
 # alias ss='git status --short' todo conflict on Ubuntu
 alias sss='. ~/.bashrc'
 if batcat --version &> /dev/null; then
