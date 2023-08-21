@@ -6,6 +6,7 @@
 # TODO think about commands that could use a capitalized version
 # TODO consider using Bash `command` keyword in front of the alias definitions
 # as is done e.g. in oh-my-bash https://github.com/ohmybash/oh-my-bash/blob/master/plugins/git/git.plugin.sh
+# TODO - sync with PowerShell aliases
 
 # version control of dotfiles, see: https://www.atlassian.com/git/tutorials/dotfiles
 alias dot='git --git-dir="${HOME}/.dotfiles/" --work-tree="${HOME}"'
