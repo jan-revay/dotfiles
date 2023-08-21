@@ -30,17 +30,16 @@ alias path='echo -e ${PATH//:/\\n}'
 # 1-3 letter aliases
 # TODO add relevant non-letter characters
 # free one letter aliases(9): jknquwy
-alias a='git add'
-alias A='git add --all'
-alias aa='git add --all'
-alias a.='git add .'
+alias a='git add --verbose'
+alias A='git add --all --verose'
+alias aa='git add --all --verbose'
+alias a.='git add . --verbose'
 alias b='git branch'
 alias c='git commit --verbose'
-alias i='git add --all && git commit --verbose'
+alias i='git add --all --verbose && git commit --verbose'
 alias ca='git commit --amend --no-edit'
 alias ch='git checkout'
 alias d='git diff'
-
 alias e='echo'
 alias f='find'
 alias g='git'
