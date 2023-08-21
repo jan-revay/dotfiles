@@ -7,18 +7,42 @@
 # TODO consider using Bash `command` keyword in front of the alias definitions
 # as is done e.g. in oh-my-bash https://github.com/ohmybash/oh-my-bash/blob/master/plugins/git/git.plugin.sh
 # TODO - sync with PowerShell aliases
+# TODO if in future I will need git aliases for sth. else, I can have a specific
+# git mode (i.e. load the git aliases on demand)
+
 
 # version control of dotfiles, see: https://www.atlassian.com/git/tutorials/dotfiles
 alias dot='git --git-dir="${HOME}/.dotfiles/" --work-tree="${HOME}"'
+alias .a='dot add --verbose'
 alias .b='dot branch'
+alias .c='dot commit --verbose'
+alias .ch='dot checkout'
 alias .d='dot diff'
 alias .i='dot commit --all --verbose'
 alias .ip='dot commit --all --verbose --patch'
 alias .gl='dot log --stat --graph --all --decorate'
+alias .glo='dot log --oneline --decorate --color'
 alias .o='dot stash pop'
 alias .p='dot stash push'
+function .ph {
+    BRANCH=$(dot symbolic-ref --short HEAD)
+    readonly BRANCH
+
+    if [ ${BRANCH} == "devel" ]; then
+        dot push
+    else
+        echo "Your current branch is: ${BRANCH}"
+        echo 'Direct push is only recommended to branch "devel"'
+        echo 'Use `dot push` to override'
+    fi
+}
 alias .pl='dot pull'
+alias .r='dot reset'
+# TODO add alias for dot reset all (similar to aa)
+alias .r.='dot reset HEAD~1'
+alias .r..='dot reset HEAD~2'
 alias .s='dot status --show-stash'
+
 # TODO add dot push alias function (only push to devel)
 
 # Enable aliases to be sudo’ed
@@ -36,7 +60,6 @@ alias aa='git add --all --verbose'
 alias a.='git add . --verbose'
 alias b='git branch'
 alias c='git commit --verbose'
-alias i='git add --all --verbose && git commit --verbose'
 alias ca='git commit --amend --no-edit'
 alias ch='git checkout'
 alias d='git diff'
@@ -48,6 +71,8 @@ alias glo='git log --oneline --decorate --color'
 alias gc='git clone'
 alias gg='git grep'
 alias h='history'
+alias hg='history | grep'
+alias i='git add --all --verbose && git commit --verbose'
 alias l='exa -F --color=always --group-directories-first' # TODO - set/learn ls colors
 alias la='exa -aF --color=always --group-directories-first'
 alias L='exa -aF --color=always --group-directories-first'
