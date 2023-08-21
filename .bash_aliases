@@ -63,7 +63,7 @@ alias r..='git reset HEAD~2'
 alias s='git status'
 # alias ss='git status --short' todo conflict on Ubuntu
 alias sss='. ~/.bashrc'
-if batcat &> /dev/null; then
+if batcat --version &> /dev/null; then
     alias t='batcat'
 else
     alias t='bat'
