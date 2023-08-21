@@ -2,6 +2,7 @@
 # TODO read <https://github.com/mathiasbynens/dotfiles/blob/main/.bash_profile>
 
 # TODO do some more research on the web wrt. what could be added here
+# TODO add setopts
 
 # Preserve bash history since OS install
 HISTSIZE=-1
