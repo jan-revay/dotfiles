@@ -10,12 +10,15 @@
 
 # version control of dotfiles, see: https://www.atlassian.com/git/tutorials/dotfiles
 alias dot='git --git-dir="${HOME}/.dotfiles/" --work-tree="${HOME}"'
-alias .i='dot commit --all --verbose'
-alias .s='dot status'
-alias .d='dot diff'
 alias .b='dot branch'
-alias .l='dot log --stat --graph --all --decorate'
+alias .d='dot diff'
+alias .i='dot commit --all --verbose'
+alias .ip='dot commit --all --verbose --patch'
+alias .gl='dot log --stat --graph --all --decorate'
+alias .o='dot stash pop'
+alias .p='dot stash push'
 alias .pl='dot pull'
+alias .s='dot status --show-stash'
 # TODO add dot push alias function (only push to devel)
 
 # Enable aliases to be sudo’ed
