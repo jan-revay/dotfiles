@@ -10,6 +10,13 @@
 
 # version control of dotfiles, see: https://www.atlassian.com/git/tutorials/dotfiles
 alias dot='git --git-dir="${HOME}/.dotfiles/" --work-tree="${HOME}"'
+alias .i='dot commit --all --verbose'
+alias .s='dot status'
+alias .d='dot diff'
+alias .b='dot branch'
+alias .l='dot log --stat --graph --all --decorate'
+alias .pl='dot pull'
+# TODO add dot push alias function (only push to devel)
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -30,13 +37,7 @@ alias i='git add --all && git commit --verbose'
 alias ca='git commit --amend --no-edit'
 alias ch='git checkout'
 alias d='git diff'
-alias doi='dot commit --all --verbose'
-alias dos='dot status'
-alias dod='dot diff'
-alias dob='dot branch'
-alias dol='dot log --stat --graph --all --decorate'
-alias dopl='dot pull'
-# dot push is omitted on purpose
+
 alias e='echo'
 alias f='find'
 alias g='git'
