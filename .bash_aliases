@@ -31,9 +31,9 @@ function .ph {
     if [ ${BRANCH} = "devel" ]; then
         dot push
     else
-        echo "Your current branch is: ${BRANCH}"
-        echo 'Direct push is only recommended to branch "devel"'
-        echo 'Use `dot push` to override'
+        echo "Your current branch is: ${BRANCH}."
+        echo 'Direct push is only recommended to branch "devel".'
+        echo 'Use `dot push` to override.'
     fi
 }
 alias .pl='dot pull'
