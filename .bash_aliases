@@ -25,10 +25,10 @@ alias .glo='dot log --oneline --decorate --color'
 alias .o='dot stash pop'
 alias .p='dot stash push'
 function .ph {
-    BRANCH=$(dot symbolic-ref --short HEAD)
+    local BRANCH=$(dot symbolic-ref --short HEAD)
     readonly BRANCH
 
-    if [ ${BRANCH} == "devel" ]; then
+    if [ ${BRANCH} = "devel" ]; then
         dot push
     else
         echo "Your current branch is: ${BRANCH}"
