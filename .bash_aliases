@@ -49,7 +49,7 @@ alias .s='dot status --show-stash'
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
-alias update='sudo apt update && sudo apt upgrade'
+alias upgrade='sudo apt update && sudo apt upgrade'
 alias path='echo -e ${PATH//:/\\n}'
 
 # 1-3 letter aliases
