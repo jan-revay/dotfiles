@@ -7,6 +7,8 @@
 # TODO consider using Bash command keyword in front of the alias definitions
 # as is done e.g. in oh-my-bash https://github.com/ohmybash/oh-my-bash/blob/master/plugins/git/git.plugin.sh
 
+alias hello-world='echo "hello world"'
+
 # version control of dotfiles, see: https://www.atlassian.com/git/tutorials/dotfiles
 alias dot='/usr/bin/git --git-dir="${HOME}/.dotfiles/" --work-tree="${HOME}"'
 
