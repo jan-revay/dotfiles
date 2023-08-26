@@ -10,6 +10,7 @@
 # TODO if in future I will need git aliases for sth. else, I can have a specific
 # git mode (i.e. load the git aliases on demand)
 
+alias hello-world='echo "hello world"'
 
 # version control of dotfiles, see: https://www.atlassian.com/git/tutorials/dotfiles
 alias dot='git --git-dir="${HOME}/.dotfiles/" --work-tree="${HOME}"'
