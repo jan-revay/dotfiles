@@ -51,7 +51,7 @@ alias .s='dot status --show-stash'
 alias sudo='sudo '
 
 alias upgrade='sudo apt update && sudo apt upgrade'
-alias refresh='cd ~/initPC && git pull && ./run_init.sh'
+alias refresh='cd ~/initPC && git pull && dot pull && ./run_init.sh'
 alias path='echo -e ${PATH//:/\\n}'
 
 # 1-3 letter aliases
