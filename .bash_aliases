@@ -10,6 +10,7 @@
 # TODO if in future I will need git aliases for sth. else, I can have a specific
 # git mode (i.e. load the git aliases on demand)
 
+alias .hello-world='echo "hello world"'
 
 # version control of dotfiles, see: https://www.atlassian.com/git/tutorials/dotfiles
 alias dot='git --git-dir="${HOME}/.dotfiles/" --work-tree="${HOME}"'
@@ -18,6 +19,7 @@ alias .b='dot branch'
 alias .c='dot commit --verbose'
 alias .ch='dot checkout'
 alias .d='dot diff'
+alias .di='dot diff --cached'
 alias .i='dot commit --all --verbose'
 alias .ip='dot commit --all --verbose --patch'
 alias .gl='dot log --stat --graph --all --decorate'
@@ -48,7 +50,8 @@ alias .s='dot status --show-stash'
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
-alias update='sudo apt update && sudo apt upgrade'
+alias upgrade='sudo apt update && sudo apt upgrade'
+alias refresh='cd ~/initPC && git pull && dot pull && ./run_init.sh'
 alias path='echo -e ${PATH//:/\\n}'
 
 # 1-3 letter aliases
@@ -63,6 +66,7 @@ alias c='git commit --verbose'
 alias ca='git commit --amend --no-edit'
 alias ch='git checkout'
 alias d='git diff'
+alias di='git diff --cached'
 alias e='echo'
 alias f='find'
 alias g='git'
