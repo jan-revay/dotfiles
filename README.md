@@ -5,7 +5,7 @@ Dotfiles are managed via a bare git repository. This repo is meant to be used to
 
 This directory also contains scripts, but only such that do not need to be executed as a part of the [initPC script](https://github.com/jan-revay/initPC) during init of a new machine.
 
-"Dotfiles" is just a fancy name for UNIX config files <https://wiki.archlinux.org/title/Dotfiles>
+"Dotfiles" is just a fancy name for personal config files <https://wiki.archlinux.org/title/Dotfiles>
 
 ## Test proposals
 
