@@ -11,3 +11,8 @@ HISTFILESIZE=-1
 
 # TODO a more useful bash prompt i.e. with git branch - set PS1 ... PS4
 
+shopt -s cdspell
+
+# TODO add more from here:
+# <https://www.geeksforgeeks.org/shell-scripting-shopt-command/>
+# bash reference...
