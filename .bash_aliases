@@ -15,6 +15,8 @@ alias .hello-world='echo "hello world"'
 # version control of dotfiles, see: https://www.atlassian.com/git/tutorials/dotfiles
 alias dot='git --git-dir="${HOME}/.dotfiles/" --work-tree="${HOME}"'
 alias .a='dot add --verbose'
+alias .a.='dot add . -u --verbose'
+alias .aa='dot add -u --verbose'
 alias .b='dot branch'
 alias .c='dot commit --verbose'
 alias .ch='dot checkout'
