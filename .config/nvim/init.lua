@@ -40,6 +40,8 @@ vim.cmd("filetype plugin on")
 -- Enable spell check
 vim.opt.spell = true
 
+vim.g.mapleader = " "
+
 -- Disable creating swap file (commented out)
 -- vim.opt.swapfile = false
 
