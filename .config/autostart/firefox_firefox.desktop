@@ -198,6 +198,7 @@ Name[vi]=Mở cửa sổ mới
 Name[zh_CN]=新建窗口
 Name[zh_TW]=開啟新視窗
 Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/firefox_firefox.desktop /snap/bin/firefox -new-window
+X-GNOME-Autostart-Delay=10
 
 [Desktop Action NewPrivateWindow]
 Name=Open a New Private Window
