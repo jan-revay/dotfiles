@@ -13,9 +13,12 @@
 alias .hello-world='echo "hello world"'
 
 # version control of dotfiles, see: https://www.atlassian.com/git/tutorials/dotfiles
+# TODO - security (accidental pushing of secrets to a public repo)
+# TODO at the moment commenting out commands that are prone to security incidents
 alias dot='git --git-dir="${HOME}/.dotfiles/" --work-tree="${HOME}"'
-alias .a='dot add --verbose'
-alias .a.='dot add . -u --verbose'
+alias .a='dot add --verbose' # TODO no wildcards
+# alias .a.='dot add . -u --verbose' # disabled - prone to accidentally adding
+# unrelated files (e.g. secrets)
 alias .aa='dot add -u --verbose'
 alias .b='dot branch'
 alias .c='dot commit --verbose'
