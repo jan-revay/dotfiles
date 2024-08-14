@@ -12,3 +12,11 @@ This directory also contains scripts, but only such that do not need to be execu
 - aliases should only be allowed to be merged to testing once they have been synchronized between all shells (PowerShell, zsh, fish, bash...)
 - aliases should not fire `command unknown` error
 - TODO - consider using this repo from root directory instead of just home
+
+## TODO P1
+
+## TODO P2
+
+## TODO P3
+
+- Rewrite/update/delete .my_scripts
