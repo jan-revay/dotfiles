@@ -20,3 +20,4 @@ This directory also contains scripts, but only such that do not need to be execu
 ## TODO P3
 
 - Rewrite/update/delete .my_scripts
+- desktop files (autostart) - read the documentation of X-GNOME attributes & turn off the app is ready notification
