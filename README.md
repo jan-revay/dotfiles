@@ -21,3 +21,8 @@ This directory also contains scripts, but only such that do not need to be execu
 
 - Rewrite/update/delete .my_scripts
 - desktop files (autostart) - read the documentation of X-GNOME attributes & turn off the app is ready notification
+
+## TOREAD
+
+- https://wiki.archlinux.org/title/GNOME
+- https://wiki.archlinux.org/title/GNOME/Tips_and_tricks
