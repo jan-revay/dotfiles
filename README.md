@@ -26,3 +26,4 @@ This directory also contains scripts, but only such that do not need to be execu
 
 - https://wiki.archlinux.org/title/GNOME
 - https://wiki.archlinux.org/title/GNOME/Tips_and_tricks
+- https://wiki.archlinux.org/title/Table_of_contents
