@@ -1,9 +1,9 @@
 # My personal Linux dotfiles
 
 
-Dotfiles are managed via a bare git repository. This repo is meant to be used together with the [iniPC repo](https://github.com/jan-revay/initPC), read the initPC repo README.md and [install_dotfiles.sh](https://github.com/jan-revay/initPC/blob/devel/CommonInitScripts/install_dotfiles.sh) for more info.
+Linux dotfiles managed via a bare git repository. This repo is meant to be used together with the iniPC script here: <https://github.com/jan-revay/initPC>, read the initPC repo README.md and [install_dotfiles.sh](https://github.com/jan-revay/initPC/blob/devel/CommonInitScripts/install_dotfiles.sh) for more info.
 
-This directory also contains scripts, but only such that do not need to be executed as a part of the [initPC script](https://github.com/jan-revay/initPC) during init of a new machine.
+This directory also contains scripts, but only such that are not executed as a part of the [initPC script](https://github.com/jan-revay/initPC) during the init of a new machine (e.g. scripts that are executed on startup of the machine or backup scripts).
 
 "Dotfiles" is just a fancy name for personal config files <https://wiki.archlinux.org/title/Dotfiles>
 
