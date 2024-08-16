@@ -11,7 +11,7 @@ This directory also contains scripts, but only such that do not need to be execu
 
 - aliases should only be allowed to be merged to testing once they have been synchronized between all shells (PowerShell, zsh, fish, bash...)
 - aliases should not fire `command unknown` error
-- TODO - consider using this repo from root directory instead of just home
+- TODO - consider using this repo from the root directory instead of just home resp. review my current solution (stow for root, git bare for local home)
 
 ## TODO P1
 
@@ -29,3 +29,4 @@ This directory also contains scripts, but only such that do not need to be execu
 - https://wiki.archlinux.org/title/Table_of_contents
 - https://wiki.archlinux.org/title/Logitech_MX_Master
 - https://wiki.archlinux.org/title/Logitech_Unifying_Receiver
+- https://wiki.archlinux.org/title/Dotfiles
