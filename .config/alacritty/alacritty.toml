@@ -1,6 +1,8 @@
 # Alacritty configuration file
 # TODO
 
+# TOREAD:
+# https://alacritty.org/config-alacritty.html
 # Inspiration:
 # - https://github.com/Widkidone/AlacrittyToml/blob/main/alacritty.toml
 # - https://github.com/scalarwaves/dotfiles/blob/main/alacritty/alacritty.toml
