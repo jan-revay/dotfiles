@@ -1,6 +1,10 @@
 # Alacritty configuration file
 # TODO
 
+# Inspiration:
+# - https://github.com/Widkidone/AlacrittyToml/blob/main/alacritty.toml
+# - https://github.com/scalarwaves/dotfiles/blob/main/alacritty/alacritty.toml
+
 [keyboard]
 bindings = [
   { key = "W", mods = "Control", action = "Quit" },
@@ -18,3 +22,7 @@ bindings = [
 #  { key = "I", mods = "Control", chars = "\u001B[105;5u" },
 #  { key = "K", mods = "Control", chars = "\u0003" },
 ]
+
+# [window.padding]
+# x = 10
+# y = 10
