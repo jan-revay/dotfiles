@@ -1,0 +1,1374 @@
++ echo 'Dump script version: 0.0'
+Dump script version: 0.0
++ echo '===== All extensions ====='
+===== All extensions =====
++ gnome-extensions list
+arrangeWindows@sun.wxg@gmail.com
+panelScroll@sun.wxg@gmail.com
+smart-auto-move@khimaros.com
+rclone-manager@germanztz.com
+Vitals@CoreCoding.com
+windowsNavigator@gnome-shell-extensions.gcampax.github.com
+stopwatch@aliakseiz.github.com
+reminder_alarm_clock@trifonovkv.gmail.com
+hide-universal-access@akiirui.github.io
+transparent-window-moving@noobsai.github.com
+window-list@gnome-shell-extensions.gcampax.github.com
+burn-my-windows@schneegans.github.com
+order-extensions@wa4557.github.com
+improved-workspace-indicator@michaelaquilina.github.io
+quake-terminal@diegodario88.github.io
+another-window-session-manager@gmail.com
+focus@scaryrawr.github.io
+focus-changer@heartmire
+highlight-focus@pimsnel.com
+workspaces-by-open-apps@favo02.github.com
+all-windows@ezix.org
+auto-move-windows@gnome-shell-extensions.gcampax.github.com
+clipboard-history@alexsaveau.dev
+weeks-start-on-monday@extensions.gnome-shell.fifi.org
+grand-theft-focus@zalckos.github.com
+dim-background-windows@stephane-13.github.com
+window-title-is-back@fthx
+tilingshell@ferrarodomenico.com
+gTile@vibou
+system-monitor-next@paradoxxx.zero.gmail.com
+monitor@astraext.github.io
+system-monitor@gnome-shell-extensions.gcampax.github.com
+ding@rastersoft.com
+tiling-assistant@ubuntu.com
+ubuntu-appindicators@ubuntu.com
+ubuntu-dock@ubuntu.com
++ echo
+
++ echo '===== Enabled extensions ======'
+===== Enabled extensions ======
++ gnome-extensions list --enabled
+panelScroll@sun.wxg@gmail.com
+Vitals@CoreCoding.com
+windowsNavigator@gnome-shell-extensions.gcampax.github.com
+stopwatch@aliakseiz.github.com
+reminder_alarm_clock@trifonovkv.gmail.com
+hide-universal-access@akiirui.github.io
+transparent-window-moving@noobsai.github.com
+improved-workspace-indicator@michaelaquilina.github.io
+quake-terminal@diegodario88.github.io
+focus@scaryrawr.github.io
+focus-changer@heartmire
+workspaces-by-open-apps@favo02.github.com
+auto-move-windows@gnome-shell-extensions.gcampax.github.com
+clipboard-history@alexsaveau.dev
+weeks-start-on-monday@extensions.gnome-shell.fifi.org
+grand-theft-focus@zalckos.github.com
+window-title-is-back@fthx
+tilingshell@ferrarodomenico.com
+system-monitor-next@paradoxxx.zero.gmail.com
+ding@rastersoft.com
+tiling-assistant@ubuntu.com
+ubuntu-appindicators@ubuntu.com
+ubuntu-dock@ubuntu.com
++ echo
+
++ echo '===== Disabled extensions ======'
+===== Disabled extensions ======
++ gnome-extensions list --disabled
+arrangeWindows@sun.wxg@gmail.com
+smart-auto-move@khimaros.com
+rclone-manager@germanztz.com
+window-list@gnome-shell-extensions.gcampax.github.com
+burn-my-windows@schneegans.github.com
+order-extensions@wa4557.github.com
+another-window-session-manager@gmail.com
+highlight-focus@pimsnel.com
+all-windows@ezix.org
+dim-background-windows@stephane-13.github.com
+gTile@vibou
+monitor@astraext.github.io
+system-monitor@gnome-shell-extensions.gcampax.github.com
++ echo '===== All extensions with details ====='
+===== All extensions with details =====
++ gnome-extensions list -d
+arrangeWindows@sun.wxg@gmail.com
+  Name: Arrange Windows
+  Description: Arrange windows on the monitors
+
+Hotkeys:
+ Ctrl+Alt+1 Cascade windows
+ Ctrl+Alt+2 Tiling windows
+ Ctrl+Alt+3 Side by side windows
+ Ctrl+Alt+4 Stack windows
+  Path: /home/jr/.local/share/gnome-shell/extensions/arrangeWindows@sun.wxg@gmail.com
+  URL: https://github.com/sunwxg/gnome-shell-extension-arrangeWindows
+  Version: 30
+  Enabled: No
+  State: INITIALIZED
+
+panelScroll@sun.wxg@gmail.com
+  Name: panel scroll
+  Description: Switch windows or workspace by mouse scroll on the panel.
+Pointer on left of panel, switch windows.
+Pointer on right of panel, switch workspaces.
+  Path: /home/jr/.local/share/gnome-shell/extensions/panelScroll@sun.wxg@gmail.com
+  URL: https://github.com/sunwxg/gnome-shell-extension-panelScroll
+  Version: 24
+  Enabled: Yes
+  State: ACTIVE
+
+smart-auto-move@khimaros.com
+  Name: Smart Auto Move
+  Description: Smart Auto Move learns the position, size, and workspace of your application windows and restores them on subsequent launches. Supports Wayland.
+
+NOTE: Optimized for use with static workspaces. For more control, set the default behavior to IGNORE and then selectively RESTORE only desired apps.
+
+KNOWN ISSUES: Multi-monitor  is not yet well supported. You may need to manually delete Saved Windows in preferences after adding or removing a display.
+  Path: /home/jr/.local/share/gnome-shell/extensions/smart-auto-move@khimaros.com
+  URL: https://github.com/khimaros/smart-auto-move
+  Original author: khimaros
+  Version: 26
+  Enabled: No
+  State: INITIALIZED
+
+rclone-manager@germanztz.com
+  Name: rclone-manager
+  Description: Is like Dropbox sync client but for more than 30 services, adds an indicator to the top panel so you can manage the rclone profiles configured in your system, perform operations such as mount as remote, watch for file modifications, sync with remote storage, navigate it's main folder. Also, it shows the status of each profile so you can supervise the operations, and provides an easy access log of events. Backup and restore the rclone configuration file, so you won't have to configure all your devices one by one
+  Path: /home/jr/.local/share/gnome-shell/extensions/rclone-manager@germanztz.com
+  URL: https://github.com/germanztz/gnome-shell-extension-rclone-manager
+  Version: 15
+  Enabled: No
+  State: INITIALIZED
+
+Vitals@CoreCoding.com
+  Name: Vitals
+  Description: A glimpse into your computer's temperature, voltage, fan speed, memory usage, processor load, system resources, network speed and storage stats. This is a one stop shop to monitor all of your vital sensors. Uses asynchronous polling to provide a smooth user experience. Feature requests or bugs? Please use GitHub.
+  Path: /home/jr/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
+  URL: https://github.com/corecoding/Vitals
+  Version: 68
+  Enabled: Yes
+  State: ACTIVE
+
+windowsNavigator@gnome-shell-extensions.gcampax.github.com
+  Name: windowNavigator
+  Description: Allow keyboard selection of windows and workspaces in overlay mode. <Ctrl>number selects a workspace, and <Alt>number selects a window.
+  Path: /home/jr/.local/share/gnome-shell/extensions/windowsNavigator@gnome-shell-extensions.gcampax.github.com
+  URL: https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+  Original author: zaspire@rambler.ru
+  Version: 65
+  Enabled: Yes
+  State: ACTIVE
+
+stopwatch@aliakseiz.github.com
+  Name: Stopwatch
+  Description: Simple extension to measure time. Primary button click starts/pauses the watch, secondary button resets it. Automatically pauses/resumes on screen locking.
+  Path: /home/jr/.local/share/gnome-shell/extensions/stopwatch@aliakseiz.github.com
+  URL: https://github.com/aliakseiz/stopwatch
+  Version: 11
+  Enabled: Yes
+  State: ACTIVE
+
+reminder_alarm_clock@trifonovkv.gmail.com
+  Name: Reminder Alarm Clock
+  Description: The reminder alarm clock will remind you of an important event at the appointed time.
+  Path: /home/jr/.local/share/gnome-shell/extensions/reminder_alarm_clock@trifonovkv.gmail.com
+  URL: https://github.com/nE0sIghT/ReminderAlarmClock
+  Version: 51
+  Enabled: Yes
+  State: ACTIVE
+
+hide-universal-access@akiirui.github.io
+  Name: Hide Universal Access
+  Description: Hide Universal Access icon from the status bar
+  Path: /home/jr/.local/share/gnome-shell/extensions/hide-universal-access@akiirui.github.io
+  URL: https://github.com/akiirui/hide-universal-access
+  Version: 17
+  Enabled: Yes
+  State: ACTIVE
+
+transparent-window-moving@noobsai.github.com
+  Name: Transparent Window Moving
+  Description: Makes the window semi-transparent when moving or resizing
+  Path: /home/jr/.local/share/gnome-shell/extensions/transparent-window-moving@noobsai.github.com
+  URL: https://github.com/Noobsai/transparent-window-moving
+  Version: 17
+  Enabled: Yes
+  State: ACTIVE
+
+window-list@gnome-shell-extensions.gcampax.github.com
+  Name: Window List
+  Description: Display a window list at the bottom of the screen.
+This extension is part of Classic Mode and is officially supported by GNOME. Please do not report bugs using the form below, use GNOME's GitLab instance instead.
+  Path: /home/jr/.local/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com
+  URL: https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+  Version: 54
+  Enabled: No
+  State: INITIALIZED
+
+burn-my-windows@schneegans.github.com
+  Name: Burn My Windows
+  Description: Disintegrate your windows with style.
+  Path: /home/jr/.local/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
+  URL: https://github.com/Schneegans/Burn-My-Windows
+  Version: 41
+  Enabled: No
+  State: INITIALIZED
+
+order-extensions@wa4557.github.com
+  Name: Order Gnome Shell extensions
+  Description: Orders icons from extensions in the top bar
+  Path: /home/jr/.local/share/gnome-shell/extensions/order-extensions@wa4557.github.com
+  URL: https://github.com/andia89/order-icons
+  Version: 22
+  Enabled: No
+  State: INITIALIZED
+
+improved-workspace-indicator@michaelaquilina.github.io
+  Name: Improved Workspace Indicator
+  Description: Slightly improved workspace indicator that shows both current and in use workspaces similar to i3/sway
+  Path: /home/jr/.local/share/gnome-shell/extensions/improved-workspace-indicator@michaelaquilina.github.io
+  URL: https://github.com/MichaelAquilina/improved-workspace-indicator
+  Version: 23
+  Enabled: Yes
+  State: ACTIVE
+
+quake-terminal@diegodario88.github.io
+  Name: Quake Terminal
+  Description: Quickly launch a terminal in Quake mode using a keyboard shortcut
+  Path: /home/jr/.local/share/gnome-shell/extensions/quake-terminal@diegodario88.github.io
+  URL: https://github.com/diegodario88/quake-terminal
+  Version: 1.6.3 (20)
+  Enabled: Yes
+  State: ACTIVE
+
+another-window-session-manager@gmail.com
+  Name: Another Window Session Manager
+  Description: Close open windows gracefully and save them as a session. And you can restore them when necessary manually or automatically at startup. Most importantly, it supports both X11 and Wayland!
+
+Main features:
+- Restore the previous session at startup. disabled by default.
+- Save running apps and windows automatically when necessary, this will be used to restore the previous session at startup.
+- Close running apps and windows automatically before Log Out, Restart, Power Off. disabled by default.
+- Close running windows gracefully
+- Close apps with multiple windows gracefully via ydotool so you don't lose sessions of this app (See also: How to make Close by rules work)
+- Save running apps and windows manually
+- Restore a selected session at startup (See also: #9). disabled by default.
+- Restore a saved session manually
+- Restore window state, including Always on Top, Always on Visible Workspace and maximization
+- Restore window workspace, size and position
+- Restore 2 column window tiling
+- Stash all supported window states so that those states will be restored after gnome shell restarts via Alt+F2 -> r or killall -3 gnome-shell.
+- Move windows to their own workspace according to a saved session
+- Support multi-monitor
+- Remove saved session to trash
+- Search saved session by the session name fuzzily
+
+For more information, please visit https://github.com/nlpsuge/gnome-shell-extension-another-window-session-manager/blob/feature-close-save-session-while-logout/README.md.
+
+Please report issues on Github.
+  Path: /home/jr/.local/share/gnome-shell/extensions/another-window-session-manager@gmail.com
+  URL: https://github.com/nlpsuge/gnome-shell-extension-another-window-session-manager
+  Version: 48
+  Enabled: No
+  State: INITIALIZED
+
+focus@scaryrawr.github.io
+  Name: Focus
+  Description: Transparent inactive windows
+  Path: /home/jr/.local/share/gnome-shell/extensions/focus@scaryrawr.github.io
+  URL: https://github.com/scaryrawr/gnome-focus
+  Version: 13
+  Enabled: Yes
+  State: ACTIVE
+
+focus-changer@heartmire
+  Name: Focus changer
+  Description: Change focus between windows in all directions.
+
+The extension will first try to find a suitable window within the same monitor. If there is none, it will try to find one on the next monitor in that direction (in a multi-monitor setup).
+
+Default shortcuts (can be changed in preferences):
+<Super>+h = Focus left
+<Super>+j = Focus down
+<Super>+k = Focus up
+<Super>+l = Focus right
+  Path: /home/jr/.local/share/gnome-shell/extensions/focus-changer@heartmire
+  URL: https://github.com/martinhjartmyr/gnome-shell-extension-focus-changer
+  Version: 20
+  Enabled: Yes
+  State: ACTIVE
+
+highlight-focus@pimsnel.com
+  Name: Highlight Focus
+  Description: Highlights the focussed window with a temporary border
+  Path: /home/jr/.local/share/gnome-shell/extensions/highlight-focus@pimsnel.com
+  URL: https://github.com/mipmip/gnome-shell-extensions-highlight-focus
+  Version: 12
+  Enabled: No
+  State: INITIALIZED
+
+workspaces-by-open-apps@favo02.github.com
+  Name: Workspaces indicator by open apps
+  Description: Display a simple workspace indicator showing icons of apps open in it.
+
+Features:
+
+- Show a simple indicator to display workspaces and apps open in it
+- Support for drag and drop: change an application workspace just dragging its icon
+- Right/Left click to focus/minimize application, Middle click to close
+- Workspaces scrolling: change active workspace scrolling hover the indicator
+- Support for multiple monitor (for both static and dynamic workspaces)
+- Rename workspaces directly from the extension (activate in settings)
+- Hide/show GNOME default workspace indicator (former activities button)
+
+Customization:
+
+- Indicator position
+- Mouse scroll direction (normal or inverse)
+- Activate/deactivate 'middle click to close app'
+- Activate/deactivate 'click on active workspace to overview'
+- Activate/deactivate 'click on focused application to minimize'
+- Activate/deactivate 'workspace indicator'
+- Activate/deactivate 'app indicator'
+- Customize indicator color
+- Activate/deactivate 'round borders'
+- Show/Hide workspaces names
+- Show/Hide empty workspaces
+- Customize apps on all workspaces text indicator
+- Desaturate all icons
+- No effect/Reduce opacity/Desaturate for both minimized and inactive apps
+- Limit icons per workspace
+- Group icons of same application
+- Ignore applications (with regex)
+- Spacing and Size of applications icons and labels
+  Path: /home/jr/.local/share/gnome-shell/extensions/workspaces-by-open-apps@favo02.github.com
+  URL: https://github.com/Favo02/workspaces-by-open-apps
+  Version: 19
+  Enabled: Yes
+  State: ACTIVE
+
+all-windows@ezix.org
+  Name: All Windows
+  Description: List open windows of all workspaces
+  Path: /home/jr/.local/share/gnome-shell/extensions/all-windows@ezix.org
+  URL: https://ezix.org/src/lyonel/all-windows
+  Version: 18
+  Enabled: No
+  State: INITIALIZED
+
+auto-move-windows@gnome-shell-extensions.gcampax.github.com
+  Name: Auto Move Windows
+  Description: Move applications to specific workspaces when they create windows.
+  Path: /home/jr/.local/share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com
+  URL: https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+  Version: 57
+  Enabled: Yes
+  State: ACTIVE
+
+clipboard-history@alexsaveau.dev
+  Name: Clipboard History
+  Description: Gnome Clipboard History is a clipboard manager GNOME extension that saves items you've copied into an easily accessible, searchable history panel.
+  Path: /home/jr/.local/share/gnome-shell/extensions/clipboard-history@alexsaveau.dev
+  URL: https://github.com/SUPERCILEX/gnome-clipboard-history
+  Version: 44
+  Enabled: Yes
+  State: ACTIVE
+
+weeks-start-on-monday@extensions.gnome-shell.fifi.org
+  Name: Weeks Start on Monday Again...
+  Description: ... or maybe not, and that's why the start day is configurable in the preferences.
+
+This is an updated version of the "Weeks Start on Monday" extension for newer Gnome Shells.
+  Path: /home/jr/.local/share/gnome-shell/extensions/weeks-start-on-monday@extensions.gnome-shell.fifi.org
+  URL: https://github.com/F-i-f/weeks-start-on-monday
+  Version: 17
+  Enabled: Yes
+  State: ACTIVE
+
+grand-theft-focus@zalckos.github.com
+  Name: Grand Theft Focus
+  Description: Removes the 'Window is ready' notification and brings the window into focus instead.
+  Path: /home/jr/.local/share/gnome-shell/extensions/grand-theft-focus@zalckos.github.com
+  URL: https://github.com/zalckos/GrandTheftFocus
+  Version: 6
+  Enabled: Yes
+  State: ACTIVE
+
+dim-background-windows@stephane-13.github.com
+  Name: Dim Background Windows
+  Description: Dim windows without focus
+  Path: /home/jr/.local/share/gnome-shell/extensions/dim-background-windows@stephane-13.github.com
+  URL: https://github.com/stephane-13/gnome-shell-extension-dim-background-windows
+  Version: 15
+  Enabled: No
+  State: INITIALIZED
+
+window-title-is-back@fthx
+  Name: Window title is back
+  Description: Focused window icon + app name + title + menu in the top bar.
+
+ Options in preferences UI: toggle items, colored icon, icon size.
+  Path: /home/jr/.local/share/gnome-shell/extensions/window-title-is-back@fthx
+  URL: https://github.com/fthx/window-title-is-back
+  Version: 32
+  Enabled: Yes
+  State: ACTIVE
+
+tilingshell@ferrarodomenico.com
+  Name: Tiling Shell
+  Description: Extend Gnome Shell with advanced tiling window management. Supports multiple monitors, Windows 11 Snap Assistant, Fancy Zones, customised tiling layouts and more.
+  Path: /home/jr/.local/share/gnome-shell/extensions/tilingshell@ferrarodomenico.com
+  URL: https://github.com/domferr/tilingshell
+  Version: 12.2 (26)
+  Enabled: Yes
+  State: ACTIVE
+
+gTile@vibou
+  Name: gTile
+  Description: Tile windows on a grid
+  Path: /home/jr/.local/share/gnome-shell/extensions/gTile@vibou
+  URL: https://github.com/gTile
+  Version: 59
+  Enabled: No
+  State: INITIALIZED
+
+system-monitor-next@paradoxxx.zero.gmail.com
+  Name: system-monitor-next
+  Description: Display system information in GNOME Shell status bar, such as memory, CPU, disk and battery usages, network rates…
+
+This is a fork of the seemingly abandoned paradoxxxzero/gnome-shell-system-monitor-applet.
+
+If you get an error after updating, try logging out and logging back in (this is a known issue that is being worked on).
+  Path: /home/jr/.local/share/gnome-shell/extensions/system-monitor-next@paradoxxx.zero.gmail.com
+  URL: https://github.com/mgalgs/gnome-shell-system-monitor-applet
+  Version: 71
+  Enabled: Yes
+  State: ACTIVE
+
+monitor@astraext.github.io
+  Name: Astra Monitor
+  Description: Astra Monitor is a cutting-edge, fully customizable, and performance-focused system monitoring extension for GNOME's top bar. It's an all-in-one solution for those seeking to keep a close eye on their system's performance metrics like CPU, GPU, RAM, disk usage, network statistics, and sensor readings.
+  Path: /home/jr/.local/share/gnome-shell/extensions/monitor@astraext.github.io
+  URL: https://github.com/AstraExt/astra-monitor
+  Version: 25 (42)
+  Enabled: No
+  State: INITIALIZED
+
+system-monitor@gnome-shell-extensions.gcampax.github.com
+  Name: System Monitor
+  Description: Monitor system from the top bar
+  Path: /home/jr/.local/share/gnome-shell/extensions/system-monitor@gnome-shell-extensions.gcampax.github.com
+  URL: https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+  Version: 3
+  Enabled: No
+  State: INITIALIZED
+
+ding@rastersoft.com
+  Name: Desktop Icons NG (DING)
+  Description: Adds icons to the desktop. Fork of the original Desktop Icons extension, with several enhancements .
+  Path: /usr/share/gnome-shell/extensions/ding@rastersoft.com
+  URL: https://gitlab.com/rastersoft/desktop-icons-ng
+  Enabled: Yes
+  State: ACTIVE
+
+tiling-assistant@ubuntu.com
+  Name: Ubuntu Tiling Assistant
+  Description: Expand GNOME's 2 column tiling and add a Windows-snap-assist-inspired popup...
+  Path: /usr/share/gnome-shell/extensions/tiling-assistant@ubuntu.com
+  URL: https://launchpad.net/ubuntu/+source/gnome-shell-extension-tiling-assistant
+  Version: 46
+  Enabled: Yes
+  State: ACTIVE
+
+ubuntu-appindicators@ubuntu.com
+  Name: Ubuntu AppIndicators
+  Description: Support app indicators and legacy tray icons in top panel, as the default Ubuntu experience. System update of AppIndicator and KStatusNotifierItem Support extension.
+  Path: /usr/share/gnome-shell/extensions/ubuntu-appindicators@ubuntu.com
+  URL: https://github.com/ubuntu/gnome-shell-extension-appindicator
+  Enabled: Yes
+  State: ACTIVE
+
+ubuntu-dock@ubuntu.com
+  Name: Ubuntu Dock
+  Description: A dock for the Gnome Shell, default Ubuntu experience. This extension is a modified version of Dash To Dock with different defaults. Dash To Dock can be installed to replace it and give more (but unsupported) configuration options.
+  Path: /usr/share/gnome-shell/extensions/ubuntu-dock@ubuntu.com
+  URL: https://micheleg.github.io/dash-to-dock/
+  Original author: micxgx@gmail.com
+  Version: 90
+  Enabled: Yes
+  State: ACTIVE
++ echo
+
++ echo '===== Enabled extensions with details ======'
+===== Enabled extensions with details ======
++ gnome-extensions list --enabled -d
+panelScroll@sun.wxg@gmail.com
+  Name: panel scroll
+  Description: Switch windows or workspace by mouse scroll on the panel.
+Pointer on left of panel, switch windows.
+Pointer on right of panel, switch workspaces.
+  Path: /home/jr/.local/share/gnome-shell/extensions/panelScroll@sun.wxg@gmail.com
+  URL: https://github.com/sunwxg/gnome-shell-extension-panelScroll
+  Version: 24
+  Enabled: Yes
+  State: ACTIVE
+
+Vitals@CoreCoding.com
+  Name: Vitals
+  Description: A glimpse into your computer's temperature, voltage, fan speed, memory usage, processor load, system resources, network speed and storage stats. This is a one stop shop to monitor all of your vital sensors. Uses asynchronous polling to provide a smooth user experience. Feature requests or bugs? Please use GitHub.
+  Path: /home/jr/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
+  URL: https://github.com/corecoding/Vitals
+  Version: 68
+  Enabled: Yes
+  State: ACTIVE
+
+windowsNavigator@gnome-shell-extensions.gcampax.github.com
+  Name: windowNavigator
+  Description: Allow keyboard selection of windows and workspaces in overlay mode. <Ctrl>number selects a workspace, and <Alt>number selects a window.
+  Path: /home/jr/.local/share/gnome-shell/extensions/windowsNavigator@gnome-shell-extensions.gcampax.github.com
+  URL: https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+  Original author: zaspire@rambler.ru
+  Version: 65
+  Enabled: Yes
+  State: ACTIVE
+
+stopwatch@aliakseiz.github.com
+  Name: Stopwatch
+  Description: Simple extension to measure time. Primary button click starts/pauses the watch, secondary button resets it. Automatically pauses/resumes on screen locking.
+  Path: /home/jr/.local/share/gnome-shell/extensions/stopwatch@aliakseiz.github.com
+  URL: https://github.com/aliakseiz/stopwatch
+  Version: 11
+  Enabled: Yes
+  State: ACTIVE
+
+reminder_alarm_clock@trifonovkv.gmail.com
+  Name: Reminder Alarm Clock
+  Description: The reminder alarm clock will remind you of an important event at the appointed time.
+  Path: /home/jr/.local/share/gnome-shell/extensions/reminder_alarm_clock@trifonovkv.gmail.com
+  URL: https://github.com/nE0sIghT/ReminderAlarmClock
+  Version: 51
+  Enabled: Yes
+  State: ACTIVE
+
+hide-universal-access@akiirui.github.io
+  Name: Hide Universal Access
+  Description: Hide Universal Access icon from the status bar
+  Path: /home/jr/.local/share/gnome-shell/extensions/hide-universal-access@akiirui.github.io
+  URL: https://github.com/akiirui/hide-universal-access
+  Version: 17
+  Enabled: Yes
+  State: ACTIVE
+
+transparent-window-moving@noobsai.github.com
+  Name: Transparent Window Moving
+  Description: Makes the window semi-transparent when moving or resizing
+  Path: /home/jr/.local/share/gnome-shell/extensions/transparent-window-moving@noobsai.github.com
+  URL: https://github.com/Noobsai/transparent-window-moving
+  Version: 17
+  Enabled: Yes
+  State: ACTIVE
+
+improved-workspace-indicator@michaelaquilina.github.io
+  Name: Improved Workspace Indicator
+  Description: Slightly improved workspace indicator that shows both current and in use workspaces similar to i3/sway
+  Path: /home/jr/.local/share/gnome-shell/extensions/improved-workspace-indicator@michaelaquilina.github.io
+  URL: https://github.com/MichaelAquilina/improved-workspace-indicator
+  Version: 23
+  Enabled: Yes
+  State: ACTIVE
+
+quake-terminal@diegodario88.github.io
+  Name: Quake Terminal
+  Description: Quickly launch a terminal in Quake mode using a keyboard shortcut
+  Path: /home/jr/.local/share/gnome-shell/extensions/quake-terminal@diegodario88.github.io
+  URL: https://github.com/diegodario88/quake-terminal
+  Version: 1.6.3 (20)
+  Enabled: Yes
+  State: ACTIVE
+
+focus@scaryrawr.github.io
+  Name: Focus
+  Description: Transparent inactive windows
+  Path: /home/jr/.local/share/gnome-shell/extensions/focus@scaryrawr.github.io
+  URL: https://github.com/scaryrawr/gnome-focus
+  Version: 13
+  Enabled: Yes
+  State: ACTIVE
+
+focus-changer@heartmire
+  Name: Focus changer
+  Description: Change focus between windows in all directions.
+
+The extension will first try to find a suitable window within the same monitor. If there is none, it will try to find one on the next monitor in that direction (in a multi-monitor setup).
+
+Default shortcuts (can be changed in preferences):
+<Super>+h = Focus left
+<Super>+j = Focus down
+<Super>+k = Focus up
+<Super>+l = Focus right
+  Path: /home/jr/.local/share/gnome-shell/extensions/focus-changer@heartmire
+  URL: https://github.com/martinhjartmyr/gnome-shell-extension-focus-changer
+  Version: 20
+  Enabled: Yes
+  State: ACTIVE
+
+workspaces-by-open-apps@favo02.github.com
+  Name: Workspaces indicator by open apps
+  Description: Display a simple workspace indicator showing icons of apps open in it.
+
+Features:
+
+- Show a simple indicator to display workspaces and apps open in it
+- Support for drag and drop: change an application workspace just dragging its icon
+- Right/Left click to focus/minimize application, Middle click to close
+- Workspaces scrolling: change active workspace scrolling hover the indicator
+- Support for multiple monitor (for both static and dynamic workspaces)
+- Rename workspaces directly from the extension (activate in settings)
+- Hide/show GNOME default workspace indicator (former activities button)
+
+Customization:
+
+- Indicator position
+- Mouse scroll direction (normal or inverse)
+- Activate/deactivate 'middle click to close app'
+- Activate/deactivate 'click on active workspace to overview'
+- Activate/deactivate 'click on focused application to minimize'
+- Activate/deactivate 'workspace indicator'
+- Activate/deactivate 'app indicator'
+- Customize indicator color
+- Activate/deactivate 'round borders'
+- Show/Hide workspaces names
+- Show/Hide empty workspaces
+- Customize apps on all workspaces text indicator
+- Desaturate all icons
+- No effect/Reduce opacity/Desaturate for both minimized and inactive apps
+- Limit icons per workspace
+- Group icons of same application
+- Ignore applications (with regex)
+- Spacing and Size of applications icons and labels
+  Path: /home/jr/.local/share/gnome-shell/extensions/workspaces-by-open-apps@favo02.github.com
+  URL: https://github.com/Favo02/workspaces-by-open-apps
+  Version: 19
+  Enabled: Yes
+  State: ACTIVE
+
+auto-move-windows@gnome-shell-extensions.gcampax.github.com
+  Name: Auto Move Windows
+  Description: Move applications to specific workspaces when they create windows.
+  Path: /home/jr/.local/share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com
+  URL: https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+  Version: 57
+  Enabled: Yes
+  State: ACTIVE
+
+clipboard-history@alexsaveau.dev
+  Name: Clipboard History
+  Description: Gnome Clipboard History is a clipboard manager GNOME extension that saves items you've copied into an easily accessible, searchable history panel.
+  Path: /home/jr/.local/share/gnome-shell/extensions/clipboard-history@alexsaveau.dev
+  URL: https://github.com/SUPERCILEX/gnome-clipboard-history
+  Version: 44
+  Enabled: Yes
+  State: ACTIVE
+
+weeks-start-on-monday@extensions.gnome-shell.fifi.org
+  Name: Weeks Start on Monday Again...
+  Description: ... or maybe not, and that's why the start day is configurable in the preferences.
+
+This is an updated version of the "Weeks Start on Monday" extension for newer Gnome Shells.
+  Path: /home/jr/.local/share/gnome-shell/extensions/weeks-start-on-monday@extensions.gnome-shell.fifi.org
+  URL: https://github.com/F-i-f/weeks-start-on-monday
+  Version: 17
+  Enabled: Yes
+  State: ACTIVE
+
+grand-theft-focus@zalckos.github.com
+  Name: Grand Theft Focus
+  Description: Removes the 'Window is ready' notification and brings the window into focus instead.
+  Path: /home/jr/.local/share/gnome-shell/extensions/grand-theft-focus@zalckos.github.com
+  URL: https://github.com/zalckos/GrandTheftFocus
+  Version: 6
+  Enabled: Yes
+  State: ACTIVE
+
+window-title-is-back@fthx
+  Name: Window title is back
+  Description: Focused window icon + app name + title + menu in the top bar.
+
+ Options in preferences UI: toggle items, colored icon, icon size.
+  Path: /home/jr/.local/share/gnome-shell/extensions/window-title-is-back@fthx
+  URL: https://github.com/fthx/window-title-is-back
+  Version: 32
+  Enabled: Yes
+  State: ACTIVE
+
+tilingshell@ferrarodomenico.com
+  Name: Tiling Shell
+  Description: Extend Gnome Shell with advanced tiling window management. Supports multiple monitors, Windows 11 Snap Assistant, Fancy Zones, customised tiling layouts and more.
+  Path: /home/jr/.local/share/gnome-shell/extensions/tilingshell@ferrarodomenico.com
+  URL: https://github.com/domferr/tilingshell
+  Version: 12.2 (26)
+  Enabled: Yes
+  State: ACTIVE
+
+system-monitor-next@paradoxxx.zero.gmail.com
+  Name: system-monitor-next
+  Description: Display system information in GNOME Shell status bar, such as memory, CPU, disk and battery usages, network rates…
+
+This is a fork of the seemingly abandoned paradoxxxzero/gnome-shell-system-monitor-applet.
+
+If you get an error after updating, try logging out and logging back in (this is a known issue that is being worked on).
+  Path: /home/jr/.local/share/gnome-shell/extensions/system-monitor-next@paradoxxx.zero.gmail.com
+  URL: https://github.com/mgalgs/gnome-shell-system-monitor-applet
+  Version: 71
+  Enabled: Yes
+  State: ACTIVE
+
+ding@rastersoft.com
+  Name: Desktop Icons NG (DING)
+  Description: Adds icons to the desktop. Fork of the original Desktop Icons extension, with several enhancements .
+  Path: /usr/share/gnome-shell/extensions/ding@rastersoft.com
+  URL: https://gitlab.com/rastersoft/desktop-icons-ng
+  Enabled: Yes
+  State: ACTIVE
+
+tiling-assistant@ubuntu.com
+  Name: Ubuntu Tiling Assistant
+  Description: Expand GNOME's 2 column tiling and add a Windows-snap-assist-inspired popup...
+  Path: /usr/share/gnome-shell/extensions/tiling-assistant@ubuntu.com
+  URL: https://launchpad.net/ubuntu/+source/gnome-shell-extension-tiling-assistant
+  Version: 46
+  Enabled: Yes
+  State: ACTIVE
+
+ubuntu-appindicators@ubuntu.com
+  Name: Ubuntu AppIndicators
+  Description: Support app indicators and legacy tray icons in top panel, as the default Ubuntu experience. System update of AppIndicator and KStatusNotifierItem Support extension.
+  Path: /usr/share/gnome-shell/extensions/ubuntu-appindicators@ubuntu.com
+  URL: https://github.com/ubuntu/gnome-shell-extension-appindicator
+  Enabled: Yes
+  State: ACTIVE
+
+ubuntu-dock@ubuntu.com
+  Name: Ubuntu Dock
+  Description: A dock for the Gnome Shell, default Ubuntu experience. This extension is a modified version of Dash To Dock with different defaults. Dash To Dock can be installed to replace it and give more (but unsupported) configuration options.
+  Path: /usr/share/gnome-shell/extensions/ubuntu-dock@ubuntu.com
+  URL: https://micheleg.github.io/dash-to-dock/
+  Original author: micxgx@gmail.com
+  Version: 90
+  Enabled: Yes
+  State: ACTIVE
++ echo
+
++ echo '===== GNOME dconf dump ======'
+===== GNOME dconf dump ======
++ dconf dump /org/gnome/
+[Disks]
+image-dir-uri='file:///home/jr/Downloads'
+
+[Extensions]
+window-height=1779
+window-width=1465
+
+[Totem]
+active-plugins=['vimeo', 'screenshot', 'save-file', 'screensaver', 'movie-properties', 'apple-trailers', 'open-directory', 'recent', 'mpris', 'autoload-subtitles', 'rotation', 'skipto', 'variable-rate']
+subtitle-encoding='UTF-8'
+
+[calendar]
+active-view='month'
+window-maximized=true
+window-size=(524, 600)
+
+[control-center]
+last-panel='keyboard'
+window-state=(1224, 1305, false)
+
+[deja-dup]
+backend='google'
+prompt-check='2024-07-26T09:44:04.444749Z'
+window-height=500
+window-width=700
+
+[desktop/a11y/magnifier]
+show-cross-hairs=false
+
+[desktop/app-folders]
+folder-children=['Utilities', 'YaST', 'Pardus']
+
+[desktop/app-folders/folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
+
+[desktop/app-folders/folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'vinagre.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[desktop/calendar]
+show-weekdate=true
+
+[desktop/datetime]
+automatic-timezone=false
+
+[desktop/input-sources]
+mru-sources=[('xkb', 'us'), ('xkb', 'sk+qwerty')]
+per-window=true
+sources=[('xkb', 'us'), ('xkb', 'sk+qwerty')]
+xkb-options=['terminate:ctrl_alt_bksp', 'shift:both_capslock_cancel', 'caps:none']
+
+[desktop/interface]
+clock-show-weekday=false
+color-scheme='prefer-dark'
+cursor-size=64
+cursor-theme='Yaru'
+gtk-theme='Yaru-red-dark'
+icon-theme='Yaru-red'
+locate-pointer=false
+text-scaling-factor=1.3999999999999999
+
+[desktop/notifications]
+application-children=['google-chrome', 'com-todoist-todoist', 'com-visualstudio-code', 'org-gnome-extensions', 'alacritty', 'com-sindresorhus-caprine', 'chrome-aghbiahbpaijignceidepookljebhfak-default', 'solaar', 'firefox-firefox', 'chrome-hnpfjngllnobngcgfapefoaidbinmjnm-default', 'snap-store-snap-store', 'org-gnome-nautilus', 'thunderbird-thunderbird', 'org-signal-signal', 'org-gnome-shell-extensions', 'ca-desrt-dconf-editor', 'org-gnome-eog', 'chrome-iobbenpdimbkfpbkkpfdlflogfikagdj-default', 'gnome-printers-panel', 'com-spotify-client', 'org-gnome-terminal-preferences', 'org-gnome-settings', 'chrome-kjgfgldnnfoeklkmfkjfagphfepbbdan-default', 'todoist-todoist', 'libreoffice-calc', 'gitkraken-gitkraken']
+
+[desktop/notifications/application/alacritty]
+application-id='Alacritty.desktop'
+
+[desktop/notifications/application/ca-desrt-dconf-editor]
+application-id='ca.desrt.dconf-editor.desktop'
+
+[desktop/notifications/application/chrome-aghbiahbpaijignceidepookljebhfak-default]
+application-id='chrome-aghbiahbpaijignceidepookljebhfak-Default.desktop'
+
+[desktop/notifications/application/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-default]
+application-id='chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop'
+
+[desktop/notifications/application/chrome-iobbenpdimbkfpbkkpfdlflogfikagdj-default]
+application-id='chrome-iobbenpdimbkfpbkkpfdlflogfikagdj-Default.desktop'
+
+[desktop/notifications/application/chrome-kjgfgldnnfoeklkmfkjfagphfepbbdan-default]
+application-id='chrome-kjgfgldnnfoeklkmfkjfagphfepbbdan-Default.desktop'
+
+[desktop/notifications/application/com-sindresorhus-caprine]
+application-id='com.sindresorhus.Caprine.desktop'
+
+[desktop/notifications/application/com-spotify-client]
+application-id='com.spotify.Client.desktop'
+
+[desktop/notifications/application/com-todoist-todoist]
+application-id='com.todoist.Todoist.desktop'
+
+[desktop/notifications/application/com-visualstudio-code]
+application-id='com.visualstudio.code.desktop'
+
+[desktop/notifications/application/firefox-firefox]
+application-id='firefox_firefox.desktop'
+
+[desktop/notifications/application/gitkraken-gitkraken]
+application-id='gitkraken_gitkraken.desktop'
+
+[desktop/notifications/application/gnome-printers-panel]
+application-id='gnome-printers-panel.desktop'
+
+[desktop/notifications/application/google-chrome]
+application-id='google-chrome.desktop'
+
+[desktop/notifications/application/libreoffice-calc]
+application-id='libreoffice-calc.desktop'
+
+[desktop/notifications/application/org-gnome-eog]
+application-id='org.gnome.eog.desktop'
+
+[desktop/notifications/application/org-gnome-extensions]
+application-id='org.gnome.Extensions.desktop'
+
+[desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
+
+[desktop/notifications/application/org-gnome-settings]
+application-id='org.gnome.Settings.desktop'
+
+[desktop/notifications/application/org-gnome-shell-extensions]
+application-id='org.gnome.Shell.Extensions.desktop'
+
+[desktop/notifications/application/org-gnome-terminal-preferences]
+application-id='org.gnome.Terminal.Preferences.desktop'
+
+[desktop/notifications/application/org-signal-signal]
+application-id='org.signal.Signal.desktop'
+
+[desktop/notifications/application/snap-store-snap-store]
+application-id='snap-store_snap-store.desktop'
+
+[desktop/notifications/application/solaar]
+application-id='solaar.desktop'
+
+[desktop/notifications/application/thunderbird-thunderbird]
+application-id='thunderbird_thunderbird.desktop'
+
+[desktop/notifications/application/todoist-todoist]
+application-id='todoist_todoist.desktop'
+
+[desktop/peripherals/keyboard]
+numlock-state=false
+
+[desktop/peripherals/mouse]
+natural-scroll=false
+
+[desktop/peripherals/touchpad]
+two-finger-scrolling-enabled=true
+
+[desktop/privacy]
+old-files-age=uint32 30
+recent-files-max-age=-1
+
+[desktop/search-providers]
+sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
+
+[desktop/session]
+idle-delay=uint32 300
+
+[desktop/wm/keybindings]
+always-on-top=['<Control><Alt><Super>space']
+maximize=@as []
+switch-to-workspace-1=['<Control><Alt><Super>h']
+switch-to-workspace-2=['<Control><Alt><Super>j']
+switch-to-workspace-3=['<Control><Alt><Super>k']
+switch-to-workspace-4=['<Control><Alt><Super>l']
+switch-to-workspace-5=['<Control><Alt><Super>semicolon']
+switch-to-workspace-6=['<Control><Alt><Super>apostrophe']
+switch-to-workspace-7=['<Control><Alt><Super>Return']
+switch-to-workspace-down=@as []
+switch-to-workspace-left=['<Control><Super>Left']
+switch-to-workspace-right=['<Control><Super>Right']
+unmaximize=@as []
+
+[desktop/wm/preferences]
+action-double-click-titlebar='toggle-maximize'
+action-middle-click-titlebar='minimize'
+button-layout='appmenu:minimize,close'
+focus-mode='click'
+mouse-button-modifier='<Alt>'
+num-workspaces=8
+resize-with-right-button=true
+workspace-names=['1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+[evince/default]
+continuous=true
+dual-page=false
+dual-page-odd-left=false
+enable-spellchecking=true
+fullscreen=false
+inverted-colors=false
+show-sidebar=true
+sidebar-page='thumbnails'
+sidebar-size=132
+sizing-mode='automatic'
+window-ratio=(3.0702614379084969, 2.4429747323643212)
+
+[evolution-data-server]
+migrated=true
+
+[file-roller/listing]
+list-mode='as-folder'
+name-column-width=78
+show-path=false
+sort-method='name'
+sort-type='ascending'
+
+[file-roller/ui]
+sidebar-width=200
+window-height=480
+window-width=600
+
+[gnome-system-monitor]
+current-tab='resources'
+show-dependencies=false
+show-whose-processes='user'
+window-height=1262
+window-width=1878
+
+[gnome-system-monitor/disktreenew]
+col-6-visible=true
+col-6-width=0
+columns-order=[5]
+sort-col=1
+sort-order=0
+
+[gnome-system-monitor/proctree]
+columns-order=[0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
+sort-col=8
+sort-order=0
+
+[mutter]
+dynamic-workspaces=false
+edge-tiling=false
+
+[mutter/keybindings]
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []
+
+[nautilus/icon-view]
+default-zoom-level='extra-large'
+
+[nautilus/preferences]
+default-folder-viewer='list-view'
+migrated-gtk-settings=true
+search-filter-time-type='last_modified'
+
+[nautilus/window-state]
+initial-size=(1912, 1049)
+maximized=false
+
+[portal/filechooser/chrome-aghbiahbpaijignceidepookljebhfak-Default]
+last-folder-path='/home/jr/Downloads'
+
+[portal/filechooser/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default]
+last-folder-path='/home/jr/Pictures/Screenshots'
+
+[portal/filechooser/com.todoist.Todoist]
+last-folder-path='/home/jr/Downloads'
+
+[portal/filechooser/com.visualstudio.code]
+last-folder-path='/home/jr/initPC'
+
+[portal/filechooser/google-chrome]
+last-folder-path='/home/jr/Downloads'
+
+[portal/filechooser/snap.gitkraken]
+last-folder-path='/home/jr/initPC'
+
+[rhythmbox]
+position=(-1, -1)
+
+[rhythmbox/plugins]
+active-plugins=['android', 'dbus-media-server', 'rb', 'alternative-toolbar', 'daap', 'generic-player', 'audiocd', 'iradio', 'audioscrobbler', 'mpris', 'ipod', 'notification', 'power-manager', 'mtpdevice', 'artsearch']
+seen-plugins=['pythonconsole', 'fmradio', 'dbus-media-server', 'rb', 'alternative-toolbar', 'listenbrainz', 'rblirc', 'daap', 'audioscrobbler', 'ipod', 'grilo', 'notification', 'mtpdevice', 'replaygain', 'magnatune', 'lyrics', 'im-status', 'artsearch', 'webremote']
+
+[rhythmbox/plugins/alternative_toolbar]
+show-source-toolbar=false
+
+[rhythmbox/plugins/audioscrobbler/Last.fm]
+scrobbling-enabled=true
+
+[rhythmbox/plugins/audioscrobbler/Libre.fm]
+scrobbling-enabled=true
+
+[rhythmbox/plugins/iradio]
+initial-stations-loaded=true
+
+[rhythmbox/rhythmdb]
+locations=['file:///home/jr/Music']
+
+[settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+home=['<Super>e']
+
+[settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Control><Alt><Super>s'
+command='systemctl suspend'
+name='Suspend'
+
+[settings-daemon/plugins/power]
+sleep-inactive-ac-timeout=3600
+sleep-inactive-ac-type='nothing'
+
+[shell]
+disable-user-extensions=false
+disabled-extensions=['rclone-manager@germanztz.com', 'window-on-top@yousafesaeed.github.io', 'order-extensions@wa4557.github.com', 'highlight-focus@pimsnel.com', 'dim-background-windows@stephane-13.github.com', 'vertical-window-list@student.gitlab.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'panel-workspace-scroll@polymeilex.github.io', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'all-windows@ezix.org', 'burn-my-windows@schneegans.github.com', 'monitor@astraext.github.io', 'arrangeWindows@sun.wxg@gmail.com', 'another-window-session-manager@gmail.com']
+enabled-extensions=['quake-terminal@diegodario88.github.io', 'transparent-window-moving@noobsai.github.com', 'Vitals@CoreCoding.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'hide-universal-access@akiirui.github.io', 'focus-changer@heartmire', 'all-windows-srwp@jkavery.github.io', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'clipboard-history@alexsaveau.dev', 'ding@rastersoft.com', 'weeks-start-on-monday@extensions.gnome-shell.fifi.org', 'tiling-assistant@ubuntu.com', 'focus@scaryrawr.github.io', 'grand-theft-focus@zalckos.github.com', 'workspaces-by-open-apps@favo02.github.com', 'window-title-is-back@fthx', 'LeftClock@adityashrivastava.tk', 'panelScroll@sun.wxg@gmail.com', 'system-monitor-next@paradoxxx.zero.gmail.com', 'stopwatch@aliakseiz.github.com', 'reminder_alarm_clock@trifonovkv.gmail.com', 'improved-workspace-indicator@michaelaquilina.github.io', 'ubuntu-dock@ubuntu.com', 'tilingshell@ferrarodomenico.com']
+favorite-apps=['Alacritty.desktop', 'com.visualstudio.code.desktop', 'google-chrome.desktop', 'firefox_firefox.desktop', 'thunderbird_thunderbird.desktop', 'snap-store_snap-store.desktop', 'chrome-iobbenpdimbkfpbkkpfdlflogfikagdj-Default.desktop', 'chrome-kjgfgldnnfoeklkmfkjfagphfepbbdan-Default.desktop']
+welcome-dialog-last-shown-version='46.0'
+
+[shell/app-switcher]
+current-workspace-only=true
+
+[shell/extensions/another-window-session-manager]
+autorestore-sessions='Test1 WA and Files'
+autostart-delay=20
+enable-autorestore-sessions=true
+enable-restore-previous-session=false
+restore-at-startup-without-asking=true
+restore-previous-delay=45
+restore-session-interval=5000
+windows-mapping='[["/var/lib/flatpak/exports/share/applications/com.visualstudio.code.desktop",{"0x5200004":{"windowTitle":"Visual Studio Code","xid":"0x5200004","windowStableSequence":8}}],["/var/lib/flatpak/exports/share/applications/com.todoist.Todoist.desktop",{"0x5800003":{"windowTitle":"Todoist","xid":"0x5800003","windowStableSequence":7}}],["/usr/share/applications/org.gnome.Nautilus.desktop",{"0x4400004":{"windowTitle":"Loading…","xid":"0x4400004","windowStableSequence":5},"0x4400017":{"windowTitle":"Loading…","xid":"0x4400017","windowStableSequence":7}}],["Unknown",{"0x40002c":{"windowTitle":null,"xid":"0x40002c","windowStableSequence":1}}],["/var/lib/snapd/desktop/applications/firefox_firefox.desktop",{"0x3a00086":{"windowTitle":"Mozilla Firefox","xid":"0x3a00086","windowStableSequence":12}}],["/var/lib/flatpak/exports/share/applications/com.sindresorhus.Caprine.desktop",{"0x2400004":{"windowTitle":"Caprine","xid":"0x2400004","windowStableSequence":4}}],["/var/lib/flatpak/exports/share/applications/org.signal.Signal.desktop",{"0x3200004":{"windowTitle":"Signal","xid":"0x3200004","windowStableSequence":3}}],["Gjs",{"0xc00007":{"windowTitle":"@!0,0;BDHF","xid":"0xc00007","windowStableSequence":2}}],["/usr/share/applications/org.gnome.Terminal.desktop",{"0x7c0000a":{"windowTitle":"Terminal","xid":"0x7c0000a","windowStableSequence":17}}],["/usr/share/applications/google-chrome.desktop",{"0x640000b":{"windowTitle":"New Tab - Google Chrome","xid":"0x640000b","windowStableSequence":10},"0x640000d":{"windowTitle":"New Tab - Google Chrome","xid":"0x640000d","windowStableSequence":12}}],["/usr/share/applications/org.gnome.Extensions.desktop",{"0x7c00004":{"windowTitle":"Extensions","xid":"0x7c00004","windowStableSequence":13}}],["/usr/share/applications/org.gnome.TextEditor.desktop",{"0x4400004":{"windowTitle":"chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop (~/.config/autostart) - Text Editor","xid":"0x4400004","windowStableSequence":255}}],["/var/lib/snapd/desktop/applications/todoist_todoist.desktop",{"0x4600004":{"windowTitle":"Todoist","xid":"0x4600004","windowStableSequence":9}}],["/home/jr/.local/share/applications/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop",{"0x640000c":{"windowTitle":"WhatsApp Web","xid":"0x640000c","windowStableSequence":11}}],["/home/jr/.local/share/applications/chrome-aghbiahbpaijignceidepookljebhfak-Default.desktop",{"0x6400004":{"windowTitle":"Google Drive","xid":"0x6400004","windowStableSequence":8}}],["/usr/share/applications/org.gnome.Shell.Extensions.desktop",{"0x780005f":{"windowTitle":"org.gnome.Shell.Extensions","xid":"0x780005f","windowStableSequence":282}}],["/usr/share/applications/Alacritty.desktop",{"0x4800005":{"windowTitle":"Alacritty","xid":"0x4800005","windowStableSequence":4}}]]'
+
+[shell/extensions/appindicator]
+custom-icons=@a(sss) []
+
+[shell/extensions/arrangeWindows]
+column=0
+
+[shell/extensions/astra-monitor]
+gpu-indicators-order='["icon","activity bar","activity graph","activity percentage","memory bar","memory graph","memory percentage","memory value"]'
+headers-height=0
+headers-height-override=0
+memory-indicators-order='["icon","bar","graph","percentage","value","free"]'
+monitors-order='["processor","gpu","memory","storage","network","sensors"]'
+network-indicators-order='["icon","IO bar","IO graph","IO speed"]'
+processor-indicators-order='["icon","bar","graph","percentage"]'
+processor-menu-gpu-color=''
+profiles='{"default":{"panel-margin-left":0,"sensors-header-tooltip-sensor2-digits":-1,"memory-update":3,"gpu-header-memory-graph-color1":"rgba(29,172,214,1.0)","panel-box":"right","memory-header-show":true,"network-header-tooltip-io":true,"processor-header-bars-color2":"rgba(214,29,29,1.0)","processor-header-icon-size":18,"storage-source-storage-io":"auto","sensors-header-tooltip-sensor4-name":"","storage-header-icon-color":"","network-source-public-ipv4":"https://api.ipify.org","storage-header-io-graph-color2":"rgba(214,29,29,1.0)","storage-header-io":false,"processor-menu-top-processes-percentage-core":true,"sensors-header-sensor1":"\\"\\"","processor-header-graph":true,"storage-header-graph-width":30,"network-header-bars":false,"processor-source-load-avg":"auto","network-menu-arrow-color1":"rgba(29,172,214,1.0)","storage-header-io-graph-color1":"rgba(29,172,214,1.0)","gpu-header-icon":true,"processor-menu-graph-breakdown":true,"sensors-header-icon-custom":"","sensors-header-sensor2":"\\"\\"","network-header-icon-alert-color":"rgba(235, 64, 52, 1)","memory-header-tooltip-free":false,"storage-header-io-figures":2,"network-menu-arrow-color2":"rgba(214,29,29,1.0)","sensors-header-tooltip-sensor3-name":"","network-source-public-ipv6":"https://api6.ipify.org","monitors-order":"\\"\\"","network-header-graph":true,"network-indicators-order":"\\"\\"","memory-header-percentage":false,"processor-header-tooltip":true,"gpu-main":"\\"\\"","storage-header-bars":true,"sensors-header-tooltip-sensor5-digits":-1,"memory-menu-swap-color":"rgba(29,172,214,1.0)","storage-io-unit":"kB/s","memory-header-graph-width":30,"processor-header-graph-color1":"rgba(29,172,214,1.0)","storage-header-tooltip-value":false,"gpu-header-icon-custom":"","processor-header-graph-breakdown":true,"panel-margin-right":0,"gpu-header-icon-size":18,"processor-source-cpu-usage":"auto","sensors-header-tooltip-sensor3-digits":-1,"sensors-header-icon":true,"memory-header-value-figures":3,"processor-header-graph-color2":"rgba(214,29,29,1.0)","compact-mode":false,"panel-box-order":0,"compact-mode-compact-icon-custom":"","network-header-graph-width":30,"gpu-header-tooltip":true,"sensors-header-icon-alert-color":"rgba(235, 64, 52, 1)","gpu-header-activity-percentage-icon-alert-threshold":0,"sensors-header-sensor2-digits":-1,"sensors-header-tooltip-sensor2-name":"","sensors-update":3,"gpu-header-tooltip-memory-value":true,"processor-header-bars":false,"gpu-header-memory-bar-color1":"rgba(29,172,214,1.0)","gpu-header-tooltip-memory-percentage":true,"sensors-header-tooltip-sensor1":"\\"\\"","sensors-header-tooltip-sensor1-digits":-1,"storage-header-free-figures":3,"processor-header-percentage-core":false,"storage-main":"[default]","network-source-network-io":"auto","memory-header-bars":true,"processor-header-percentage":false,"sensors-header-icon-color":"","storage-header-io-threshold":0,"memory-header-graph-color1":"rgba(29,172,214,1.0)","compact-mode-activation":"both","storage-header-icon-size":18,"sensors-header-tooltip-sensor1-name":"","sensors-header-icon-size":18,"sensors-source":"auto","explicit-zero":false,"storage-header-percentage-icon-alert-threshold":0,"storage-header-tooltip-io":true,"sensors-header-tooltip-sensor2":"\\"\\"","compact-mode-expanded-icon-custom":"","memory-header-graph-color2":"rgba(29,172,214,0.3)","processor-header-icon-alert-color":"rgba(235, 64, 52, 1)","processor-header-tooltip-percentage":true,"gpu-header-show":false,"network-update":1.5,"sensors-header-tooltip-sensor3":"\\"\\"","storage-header-free-icon-alert-threshold":0,"memory-header-icon-custom":"","sensors-header-tooltip-sensor4":"\\"\\"","storage-header-percentage":false,"sensors-temperature-unit":"celsius","storage-header-icon-alert-color":"rgba(235, 64, 52, 1)","storage-menu-arrow-color2":"rgba(214,29,29,1.0)","memory-source-top-processes":"auto","storage-header-value-figures":3,"storage-header-io-bars-color1":"rgba(29,172,214,1.0)","storage-menu-arrow-color1":"rgba(29,172,214,1.0)","processor-header-graph-width":30,"network-header-icon-custom":"","gpu-header-tooltip-activity-percentage":true,"network-header-icon":true,"sensors-header-sensor2-layout":"vertical","sensors-header-tooltip-sensor5":"\\"\\"","memory-header-bars-breakdown":true,"sensors-header-show":false,"sensors-header-tooltip":false,"storage-update":3,"processor-header-bars-core":false,"storage-indicators-order":"\\"\\"","processor-menu-bars-breakdown":true,"storage-header-io-bars-color2":"rgba(214,29,29,1.0)","network-io-unit":"kB/s","storage-header-icon":true,"gpu-header-activity-graph-color1":"rgba(29,172,214,1.0)","memory-unit":"kB-kiB","processor-menu-core-bars-breakdown":true,"sensors-header-sensor2-show":false,"network-header-tooltip":true,"storage-header-tooltip-free":true,"storage-header-bars-color1":"rgba(29,172,214,1.0)","theme-style":"dark","storage-source-storage-usage":"auto","network-header-io":false,"memory-header-tooltip-percentage":true,"memory-indicators-order":"\\"\\"","memory-source-memory-usage":"auto","memory-header-graph-breakdown":false,"memory-header-tooltip-value":true,"memory-menu-graph-breakdown":true,"sensors-indicators-order":"\\"\\"","compact-mode-start-expanded":false,"startup-delay":2,"memory-header-percentage-icon-alert-threshold":0,"sensors-header-sensor1-show":false,"network-ignored-regex":"","memory-header-value":false,"memory-header-bars-color1":"rgba(29,172,214,1.0)","network-header-io-graph-color1":"rgba(29,172,214,1.0)","gpu-header-memory-bar":true,"memory-used":"total-free-buffers-cached","gpu-header-memory-graph-width":30,"gpu-header-memory-graph":false,"headers-font-family":"","memory-header-icon":true,"network-header-io-graph-color2":"rgba(214,29,29,1.0)","memory-header-bars-color2":"rgba(29,172,214,0.3)","processor-gpu":true,"network-header-icon-color":"","storage-header-value":false,"gpu-header-icon-alert-color":"rgba(235, 64, 52, 1)","processor-header-icon":true,"headers-font-size":0,"network-header-io-figures":2,"network-header-show":true,"storage-header-tooltip":true,"network-header-io-bars-color1":"rgba(29,172,214,1.0)","processor-update":1.5,"network-source-wireless":"auto","processor-indicators-order":"\\"\\"","storage-header-icon-custom":"","gpu-header-activity-bar":true,"gpu-header-activity-bar-color1":"rgba(29,172,214,1.0)","shell-bar-position":"top","network-ignored":"\\"[]\\"","network-header-io-bars-color2":"rgba(214,29,29,1.0)","memory-header-icon-color":"","sensors-header-sensor1-digits":-1,"storage-header-io-layout":"vertical","memory-header-icon-size":18,"network-header-io-threshold":0,"storage-header-show":true,"sensors-header-tooltip-sensor4-digits":-1,"processor-header-percentage-icon-alert-threshold":0,"memory-header-tooltip":true,"headers-height-override":0,"memory-header-graph":false,"network-header-icon-size":18,"gpu-header-icon-color":"","memory-header-free-figures":3,"storage-header-io-bars":false,"processor-header-bars-breakdown":true,"gpu-header-activity-graph":false,"storage-ignored":"\\"[]\\"","memory-header-icon-alert-color":"rgba(235, 64, 52, 1)","storage-header-free":false,"processor-header-icon-custom":"","gpu-header-memory-percentage":false,"processor-header-tooltip-percentage-core":false,"processor-source-cpu-cores-usage":"auto","processor-source-top-processes":"auto","processor-header-icon-color":"","sensors-header-tooltip-sensor5-name":"","gpu-header-activity-graph-width":30,"gpu-header-activity-percentage":false,"gpu-indicators-order":"\\"\\"","processor-header-bars-color1":"rgba(29,172,214,1.0)","gpu-update":1.5,"gpu-header-memory-percentage-icon-alert-threshold":0,"network-header-io-layout":"vertical","processor-header-show":true,"storage-header-graph":false,"memory-header-free-icon-alert-threshold":0,"storage-ignored-regex":"","storage-menu-device-color":"rgba(29,172,214,1.0)","storage-header-tooltip-percentage":true,"memory-header-free":false,"storage-source-top-processes":"auto"}}'
+queued-pref-category=''
+sensors-indicators-order='["icon","value"]'
+storage-indicators-order='["icon","bar","percentage","value","free","IO bar","IO graph","IO speed"]'
+storage-main='eui.002538da21a157ba-part5'
+
+[shell/extensions/auto-move-windows]
+application-list=['com.visualstudio.code.desktop:2', 'com.spotify.Client.desktop:8', 'com.sindresorhus.Caprine.desktop:4', 'org.signal.Signal.desktop:4', 'google-chrome.desktop:1', 'firefox_firefox.desktop:1', 'chrome-aghbiahbpaijignceidepookljebhfak-Default.desktop:3', 'org.gnome.Nautilus.desktop:3', 'chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop:4', 'chrome-iobbenpdimbkfpbkkpfdlflogfikagdj-Default.desktop:6']
+
+[shell/extensions/burn-my-windows]
+active-profile='/home/jr/.config/burn-my-windows/profiles/1722005620023957.conf'
+last-extension-version=41
+last-prefs-version=41
+prefs-open-count=7
+
+[shell/extensions/clipboard-history]
+cache-size=200
+display-mode=1
+history-size=2000
+next-entry=['<Control><Super>Page_Up']
+prev-entry=['<Control><Super>Page_Down']
+process-primary-selection=true
+toggle-menu=['<Super>v']
+topbar-preview-size=50
+window-width-percentage=43
+
+[shell/extensions/dash-to-dock]
+always-center-icons=true
+animation-time=0.01
+apply-custom-theme=true
+background-opacity=0.80000000000000004
+click-action='previews'
+dash-max-icon-size=64
+default-windows-preview-to-open=true
+disable-overview-on-startup=true
+dock-fixed=false
+dock-position='LEFT'
+extend-height=false
+height-fraction=0.90000000000000002
+hide-tooltip=false
+isolate-monitors=false
+minimize-shift=false
+preferred-monitor=-2
+preferred-monitor-by-connector='DP-4'
+pressure-threshold=70.0
+preview-size-scale=0.25
+scroll-action='cycle-windows'
+shift-click-action='minimize'
+shift-middle-click-action='launch'
+shortcut-timeout=4.0
+show-apps-at-top=false
+show-favorites=true
+show-mounts=false
+show-show-apps-button=false
+show-trash=false
+show-windows-preview=true
+
+[shell/extensions/dim-background-windows]
+dimming-enabled=true
+target-monitor='all'
+toggle-shortcut=['<Super>g']
+
+[shell/extensions/ding]
+check-x11wayland=true
+icon-size='large'
+show-home=true
+start-corner='top-left'
+
+[shell/extensions/focus-changer]
+focus-down=['<Control><Super>j']
+focus-left=['<Control><Super>h']
+focus-right=['<Control><Super>l']
+focus-up=['<Control><Super>k']
+
+[shell/extensions/focus]
+focus-opacity=uint32 100
+inactive-opacity=uint32 96
+is-background-blur=false
+special-focus-opacity=uint32 95
+
+[shell/extensions/highlight-focus]
+border-color='#e01b24'
+border-radius=10
+border-width=5
+disable-hiding=false
+hide-delay=5000
+keybinding-highlight-now=['<Super>l']
+
+[shell/extensions/improved-workspace-indicator]
+change-on-scroll=false
+panel-position='center'
+wrap-scroll=false
+
+[shell/extensions/order-icons]
+order-icons-center=['dateMenu']
+order-icons-left=['activities']
+order-icons-right=['arrange-menu', 'xdg-dbus-proxy --args=45 ', 'livepatch', 'software-update-available', 'improved-workspace-indicator', 'all-windows-srwp@jkavery.github.io', 'vitalsMenu', '[object Object]', 'Reminder Alarm Clock ReminderAlarmClock', 'tiling-assistant@leleat-on-github', 'quickSettings', 'keyboard', 'a11y', 'dwellClick', 'screenSharing', 'screenRecording']
+
+[shell/extensions/panelScroll]
+debounce=0
+left='workspace'
+right='workspace'
+wrap=false
+
+[shell/extensions/quake-terminal]
+always-on-top=true
+animation-time=0
+auto-hide-window=false
+horizontal-alignment=1
+horizontal-size=48
+render-on-current-monitor=true
+render-on-primary-monitor=false
+terminal-id='org.gnome.Terminal.desktop'
+vertical-size=80
+
+[shell/extensions/rclone-manager]
+prefkey0051-check-interval=2
+
+[shell/extensions/reminderalarmclock]
+message='GNOME timer!'
+
+[shell/extensions/smart-auto-move]
+activate-workspace=true
+debug-logging=false
+freeze-saves=false
+ignore-position=false
+ignore-workspace=false
+match-threshold=0.69999999999999996
+overrides='{"python3":[{"query":{"title":"GNOME Tweaks"},"action":0},{"action":0,"threshold":0.7}]}'
+save-frequency=1000
+saved-windows='{"Todoist":[{"id":3916205172,"hash":3916205172,"sequence":21,"title":"Backup solution – Todoist","workspace":1,"maximized":0,"fullscreen":false,"above":false,"monitor":0,"x":74,"y":45,"width":1883,"height":2063,"occupied":false},{"id":3985166429,"hash":3985166429,"sequence":10,"title":"Upcoming – Todoist","workspace":0,"maximized":0,"fullscreen":false,"above":false,"monitor":0,"x":3840,"y":81,"width":1888,"height":2069,"occupied":true}],"Alacritty":[{"id":3916205185,"hash":3916205185,"sequence":34,"title":"jr@jr-PC-Dzej: ~/initPC/Ubuntu_22.04","workspace":0,"maximized":0,"fullscreen":false,"above":false,"monitor":0,"x":648,"y":46,"width":1326,"height":689,"occupied":false},{"id":3916205202,"hash":3916205202,"sequence":51,"title":"jr@jr-PC-Dzej: ~/initPC/Ubuntu_22.04","workspace":0,"maximized":0,"fullscreen":false,"above":false,"monitor":0,"x":1105,"y":1313,"width":800,"height":637,"occupied":false},{"id":3916205153,"hash":3916205153,"sequence":2,"title":"jr@jr-PC-Dzej: ~/initPC/CommonInitScripts","workspace":0,"maximized":0,"fullscreen":false,"above":false,"monitor":0,"x":1957,"y":45,"width":1883,"height":2063,"occupied":false},{"id":3916205175,"hash":3916205175,"sequence":24,"title":"jr@jr-PC-Dzej: ~/initPC/UbuntuCLI","workspace":0,"maximized":0,"fullscreen":false,"above":true,"monitor":0,"x":2020,"y":623,"width":1290,"height":1025,"occupied":false},{"id":3985166424,"hash":3985166424,"sequence":5,"title":"jr@jr-PC-Dzej: ~/initPC/CommonInitScripts","workspace":0,"maximized":0,"fullscreen":false,"above":false,"monitor":0,"x":2223,"y":383,"width":1492,"height":979,"occupied":true}],"firefox":[{"id":3916205167,"hash":3916205167,"sequence":16,"title":"Dark mode selected but system UI remains light (Ubuntu 24.04) : r/Ubuntu — Mozilla Firefox","workspace":0,"maximized":0,"fullscreen":false,"above":false,"monitor":0,"x":74,"y":45,"width":1883,"height":2063,"occupied":false},{"id":3985166421,"hash":3985166421,"sequence":2,"title":"Smart Auto Move - GNOME Shell Extensions — Mozilla Firefox","workspace":0,"maximized":0,"fullscreen":false,"above":false,"monitor":0,"x":246,"y":122,"width":1883,"height":2063,"occupied":true}],"python3":[{"id":3916205210,"hash":3916205210,"sequence":59,"title":"GNOME Tweaks","workspace":0,"maximized":0,"fullscreen":false,"above":true,"monitor":0,"x":347,"y":371,"width":980,"height":640,"occupied":false}],"gnome-control-center":[{"id":3916205208,"hash":3916205208,"sequence":57,"title":"Settings","workspace":0,"maximized":0,"fullscreen":false,"above":false,"monitor":0,"x":124,"y":95,"width":2016,"height":1305,"occupied":false}],"org.gnome.Nautilus":[{"id":3916205221,"hash":3916205221,"sequence":70,"title":"Home","workspace":0,"maximized":0,"fullscreen":false,"above":false,"monitor":0,"x":814,"y":1195,"width":890,"height":550,"occupied":false}],"org.gnome.Shell.Extensions":[{"id":3985166425,"hash":3985166425,"sequence":6,"title":"Smart Auto Move","workspace":0,"maximized":0,"fullscreen":false,"above":false,"monitor":0,"x":1923,"y":946,"width":1135,"height":980,"occupied":false}]}'
+startup-delay=2500
+sync-frequency=100
+sync-mode='RESTORE'
+
+[shell/extensions/system-monitor]
+battery-position=9
+center-display=false
+compact-display=false
+cpu-position=0
+disk-position=5
+fan-position=8
+freq-position=1
+gpu-position=6
+icon-display=false
+memory-position=2
+move-clock=false
+net-position=4
+show-tooltip=true
+swap-position=3
+thermal-position=7
+
+[shell/extensions/tiling-assistant]
+activate-layout0=@as []
+activate-layout1=@as []
+activate-layout2=@as []
+activate-layout3=@as []
+active-window-hint=2
+active-window-hint-color='rgb(211,70,21)'
+auto-tile=@as []
+center-window=@as []
+debugging-free-rects=@as []
+debugging-show-tiled-rects=@as []
+default-move-mode=0
+dynamic-keybinding-behavior=0
+enable-tiling-popup=false
+import-layout-examples=false
+last-version-installed=46
+maximize-with-gap=true
+move-favorite-layout-mod=0
+overridden-settings={'org.gnome.mutter.edge-tiling': <false>, 'org.gnome.mutter.keybindings.toggle-tiled-left': <@mb nothing>, 'org.gnome.mutter.keybindings.toggle-tiled-right': <@mb nothing>}
+restore-window=['<Super>Down']
+search-popup-layout=@as []
+single-screen-gap=4
+tile-bottom-half=['<Super>KP_2']
+tile-bottom-half-ignore-ta=@as []
+tile-bottomleft-quarter=['<Super>KP_1']
+tile-bottomleft-quarter-ignore-ta=@as []
+tile-bottomright-quarter=['<Super>KP_3']
+tile-bottomright-quarter-ignore-ta=@as []
+tile-edit-mode=@as []
+tile-left-half=['<Super>Left', '<Super>KP_4']
+tile-left-half-ignore-ta=@as []
+tile-maximize=['<Super>Up', '<Super>KP_5']
+tile-maximize-horizontally=@as []
+tile-maximize-vertically=@as []
+tile-right-half=['<Super>Right', '<Super>KP_6']
+tile-right-half-ignore-ta=@as []
+tile-top-half=['<Super>KP_8']
+tile-top-half-ignore-ta=@as []
+tile-topleft-quarter=['<Super>KP_7']
+tile-topleft-quarter-ignore-ta=@as []
+tile-topright-quarter=['<Super>KP_9']
+tile-topright-quarter-ignore-ta=@as []
+tiling-popup-all-workspace=false
+toggle-always-on-top=@as []
+toggle-tiling-popup=@as []
+window-gap=8
+
+[shell/extensions/tilingshell]
+enable-move-keybindings=false
+last-version-name-installed='12.2'
+layouts-json='[{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"340041","tiles":[{"x":0,"y":0,"width":0.4669270833333333,"height":0.49692671394799054,"groups":[1,2]},{"x":0.4669270833333333,"y":0,"width":0.5330729166666663,"height":1,"groups":[1]},{"x":0,"y":0.49692671394799054,"width":0.4669270833333333,"height":0.5030732860520095,"groups":[2,1]}]}]'
+overridden-settings='{"org.gnome.mutter":{"edge-tiling":"false"}}'
+selected-layouts=['340041']
+span-multiple-tiles-activation-key=['2']
+
+[shell/extensions/transparent-window-moving]
+transition-time=0.0
+
+[shell/extensions/vertical-window-list]
+windows='{"1207163037":{"order":2,"customTitle":"","workspaceIndex":2},"1207163039":{"order":3,"customTitle":"","workspaceIndex":2},"1207163040":{"order":2,"customTitle":"","workspaceIndex":5},"1207163117":{"order":1,"customTitle":"","workspaceIndex":5},"1207163160":{"order":4,"customTitle":"","workspaceIndex":2},"1207163209":{"order":2,"customTitle":"","workspaceIndex":-1},"1207163317":{"order":3,"customTitle":"","workspaceIndex":5}}'
+
+[shell/extensions/vitals]
+fixed-widths=false
+hot-sensors=['__temperature_max__', '_memory_usage_', '__network-tx_max__']
+position-in-panel=1
+show-fan=false
+show-gpu=true
+show-processor=false
+show-voltage=false
+use-higher-precision=false
+
+[shell/extensions/window-title-is-back]
+colored-icon=false
+ease-time=10
+fixed-width=false
+icon-size=24
+indicator-width=40
+show-app=false
+show-icon=true
+show-title=true
+
+[shell/extensions/workspaces-indicator-by-open-apps]
+apps-all-desaturate=false
+apps-inactive-effect='REDUCE OPACITY'
+apps-minimized-effect='REDUCE OPACITY'
+hide-activities-button=true
+indicator-color='rgb(224,7,7)'
+indicator-hide-empty=true
+indicator-show-active-workspace=true
+indicator-show-indexes=true
+indicator-swap-position=true
+position-in-panel='LEFT'
+position-index=0
+scroll-enable=false
+scroll-inverse=true
+scroll-wraparound=false
+size-app-icon=30
+size-labels=15
+spacing-app-left=1
+spacing-app-right=1
+spacing-label-left=2
+spacing-label-right=2
+spacing-workspace-left=4
+spacing-workspace-right=4
+
+[shell/keybindings]
+show-screenshot-ui=['<Shift><Super>s']
+toggle-message-tray=['<Shift><Super>v']
+
+[shell/world-clocks]
+locations=@av []
