@@ -22,6 +22,7 @@ alias .a='dot add --verbose' # TODO no wildcards
 alias .aa='dot add -u --verbose'
 alias .b='dot branch'
 alias .c='dot commit --verbose'
+alias .ca='dot commit --amend --no-edit'
 alias .ch='dot checkout'
 alias .d='dot diff'
 alias .di='dot diff --cached'
