@@ -11,3 +11,5 @@
 
 <https://github.com/neovim/nvim-lspconfig/tree/master>
 <https://github.com/p00f/clangd_extensions.nvim>
+<https://docs.astronvim.com/>
+<https://nvchad.com/>
