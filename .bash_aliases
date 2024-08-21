@@ -71,6 +71,9 @@ alias b='git branch'
 alias c='git commit --verbose'
 alias ca='git commit --amend --no-edit'
 alias ch='git checkout'
+# TODO rewrite so that it does not detach heads (so that it pulls remote branches
+# it hose are not in the local repo)
+# alias chf='git checkout $(git branch -r | fzf)'
 alias d='git diff'
 alias di='git diff --cached'
 alias e='echo'
