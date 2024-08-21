@@ -5,7 +5,7 @@
 
 ## Clangd
 
-## Options
+### Options
 
 ### Reading
 
