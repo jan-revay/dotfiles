@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-echo "Dump script version: 0.0"
+echo "Dump script version: 0.1"
 
 echo "===== All extensions ====="
 gnome-extensions list
