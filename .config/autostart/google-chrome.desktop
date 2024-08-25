@@ -106,7 +106,7 @@ Comment[zh_CN]=访问互联网
 Comment[zh_HK]=連線到網際網路
 Comment[zh_TW]=連線到網際網路
 Exec=/usr/bin/google-chrome-stable %U
-StartupNotify=true
+StartupNotify=false
 Terminal=false
 Icon=google-chrome
 Type=Application
@@ -114,7 +114,7 @@ Categories=Network;WebBrowser;
 MimeType=application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;
 Actions=new-window;new-private-window;
 X-GNOME-Autostart-enabled=true
-X-GNOME-Autostart-Delay=20
+X-GNOME-Autostart-Delay=8
 
 [Desktop Action new-window]
 Name=New Window
