@@ -17,7 +17,7 @@ Actions=new-window;
 X-Purism-FormFactor=Workstation;Mobile;
 X-Unity-IconBackgroundColor=#af4853
 X-Ubuntu-Gettext-Domain=nautilus
-X-GNOME-Autostart-Delay=3
+X-GNOME-Autostart-Delay=1
 
 [Desktop Action new-window]
 Name=New Window

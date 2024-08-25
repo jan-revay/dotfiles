@@ -12,7 +12,7 @@ Comment=A fast, cross-platform, OpenGL terminal emulator
 StartupNotify=false
 StartupWMClass=Alacritty
 Actions=New;
-X-GNOME-Autostart-Delay=6
+X-GNOME-Autostart-Delay=0
 X-GNOME-Autostart-enabled=false
 
 [Desktop Action New]

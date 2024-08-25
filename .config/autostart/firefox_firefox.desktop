@@ -159,7 +159,7 @@ Categories=GNOME;GTK;Network;WebBrowser;
 MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
 StartupNotify=false
 Actions=NewWindow;NewPrivateWindow;
-X-GNOME-Autostart-Delay=10
+X-GNOME-Autostart-Delay=1
 X-GNOME-Autostart-enabled=false
 
 [Desktop Action NewWindow]

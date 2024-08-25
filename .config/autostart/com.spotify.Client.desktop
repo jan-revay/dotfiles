@@ -14,4 +14,4 @@ X-GNOME-UsesNotifications=true
 X-Flatpak-Tags=proprietary;
 X-Flatpak=com.spotify.Client
 X-GNOME-Autostart-enabled=true
-X-GNOME-Autostart-Delay=5
+X-GNOME-Autostart-Delay=1
