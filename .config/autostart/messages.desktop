@@ -7,4 +7,4 @@ Name=Messages
 Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=hpfldicfbfomlpcikngkocigghgafkph
 Icon=chrome-hpfldicfbfomlpcikngkocigghgafkph-Default
 StartupWMClass=crx_hpfldicfbfomlpcikngkocigghgafkph
-X-GNOME-Autostart-Delay=5
+X-GNOME-Autostart-Delay=7
