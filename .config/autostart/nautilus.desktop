@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Exec=nautilus --new-window %U
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Files2
+Name=Files2
+Comment[en_US]=Files2
+Comment=Files2
+X-GNOME-Autostart-Delay=1
