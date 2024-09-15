@@ -10,3 +10,4 @@ Terminal=false
 Categories=GTK;InstantMessaging;Network;
 StartupNotify=false
 X-Flatpak=com.sindresorhus.Caprine
+X-GNOME-Autostart-enabled=false
