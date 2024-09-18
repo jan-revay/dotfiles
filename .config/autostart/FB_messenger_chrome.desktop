@@ -7,4 +7,4 @@ Name=Messenger
 Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=bbdeiblfgdokhlblpgeaokenkfknecgl --app-run-on-os-login-mode=windowed
 Icon=chrome-bbdeiblfgdokhlblpgeaokenkfknecgl-Default
 StartupWMClass=crx_bbdeiblfgdokhlblpgeaokenkfknecgl
-X-GNOME-Autostart-Delay=7
+X-GNOME-Autostart-Delay=9
