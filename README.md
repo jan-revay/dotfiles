@@ -21,6 +21,7 @@ This directory also contains scripts, but only such that are not executed as a p
 
 - Rewrite/update/delete .my_scripts
 - desktop files (autostart) - read the documentation of X-GNOME attributes & turn off the app is ready notification
+- remove Autostart from .my_scripts/
 
 ## TOREAD
 
