@@ -11,6 +11,7 @@ pushd backup_config_dumps
 # TODO review (and improve) - encrypt the dumps, just in case
 7z a -p -mx=9 -mhe=on "${GNOME_DUMP_FILENAME}.encrypted" "${GNOME_DUMP_FILENAME}"
 rm "${GNOME_DUMP_FILENAME}"
+rm *.log
 
 
 popd
