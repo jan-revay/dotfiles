@@ -7,4 +7,4 @@ Name=WhatsApp Web
 Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm --app-run-on-os-login-mode=windowed
 Icon=chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default
 StartupWMClass=crx_hnpfjngllnobngcgfapefoaidbinmjnm
-X-GNOME-Autostart-Delay=9
+X-GNOME-Autostart-Delay=15

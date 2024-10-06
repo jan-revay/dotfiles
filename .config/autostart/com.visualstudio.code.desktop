@@ -13,7 +13,7 @@ Actions=new-empty-window;
 Keywords=vscode;
 X-Flatpak-Tags=proprietary;
 X-Flatpak=com.visualstudio.code
-X-GNOME-Autostart-Delay=4
+X-GNOME-Autostart-Delay=7
 
 [Desktop Action new-empty-window]
 Name=New Empty Window

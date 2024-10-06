@@ -7,4 +7,4 @@ Name=Google Drive
 Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=aghbiahbpaijignceidepookljebhfak
 Icon=chrome-aghbiahbpaijignceidepookljebhfak-Default
 StartupWMClass=crx_aghbiahbpaijignceidepookljebhfak
-X-GNOME-Autostart-Delay=9
+X-GNOME-Autostart-Delay=15

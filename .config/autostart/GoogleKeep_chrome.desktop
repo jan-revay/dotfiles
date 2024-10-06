@@ -7,4 +7,4 @@ Name=Google Keep
 Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=eilembjdkfgodjkcjnpgpaenohkicgjd
 Icon=chrome-eilembjdkfgodjkcjnpgpaenohkicgjd-Default
 StartupWMClass=crx_eilembjdkfgodjkcjnpgpaenohkicgjd
-X-GNOME-Autostart-Delay=9
+X-GNOME-Autostart-Delay=15
