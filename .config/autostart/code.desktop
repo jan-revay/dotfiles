@@ -11,6 +11,7 @@ Categories=TextEditor;Development;IDE;
 MimeType=application/x-code-workspace;
 Actions=new-empty-window;
 Keywords=vscode;
+X-GNOME-Autostart-Delay=15
 
 [Desktop Action new-empty-window]
 Name=New Empty Window
