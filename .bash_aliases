@@ -97,6 +97,7 @@ alias m='man'
 alias o='git stash pop'
 alias p='git stash push'
 alias ph='git push'
+# TODO consider using `git pull --rebase` instead
 alias pl='git pull'
 alias py='python3'
 alias r='git reset'
