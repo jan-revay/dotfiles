@@ -15,6 +15,8 @@ This directory also contains scripts, but only such that are not executed as a p
 
 ## TODO P1
 
+- add VSC config & vsc extension list here
+
 ## TODO P2
 
 ## TODO P3
