@@ -15,7 +15,57 @@ This directory also contains scripts, but only such that are not executed as a p
 
 ## TODO P1
 
-- add VSC config & vsc extension list here
+- add VSC config & vsc extension list here (and also search the settings history to add more - Strl+shift+p -> Settings sync - show synced data)
+- have all VSC config synced via git dotfiles don't use the MS sync much (only as an additional method for temporary changes)
+```
+{
+    "recommendations": [
+        // Code formatting tools
+        "stkb.rewrap",
+        "foxundermoon.shell-format",
+        "editorconfig.editorconfig",
+
+        // Linters
+        "streetsidesoftware.code-spell-checker",
+        "nhoizey.gremlins",
+        "timonwong.shellcheck",
+        "davidanson.vscode-markdownlint",
+
+        // C++ tools
+        "ms-vscode.cpptools",
+        "ajshort.include-autocomplete",
+        "ms-vscode.cpptools-extension-pack",
+        "cschlosser.doxdocgen",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "twxs.cmake",
+
+        // Powershell LSP
+
+        // Git and GitHub support
+        "eamodio.gitlens",
+        "github.vscode-github-actions",
+
+        // Markdown tools
+        "yzhang.markdown-all-in-one",
+
+        // bash LSP
+        "mads-hartmann.bash-ide-vscode",
+
+        // Python tools
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+
+        // Ignore files syntax highlighting
+        "ldez.ignore-files",
+
+        // Other
+        "ionutvmi.path-autocomplete",
+        "tetradresearch.vscode-h2o",
+        "ms-vscode.powershell"
+    ]
+}
+
+```
 
 ## TODO P2
 
