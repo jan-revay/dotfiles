@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=bash -c 'bluetoothctl <<< "connect 00:11:67:24:75:AF" >> ./bluetooth.log'
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Bluetooth Auto Connect
+Comment=Automatically connects to a Bluetooth device at startup
+X-GNOME-Autostart-Delay=10
