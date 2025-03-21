@@ -15,6 +15,14 @@
 
 - `:tabo` - close all other tabs
 
+## Text replace
+
+- :%s/old/new/g
+- :startline,endline s/pattern/replacement/g
+- :%s/foo/bar/gi (case insensitive)
+- :%s/pattern/replacement/gc (with confirmation)
+- :%s/Vim/ (delete all occurrences of a word)
+
 
 ## Other cheetsheets
 
