@@ -8,5 +8,5 @@ if [[ "${FOCUS}" =~ '"wm_class":"Todoist"' ]]; then
     gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows --method org.gnome.Shell.Extensions.Windows.Minimize "${ID}"
 else
 #     gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows --method org.gnome.Shell.Extensions.Windows.Unminimize "${ID}"
-todoist
+    todoist
 fi
