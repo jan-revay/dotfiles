@@ -60,8 +60,10 @@ alias sudo='sudo '
 alias upgrade='sudo apt update && sudo apt upgrade'
 alias refresh='pushd ~/initPC && git pull && dot pull && ./run_init.sh ; popd'
 alias path='echo -e ${PATH//:/\\n}'
-alias hddon='echo 1 | sudo tee /sys/bus/pci/rescan'
-alias hddoff='echo 1 | sudo tee /sys/bus/pci/devices/0000:11:00.0/remove'
+# old: alias hddon='echo 1 | sudo tee /sys/bus/pci/rescan'
+alias hddon='sudo echo "- - -" | sudo tee /sys/class/scsi_host/host6/scan'
+alias hddoff='echo 1 | sudo tee /sys/block/sda/device/delete'
+# old: echo 1 | sudo tee /sys/bus/pci/devices/0000:0e:00.0/remove'
 
 # 1-3 letter aliases
 # TODO add relevant non-letter characters
