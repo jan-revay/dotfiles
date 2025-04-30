@@ -42,6 +42,9 @@ vim.opt.spell = true
 
 vim.g.mapleader = " "
 
+-- TODO test the clipboard setting
+vim.api.nvim_set_option("clipboard", "unnamedplus")
+
 -- Disable creating swap file (commented out)
 -- vim.opt.swapfile = false
 
