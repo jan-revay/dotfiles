@@ -8,3 +8,4 @@ Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=hnpfj
 Icon=chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default
 StartupWMClass=crx_hnpfjngllnobngcgfapefoaidbinmjnm
 X-GNOME-Autostart-Delay=15
+X-GNOME-Autostart-enabled=false
