@@ -1,10 +1,96 @@
 {
-   "checksum": "987ab5e2f7a89f219ee6dcae050e6d83",
+   "checksum": "20cb09e899de49957d06df959bd3915a",
    "roots": {
       "bookmark_bar": {
          "children": [ {
+            "children": [ {
+               "date_added": "13398357980269784",
+               "date_last_used": "13398358059749788",
+               "guid": "ef2fbb77-bcdb-484e-a940-e4b19a05f224",
+               "id": "9",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "",
+               "type": "url",
+               "url": "https://mail.google.com/mail/u/2/#inbox"
+            }, {
+               "date_added": "13398358000580926",
+               "date_last_used": "0",
+               "guid": "88218c12-362e-49ad-8bf1-8df4b7e3fad9",
+               "id": "10",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "t",
+               "type": "url",
+               "url": "https://mail.google.com/mail/u/0/#inbox"
+            }, {
+               "date_added": "13398358018115099",
+               "date_last_used": "0",
+               "guid": "70f12488-c9c4-4237-8bce-99662a12a08e",
+               "id": "11",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "2",
+               "type": "url",
+               "url": "https://mail.google.com/mail/u/1/#inbox"
+            }, {
+               "date_added": "13398358042931540",
+               "date_last_used": "0",
+               "guid": "77e7d0e9-ca8a-4b56-8fca-793d09d2a825",
+               "id": "12",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "92",
+               "type": "url",
+               "url": "https://mail.google.com/mail/u/4/#inbox"
+            }, {
+               "date_added": "13398358141100365",
+               "date_last_used": "13398358398686400",
+               "guid": "60ef16bd-84e6-464c-801c-bf882ee9c040",
+               "id": "13",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Messenger",
+               "type": "url",
+               "url": "https://www.messenger.com/"
+            }, {
+               "date_added": "13398358158400989",
+               "date_last_used": "0",
+               "guid": "ddd85070-b903-4a58-828f-49f0cb0e3c7e",
+               "id": "14",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Google Messages for web: Conversations",
+               "type": "url",
+               "url": "https://messages.google.com/"
+            }, {
+               "date_added": "13398358174913959",
+               "date_last_used": "0",
+               "guid": "2bbfcd99-fe7b-4530-8bd4-bbd3aedd279e",
+               "id": "15",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "WhatsApp",
+               "type": "url",
+               "url": "https://web.whatsapp.com/"
+            } ],
+            "date_added": "13398357963339790",
+            "date_last_used": "0",
+            "date_modified": "13398358985751933",
+            "guid": "9d68b9b6-dcc1-4f90-bd37-6cd26b88ab9b",
+            "id": "8",
+            "name": "MSG",
+            "type": "folder"
+         }, {
             "date_added": "13398352156271548",
-            "date_last_used": "13398353349996253",
+            "date_last_used": "13398361411784317",
             "guid": "222889c5-66fd-4932-8ac6-0d643d740d86",
             "id": "5",
             "meta_info": {
@@ -13,10 +99,109 @@
             "name": "",
             "type": "url",
             "url": "https://calendar.google.com/calendar/u/2/r?pli=1"
+         }, {
+            "date_added": "13398357941690992",
+            "date_last_used": "13398360695543647",
+            "guid": "2306b7ff-c1e6-4657-a32e-59e1612600bc",
+            "id": "7",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://chatgpt.com/"
+         }, {
+            "date_added": "13398358985751933",
+            "date_last_used": "13398360392559324",
+            "guid": "5a1b31c5-9d38-42d1-8144-deedaff6d35f",
+            "id": "16",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://instapaper.com/"
+         }, {
+            "date_added": "13398359651075575",
+            "date_last_used": "0",
+            "guid": "fedf5278-2bf2-4550-a34e-0307e6cf228a",
+            "id": "17",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://app.todoist.com/app/today"
+         }, {
+            "date_added": "13398359691561720",
+            "date_last_used": "13398360322971436",
+            "guid": "8fdc007e-a3ed-40b7-9933-f1a1f6ebc389",
+            "id": "18",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://keep.google.com/"
+         }, {
+            "date_added": "13398359732822940",
+            "date_last_used": "0",
+            "guid": "6c978519-e52b-4297-8140-8d1aaf39a367",
+            "id": "19",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://drive.google.com/drive/u/2/home"
+         }, {
+            "date_added": "13398359752175806",
+            "date_last_used": "0",
+            "guid": "b0a6a943-272e-4d90-9362-39d56b0670aa",
+            "id": "20",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://my.pcloud.com/"
+         }, {
+            "date_added": "13398359805712337",
+            "date_last_used": "0",
+            "guid": "7760cf58-e5ed-4bf1-882c-6eeab42ba26e",
+            "id": "21",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://translate.google.com/"
+         }, {
+            "date_added": "13398359883127391",
+            "date_last_used": "0",
+            "guid": "1401b312-35f6-475a-927a-ec4a8f54a624",
+            "id": "22",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://www.goodreads.com/"
+         }, {
+            "date_added": "13398361384631414",
+            "date_last_used": "13398361412792869",
+            "guid": "f5ba50a4-8999-49f0-8370-ebeae0bbffa2",
+            "id": "24",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "2",
+            "type": "url",
+            "url": "https://calendar.google.com/calendar/u/1/r?pli=1"
          } ],
          "date_added": "13398350660180646",
          "date_last_used": "0",
-         "date_modified": "13398352162616798",
+         "date_modified": "13398361409109207",
          "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
          "id": "1",
          "name": "Bookmarks bar",
