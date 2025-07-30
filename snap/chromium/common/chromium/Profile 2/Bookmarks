@@ -1,5 +1,5 @@
 {
-   "checksum": "e3b5eba232e84b5aa15884c77411b2ce",
+   "checksum": "1acc5b20c84158461b2ba9c9d7f9aa1b",
    "roots": {
       "bookmark_bar": {
          "children": [ {
@@ -101,7 +101,7 @@
             "url": "https://calendar.google.com/calendar/u/0/r?pli=1"
          }, {
             "date_added": "13398357941690992",
-            "date_last_used": "13398360695543647",
+            "date_last_used": "13398363302821730",
             "guid": "2306b7ff-c1e6-4657-a32e-59e1612600bc",
             "id": "7",
             "meta_info": {
@@ -167,7 +167,7 @@
             "url": "https://my.pcloud.com/"
          }, {
             "date_added": "13398359805712337",
-            "date_last_used": "0",
+            "date_last_used": "13398364239486840",
             "guid": "7760cf58-e5ed-4bf1-882c-6eeab42ba26e",
             "id": "21",
             "meta_info": {
@@ -198,10 +198,21 @@
             "name": "2",
             "type": "url",
             "url": "https://calendar.google.com/calendar/u/3/r?pli=1"
+         }, {
+            "date_added": "13398365569885230",
+            "date_last_used": "0",
+            "guid": "cad648a7-f46f-4728-9cf7-09bb21f05f49",
+            "id": "26",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://github.com/"
          } ],
          "date_added": "13398350660180646",
          "date_last_used": "0",
-         "date_modified": "13398361409109207",
+         "date_modified": "13398365569885230",
          "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
          "id": "1",
          "name": "Bookmarks bar",
