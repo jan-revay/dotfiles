@@ -1,11 +1,11 @@
 {
-   "checksum": "1acc5b20c84158461b2ba9c9d7f9aa1b",
+   "checksum": "7ffe96a59baf57409366f025fdfd00c7",
    "roots": {
       "bookmark_bar": {
          "children": [ {
             "children": [ {
                "date_added": "13398357980269784",
-               "date_last_used": "13398358059749788",
+               "date_last_used": "13398693026326021",
                "guid": "ef2fbb77-bcdb-484e-a940-e4b19a05f224",
                "id": "9",
                "meta_info": {
@@ -13,10 +13,10 @@
                },
                "name": "",
                "type": "url",
-               "url": "https://mail.google.com/mail/u/2/#inbox"
+               "url": "https://mail.google.com/mail/u/0/#inbox"
             }, {
                "date_added": "13398358000580926",
-               "date_last_used": "0",
+               "date_last_used": "13398693023079914",
                "guid": "88218c12-362e-49ad-8bf1-8df4b7e3fad9",
                "id": "10",
                "meta_info": {
@@ -24,10 +24,10 @@
                },
                "name": "t",
                "type": "url",
-               "url": "https://mail.google.com/mail/u/0/#inbox"
+               "url": "https://mail.google.com/mail/u/1/"
             }, {
                "date_added": "13398358018115099",
-               "date_last_used": "0",
+               "date_last_used": "13398693010769016",
                "guid": "70f12488-c9c4-4237-8bce-99662a12a08e",
                "id": "11",
                "meta_info": {
@@ -35,10 +35,10 @@
                },
                "name": "2",
                "type": "url",
-               "url": "https://mail.google.com/mail/u/1/#inbox"
+               "url": "https://mail.google.com/mail/u/3/#inbox"
             }, {
                "date_added": "13398358042931540",
-               "date_last_used": "0",
+               "date_last_used": "13398693008073238",
                "guid": "77e7d0e9-ca8a-4b56-8fca-793d09d2a825",
                "id": "12",
                "meta_info": {
@@ -46,10 +46,10 @@
                },
                "name": "92",
                "type": "url",
-               "url": "https://mail.google.com/mail/u/4/#inbox"
+               "url": "https://mail.google.com/mail/u/4/"
             }, {
                "date_added": "13398358141100365",
-               "date_last_used": "13398358398686400",
+               "date_last_used": "13398533525970416",
                "guid": "60ef16bd-84e6-464c-801c-bf882ee9c040",
                "id": "13",
                "meta_info": {
@@ -90,7 +90,7 @@
             "type": "folder"
          }, {
             "date_added": "13398352156271548",
-            "date_last_used": "13398363168582209",
+            "date_last_used": "13398693256257379",
             "guid": "222889c5-66fd-4932-8ac6-0d643d740d86",
             "id": "5",
             "meta_info": {
@@ -100,19 +100,19 @@
             "type": "url",
             "url": "https://calendar.google.com/calendar/u/0/r?pli=1"
          }, {
-            "date_added": "13398357941690992",
-            "date_last_used": "13398363302821730",
-            "guid": "2306b7ff-c1e6-4657-a32e-59e1612600bc",
-            "id": "7",
+            "date_added": "13398365569885230",
+            "date_last_used": "13398618204862683",
+            "guid": "cad648a7-f46f-4728-9cf7-09bb21f05f49",
+            "id": "26",
             "meta_info": {
                "power_bookmark_meta": ""
             },
             "name": "",
             "type": "url",
-            "url": "https://chatgpt.com/"
+            "url": "https://github.com/"
          }, {
             "date_added": "13398358985751933",
-            "date_last_used": "13398360392559324",
+            "date_last_used": "13398557026550940",
             "guid": "5a1b31c5-9d38-42d1-8144-deedaff6d35f",
             "id": "16",
             "meta_info": {
@@ -145,7 +145,7 @@
             "url": "https://keep.google.com/"
          }, {
             "date_added": "13398359732822940",
-            "date_last_used": "0",
+            "date_last_used": "13398609151060785",
             "guid": "6c978519-e52b-4297-8140-8d1aaf39a367",
             "id": "19",
             "meta_info": {
@@ -153,7 +153,7 @@
             },
             "name": "",
             "type": "url",
-            "url": "https://drive.google.com/drive/u/2/home"
+            "url": "https://drive.google.com/drive/u/0/home"
          }, {
             "date_added": "13398359752175806",
             "date_last_used": "0",
@@ -189,7 +189,7 @@
             "url": "https://www.goodreads.com/"
          }, {
             "date_added": "13398361384631414",
-            "date_last_used": "13398363185516049",
+            "date_last_used": "13398693259357658",
             "guid": "f5ba50a4-8999-49f0-8370-ebeae0bbffa2",
             "id": "24",
             "meta_info": {
@@ -199,20 +199,20 @@
             "type": "url",
             "url": "https://calendar.google.com/calendar/u/3/r?pli=1"
          }, {
-            "date_added": "13398365569885230",
-            "date_last_used": "0",
-            "guid": "cad648a7-f46f-4728-9cf7-09bb21f05f49",
-            "id": "26",
+            "date_added": "13398357941690992",
+            "date_last_used": "13398692073364325",
+            "guid": "2306b7ff-c1e6-4657-a32e-59e1612600bc",
+            "id": "7",
             "meta_info": {
                "power_bookmark_meta": ""
             },
             "name": "",
             "type": "url",
-            "url": "https://github.com/"
+            "url": "https://chatgpt.com/"
          } ],
          "date_added": "13398350660180646",
          "date_last_used": "0",
-         "date_modified": "13398365569885230",
+         "date_modified": "13398468959122718",
          "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
          "id": "1",
          "name": "Bookmarks bar",
