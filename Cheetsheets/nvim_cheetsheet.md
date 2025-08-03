@@ -10,9 +10,8 @@
 
 - `gt` - next tab
 - `gT` - previous tab
-
-### Close
-
+- <leader> bd - close tab
+- <leader> ff - open telescope
 - `:tabo` - close all other tabs
 
 ## Text replace
