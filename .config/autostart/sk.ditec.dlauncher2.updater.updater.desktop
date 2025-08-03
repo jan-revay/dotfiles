@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=D.Launcher 2 Updater
+Exec=/home/jr/.local/share/dlauncher2/updater --autostart
+Terminal=false
+NoDisplay=true

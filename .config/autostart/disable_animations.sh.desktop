@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/jr/.my_scripts/disable_animations.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=disable_animations
+Name=disable_animations
+Comment[en_US]=Disable GNOME animations (GNOME keeps reenabling them)
+Comment=Disable GNOME animations (GNOME keeps reenabling them)

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=nautilus --new-window %U
+Exec=nautilus --new-window ./Downloads
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
