@@ -14,6 +14,10 @@
 - <leader> ff - open telescope
 - `:tabo` - close all other tabs
 
+## LSP
+
+- <leader> xx - show list of errors
+
 ## Text replace
 
 - :%s/old/new/g
