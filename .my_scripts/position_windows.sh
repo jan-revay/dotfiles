@@ -1,5 +1,16 @@
 #!/bin/bash
 
+
+napady na faktorizaciu
+1. napisat to v pythone? - netreba
+2. fcia getIdFromClass
+3. fcia get ids (caka v cykle kym vsetky idcka bidi existovat) - vracoa map - nazov triedy -> id
+4. samotne cally co roboa s oknami veci
+
+
+
+
+
 # TODO Wayland support
 # TODO improve - try sth. that is not dependent on timing so much
 # TODO remove dependence on the put window GNOME extension
