@@ -7,10 +7,13 @@ napady na faktorizaciu
 3. fcia get ids (caka v cykle kym vsetky idcka bidi existovat) - vracoa map - nazov triedy -> id
 4. samotne cally co roboa s oknami veci
 
+# TOREAD https://en.wikipedia.org/wiki/D-Bus
+
 windows=(a b c)
 
-getWindowIdFromClass(){
+getWindowIdFromClass(){ # array parameter and map return value, so that I don't need to call DBus multiple times
     # dbus call
+    # returns map with map[loaded] = false so that I can easily check that all ids were found (that one key is enough)
 }
 
 waitForIds(){
