@@ -160,7 +160,7 @@ MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rs
 StartupNotify=false
 Actions=NewWindow;NewPrivateWindow;
 X-GNOME-Autostart-Delay=1
-X-GNOME-Autostart-enabled=false
+X-GNOME-Autostart-enabled=true
 
 [Desktop Action NewWindow]
 Name=Open a New Window
