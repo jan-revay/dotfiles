@@ -7,6 +7,31 @@ napady na faktorizaciu
 3. fcia get ids (caka v cykle kym vsetky idcka bidi existovat) - vracoa map - nazov triedy -> id
 4. samotne cally co roboa s oknami veci
 
+windows=(a b c)
+
+getWindowIdFromClass(){
+    # dbus call
+}
+
+waitForIds(){
+    WOMDOWS=$1
+    declare -A IDS
+
+    for i in {1..30}; do
+        for win in $WINDOWS; do
+            id=getWondowIdFromClass $wim
+
+            if [[ $id == "" ]]; then
+                sleep 1
+                break
+            fi
+
+            IDS[$win]=$is
+        done
+    done
+
+    return $IDS
+}
 
 
 
