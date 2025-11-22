@@ -1,5 +1,7 @@
 #!/bin/bash -x
 
+# TODO try using activate and keybindings (alt qwaszx) to tile the windows
+# in a way that WM registers as tiles
 # TODO - what if there is more than one instance of the window?
 
 for i in {1..15}; do
