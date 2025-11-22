@@ -9,11 +9,25 @@ for i in {1..15}; do
     TODOIST_IDS=( $(gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
         --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]" \
             | jq -c '.[] | select (.wm_class == "Todoist") | .id') )
+    MESSAGES_IDS=( $(gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+        --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]" \
+            | jq -c '.[] | select (.wm_class == "FFPWA-01K9Q465CXSRDW5E7JT05YB6F6") | .id') )
+    MESSENGER_IDS=( $(gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+        --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]" \
+            | jq -c '.[] | select (.wm_class == "FFPWA-01K9Q3ZXJ98GTZQJ2V0TV72Z24") | .id') )
+    WA_IDS=( $(gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+        --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]" \
+            | jq -c '.[] | select (.wm_class == "FFPWA-01K9Q307BN2CB01RVV704HZ3AD") | .id') )
+    SIGNAL_IDS=( $(gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+        --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]" \
+            | jq -c '.[] | select (.wm_class == "org.signal.Signal") | .id') )
 
-    echo "${FIREFOX_IDS[@]}"
-    echo "${TODOIST_IDS[@]}"
-
-    if [[ ${FIREFOX_IDS[0]} != "" && ${TODOIST_IDS[0]} != "" ]]; then
+    if [[ ${FIREFOX_IDS[0]} != "" \
+        && ${TODOIST_IDS[0]} != "" \
+        && ${MESSAGES_IDS[0]} != "" \
+        && ${MESSENGER_IDS[0]} != "" \
+        && ${WA_IDS[0]} != "" \
+        && ${SIGNAL_IDS[0]} != "" ]]; then
         break
     fi
     
@@ -24,6 +38,26 @@ gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Exten
     --method org.gnome.Shell.Extensions.Windows.MoveToWorkspace "${FIREFOX_IDS[0]}" 0
 gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
     --method org.gnome.Shell.Extensions.Windows.Close "${TODOIST_IDS[0]}"
+
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Move "${MESSAGES_IDS[0]}" 4 45
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Resize "${MESSAGES_IDS[0]}" 1912 1052
+
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Move "${MESSENGER_IDS[0]}" 1924 45
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Resize "${MESSENGER_IDS[0]}" 1912 1052
+
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Move "${WA_IDS[0]}" 4 1105
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Resize "${WA_IDS[0]}" 1912 1051
+
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Move "${SIGNAL_IDS[0]}" 1924 1105
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Resize "${SIGNAL_IDS[0]}" 1912 1051
 
 # TODO: rewrite using list of windows, map and for_each function
 # napady na faktorizaciu
