@@ -1,5 +1,11 @@
 #!/bin/bash -x
 
+# Use
+#     dbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]"     | jq .
+
+# to list the windows
+
+
 # TODO try using activate and keybindings (alt qwaszx) to tile the windows
 # in a way that WM registers as tiles
 # TODO - what if there is more than one instance of the window?
@@ -36,30 +42,44 @@ for i in {1..15}; do
     sleep 1
 done
 
+# NOTE: for some reason position need to be added to a offset (20,20)
+
 gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
     --method org.gnome.Shell.Extensions.Windows.MoveToWorkspace "${FIREFOX_IDS[0]}" 0
 gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
     --method org.gnome.Shell.Extensions.Windows.Close "${TODOIST_IDS[0]}"
 
 gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Move "${MESSAGES_IDS[0]}" 4 45
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Resize "${MESSAGES_IDS[0]}" 1912 1052
-
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Move "${MESSENGER_IDS[0]}" 1924 45
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Resize "${MESSENGER_IDS[0]}" 1912 1052
-
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Move "${WA_IDS[0]}" 4 1105
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Resize "${WA_IDS[0]}" 1912 1051
-
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Move "${SIGNAL_IDS[0]}" 1924 1105
+    --method org.gnome.Shell.Extensions.Windows.Move "${SIGNAL_IDS[0]}" 1944 1125
 gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
     --method org.gnome.Shell.Extensions.Windows.Resize "${SIGNAL_IDS[0]}" 1912 1051
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Activate "${SIGNAL_IDS[0]}"
+sleep 0.1
+
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Move "${WA_IDS[0]}" 24 1125
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Resize "${WA_IDS[0]}" 1912 1051
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Activate "${WA_IDS[0]}"
+sleep 0.1
+
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Move "${MESSENGER_IDS[0]}" 1950 68
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Resize "${MESSENGER_IDS[0]}" 1912 1052
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Activate "${MESSENGER_IDS[0]}"
+sleep 0.1
+
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Move "${MESSAGES_IDS[0]}" 24 65
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Resize "${MESSAGES_IDS[0]}" 1912 1052
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Activate "${MESSAGES_IDS[0]}"
+
 
 # TODO: rewrite using list of windows, map and for_each function
 # napady na faktorizaciu
