@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Application
+Version=1.4
+Name=WhatsApp
+Comment=Log in to WhatsApp Web for simple, reliable and private messaging on your desktop. Send and receive messages and files with ease, all for free.
+Keywords=;
+Categories=GTK;Chat;Network;
+Icon=FFPWA-01K9Q307BN2CB01RVV704HZ3AD
+Exec=/usr/bin/firefoxpwa site launch 01K9Q307BN2CB01RVV704HZ3AD --protocol %u
+Actions=
+MimeType=
+Terminal=false
+StartupNotify=true
+StartupWMClass=FFPWA-01K9Q307BN2CB01RVV704HZ3AD
+X-GNOME-Autostart-Delay=3
+

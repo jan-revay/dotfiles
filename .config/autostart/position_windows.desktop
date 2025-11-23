@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/jr/.my_scripts/position_windows.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Position windows
+Comment=Position GNOME windows

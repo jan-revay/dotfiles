@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Version=1.4
+Name=Messenger
+Comment=Rozprávajte sa kedykoľvek a kdekoľvek: s Messengerom je jednoduché byť v kontakte s vašimi obľúbenými ľuďmi
+Keywords=;
+Categories=GTK;Chat;Network;
+Icon=FFPWA-01K9Q3ZXJ98GTZQJ2V0TV72Z24
+Exec=/usr/bin/firefoxpwa site launch 01K9Q3ZXJ98GTZQJ2V0TV72Z24 --protocol %u
+Actions=
+MimeType=
+Terminal=false
+StartupNotify=true
+StartupWMClass=FFPWA-01K9Q3ZXJ98GTZQJ2V0TV72Z24
+X-GNOME-Autostart-Delay=3

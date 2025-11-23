@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Version=1.4
+Name=Google Keep
+Comment=
+Keywords=;
+Categories=GTK;Utility;
+Icon=FFPWA-01K9Q6Z5KPWRQX54K98TCARNCM
+Exec=/usr/bin/firefoxpwa site launch 01K9Q6Z5KPWRQX54K98TCARNCM --protocol %u
+Actions=
+MimeType=
+Terminal=false
+StartupNotify=true
+StartupWMClass=FFPWA-01K9Q6Z5KPWRQX54K98TCARNCM
+X-GNOME-Autostart-Delay=3
