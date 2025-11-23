@@ -29,13 +29,19 @@ for i in {1..15}; do
     SIGNAL_IDS=( $(gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
         --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]" \
             | jq -c '.[] | select (.wm_class == "org.signal.Signal") | .id') )
+    NAUTILUS_IDS=( $(gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+        --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]" \
+            | jq -c '.[] | select (.wm_class == "org.gnome.Nautilus") | .id') )
 
     if [[ ${FIREFOX_IDS[0]} != "" \
         && ${TODOIST_IDS[0]} != "" \
         && ${MESSAGES_IDS[0]} != "" \
         && ${MESSENGER_IDS[0]} != "" \
         && ${WA_IDS[0]} != "" \
-        && ${SIGNAL_IDS[0]} != "" ]]; then
+        && ${SIGNAL_IDS[0]} != "" \
+        && ${NAUTILUS_IDS[0]} != "" \
+        && ${NAUTILUS_IDS[1]} != "" \
+        && ${NAUTILUS_IDS[2]} != "" ]]; then
         break
     fi
     
@@ -46,6 +52,12 @@ done
 
 gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
     --method org.gnome.Shell.Extensions.Windows.MoveToWorkspace "${FIREFOX_IDS[0]}" 0
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.MoveToWorkspace "${NAUTILUS_IDS[0]}" 2
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.MoveToWorkspace "${NAUTILUS_IDS[1]}" 2
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.MoveToWorkspace "${NAUTILUS_IDS[2]}" 2
 gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
     --method org.gnome.Shell.Extensions.Windows.Close "${TODOIST_IDS[0]}"
 
