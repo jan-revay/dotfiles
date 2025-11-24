@@ -103,6 +103,51 @@ gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Exten
     --method org.gnome.Shell.Extensions.Windows.Activate "${MESSAGES_IDS[0]}"
 
 
+# TODO - wait until the windows are open and remove the sleep
+sleep 3
+
+# Tile windows on startup
+# TODO make a function out of this and name & comment the code
+# Left Alt	56	KEY_LEFTALT
+# Left Shift	42	KEY_LEFTSHIFT
+# 1	2	KEY_1
+# 2	3	KEY_2
+# Q	16	KEY_Q
+# Enter	28	KEY_ENTER
+# https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h
+ydotool key 56:1 42:1 31:1 56:0 42:0 31:0
+ydotool key 28:1 28:0
+ydotool key 28:1 28:0
+ydotool key 28:1 28:0
+ydotool key 28:1 28:0
+
+ydotool key 56:1 2:1 2:0 56:0
+ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
+ydotool key 28:1 28:0
+
+ydotool key 56:1 4:1 4:0 56:0
+ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
+ydotool key 28:1 28:0
+ydotool key 28:1 28:0
+ydotool key 28:1 28:0
+
+ydotool key 56:1 9:1 9:0 56:0
+ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
+ydotool key 28:1 28:0
+ydotool key 28:1 28:0
+
+ydotool key 56:1 10:1 10:0 56:0
+ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
+ydotool key 28:1 28:0
+ydotool key 28:1 28:0
+ydotool key 28:1 28:0
+
+ydotool key 56:1 11:1 11:0 56:0
+ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
+ydotool key 28:1 28:0
+ydotool key 28:1 28:0
+ydotool key 28:1 28:0
+
 # TODO: rewrite using list of windows, map and for_each function
 # napady na faktorizaciu
 # 1. napisat to v pythone? - netreba
