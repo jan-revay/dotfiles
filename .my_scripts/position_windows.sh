@@ -104,7 +104,7 @@ gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Exten
 
 
 # TODO - wait until the windows are open and remove the sleep
-sleep 3
+sleep 5
 
 # Tile windows on startup
 # TODO make a function out of this and name & comment the code
@@ -116,34 +116,45 @@ sleep 3
 # Enter	28	KEY_ENTER
 # https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h
 ydotool key 56:1 42:1 31:1 56:0 42:0 31:0
+sleep 0.05
 ydotool key 28:1 28:0
 ydotool key 28:1 28:0
 ydotool key 28:1 28:0
 ydotool key 28:1 28:0
 
 ydotool key 56:1 2:1 2:0 56:0
+sleep 0.05
 ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
+sleep 0.05
 ydotool key 28:1 28:0
 
 ydotool key 56:1 4:1 4:0 56:0
+sleep 0.05
 ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
+sleep 0.05
 ydotool key 28:1 28:0
 ydotool key 28:1 28:0
 ydotool key 28:1 28:0
 
 ydotool key 56:1 9:1 9:0 56:0
+sleep 0.05
 ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
+sleep 0.05
 ydotool key 28:1 28:0
 ydotool key 28:1 28:0
 
 ydotool key 56:1 10:1 10:0 56:0
+sleep 0.05
 ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
+sleep 0.05
 ydotool key 28:1 28:0
 ydotool key 28:1 28:0
 ydotool key 28:1 28:0
 
 ydotool key 56:1 11:1 11:0 56:0
+sleep 0.05
 ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
+sleep 0.05
 ydotool key 28:1 28:0
 ydotool key 28:1 28:0
 ydotool key 28:1 28:0
