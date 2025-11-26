@@ -1,4 +1,5 @@
 #!/bin/bash -x
+. ../initPC/prelude.sh
 
 # Use
 #     dbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]"     | jq .
@@ -10,6 +11,9 @@
 # TODO try using activate and keybindings (alt qwaszx) to tile the windows
 # in a way that WM registers as tiles
 # TODO - what if there is more than one instance of the window?
+
+
+
 
 for i in {1..15}; do
     FIREFOX_IDS=( $(gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
@@ -34,15 +38,13 @@ for i in {1..15}; do
         --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]" \
             | jq -c '.[] | select (.wm_class == "org.gnome.Nautilus") | .id') )
 
-    if [[ ${FIREFOX_IDS[0]} != "" \
-        && ${TODOIST_IDS[0]} != "" \
-        && ${MESSAGES_IDS[0]} != "" \
-        && ${MESSENGER_IDS[0]} != "" \
-        && ${WA_IDS[0]} != "" \
-        && ${SIGNAL_IDS[0]} != "" \
-        && ${NAUTILUS_IDS[0]} != "" \
-        && ${NAUTILUS_IDS[1]} != "" \
-        && ${NAUTILUS_IDS[2]} != "" ]]; then
+    if (( ${#FIREFOX_IDS[@]} > 0 )) \
+       && (( ${#TODOIST_IDS[@]} > 0 )) \
+       && (( ${#MESSAGES_IDS[@]} > 0 )) \
+       && (( ${#MESSENGER_IDS[@]} > 0 )) \
+       && (( ${#WA_IDS[@]} > 0 )) \
+       && (( ${#SIGNAL_IDS[@]} > 0 )) \
+       && (( ${#NAUTILUS_IDS[@]} > 2 )); then
         break
     fi
     
