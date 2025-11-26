@@ -37,7 +37,8 @@ for i in {1..15}; do
        && (( ${#MESSENGER_IDS[@]} > 0 )) \
        && (( ${#WA_IDS[@]} > 0 )) \
        && (( ${#SIGNAL_IDS[@]} > 0 )) \
-       && (( ${#NAUTILUS_IDS[@]} > 2 )); then
+       && (( ${#NAUTILUS_IDS[@]} > 2 )) \
+       && (( ${#GOOGLE_CAL_NEW_IDS[@]} > 0 )); then
         break
     fi
     
