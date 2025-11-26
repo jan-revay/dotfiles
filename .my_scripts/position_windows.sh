@@ -2,7 +2,7 @@
 . ../initPC/prelude.sh
 
 # Use
-#     dbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]"     | jq .
+#     gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]"     | jq .
 
 # to list the windows
 # TODO usde for_each macro and rewrite it so that it works here
@@ -12,31 +12,24 @@
 # in a way that WM registers as tiles
 # TODO - what if there is more than one instance of the window?
 
-
+ids_from_wm_class() {
+    gdbus call --session --dest org.gnome.Shell \
+    --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.List \
+    | rg -o "\[[^\]]+\]" \
+    | jq -c ".[] | select (.wm_class == \"$1\") | .id"
+}
 
 
 for i in {1..15}; do
-    FIREFOX_IDS=( $(gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-        --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]" \
-            | jq -c '.[] | select (.wm_class == "firefox_firefox") | .id') )
-    TODOIST_IDS=( $(gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-        --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]" \
-            | jq -c '.[] | select (.wm_class == "Todoist") | .id') )
-    MESSAGES_IDS=( $(gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-        --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]" \
-            | jq -c '.[] | select (.wm_class == "FFPWA-01K9Q465CXSRDW5E7JT05YB6F6") | .id') )
-    MESSENGER_IDS=( $(gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-        --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]" \
-            | jq -c '.[] | select (.wm_class == "FFPWA-01K9Q3ZXJ98GTZQJ2V0TV72Z24") | .id') )
-    WA_IDS=( $(gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-        --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]" \
-            | jq -c '.[] | select (.wm_class == "FFPWA-01K9Q307BN2CB01RVV704HZ3AD") | .id') )
-    SIGNAL_IDS=( $(gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-        --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]" \
-            | jq -c '.[] | select (.wm_class == "org.signal.Signal") | .id') )
-    NAUTILUS_IDS=( $(gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-        --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]" \
-            | jq -c '.[] | select (.wm_class == "org.gnome.Nautilus") | .id') )
+    FIREFOX_IDS=( $(ids_from_wm_class firefox_firefox) )
+    TODOIST_IDS=( $(ids_from_wm_class Todoist) )
+    MESSAGES_IDS=( $(ids_from_wm_class FFPWA-01K9Q465CXSRDW5E7JT05YB6F6) )
+    MESSENGER_IDS=( $(ids_from_wm_class FFPWA-01K9Q3ZXJ98GTZQJ2V0TV72Z24) )
+    WA_IDS=( $(ids_from_wm_class FFPWA-01K9Q307BN2CB01RVV704HZ3AD) )
+    SIGNAL_IDS=( $(ids_from_wm_class org.signal.Signal) )
+    NAUTILUS_IDS=( $(ids_from_wm_class org.gnome.Nautilus) )
+    GOOGLE_CAL_NEW_IDS=( $(ids_from_wm_class FFPWA-01K9VX1TWRMC3E4E48T7YX3AS6) )
 
     if (( ${#FIREFOX_IDS[@]} > 0 )) \
        && (( ${#TODOIST_IDS[@]} > 0 )) \
@@ -52,6 +45,7 @@ for i in {1..15}; do
 done
 
 # NOTE: for some reason position need to be added to a offset (20,20)
+# TODO isn't that just sync issue? Does sleep fix that?
 
 gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
     --method org.gnome.Shell.Extensions.Windows.MoveToWorkspace "${FIREFOX_IDS[0]}" 0
@@ -165,9 +159,10 @@ sleep 0.05
 
 ydotool key 56:1 11:1 11:0 56:0
 sleep 0.05
-ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+    --method org.gnome.Shell.Extensions.Windows.Activate "${GOOGLE_CAL_NEW_IDS[0]}"
 sleep 0.05
-ydotool key 28:1 28:0
+ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
 sleep 0.05
 ydotool key 28:1 28:0
 sleep 0.05
