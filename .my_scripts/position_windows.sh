@@ -47,6 +47,9 @@ done
 
 # NOTE: for some reason position need to be added to a offset (20,20)
 # TODO isn't that just sync issue? Does sleep fix that?
+# TODO for_each "sleep 0.1; gdbus...." <<
+# TODO alternatively I can declare a variable with the prefix and use that
+# that would be probably more suitable given the mixing of gdbus and Window Calls
 
 gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
     --method org.gnome.Shell.Extensions.Windows.MoveToWorkspace "${FIREFOX_IDS[0]}" 0
