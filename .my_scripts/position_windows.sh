@@ -50,6 +50,13 @@ done
 # TODO for_each "sleep 0.1; gdbus...." <<
 # TODO alternatively I can declare a variable with the prefix and use that
 # that would be probably more suitable given the mixing of gdbus and Window Calls
+# I can name the variable $W co that it is easy to access I would need to use it as "$W"
+# because of the spaces?
+# W="sleep 0.05
+# gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
+#     --method org.gnome.Shell.Extensions.Windows"
+# TODO every window calls call could theoretically wait untill the change propagated to gnome
+# i.s. read the window info and spinlock untill the change is not registered
 
 gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
     --method org.gnome.Shell.Extensions.Windows.MoveToWorkspace "${FIREFOX_IDS[0]}" 0
