@@ -45,6 +45,7 @@ for i in {1..15}; do
     WA_IDS=( $(ids_from_wm_class FFPWA-01K9Q307BN2CB01RVV704HZ3AD) )
     SIGNAL_IDS=( $(ids_from_wm_class org.signal.Signal) )
     NAUTILUS_IDS=( $(ids_from_wm_class org.gnome.Nautilus) )
+    GOOGLE_KEEP_IDS=( $(ids_from_wm_class FFPWA-01K9Q6Z5KPWRQX54K98TCARNCM) )
     GOOGLE_CAL_NEW_IDS=( $(ids_from_wm_class FFPWA-01K9VX1TWRMC3E4E48T7YX3AS6) )
 
     if (( ${#FIREFOX_IDS[@]} > 0 )) \
@@ -54,6 +55,7 @@ for i in {1..15}; do
        && (( ${#WA_IDS[@]} > 0 )) \
        && (( ${#SIGNAL_IDS[@]} > 0 )) \
        && (( ${#NAUTILUS_IDS[@]} > 2 )) \
+       && (( ${#GOOGLE_KEEP_IDS[@]} > 0 )) \
        && (( ${#GOOGLE_CAL_NEW_IDS[@]} > 0 )); then
         break
     fi
@@ -152,6 +154,7 @@ ydotool key 28:1 28:0
 
 ydotool key 56:1 9:1 9:0 56:0
 sleep 0.05
+win Activate "${GOOGLE_KEEP_IDS[0]}"
 ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
 sleep 0.05
 ydotool key 28:1 28:0
