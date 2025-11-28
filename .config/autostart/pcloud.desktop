@@ -6,3 +6,4 @@ Comment=pcloudstartup script
 Exec=/home/jr/localSW/pcloud
 StartupNotify=false
 Terminal=false
+X-GNOME-Autostart-Delay=10
