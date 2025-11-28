@@ -4,19 +4,35 @@
 # Use
 #     gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]"     | jq .
 
+# TODO try to cause a race condition by setting a windows in focus and reading the
+# focus state so that I can see whether I need to add spinlocks to
 # to list the windows
 # TODO usde for_each macro and rewrite it so that it works here
+# TODO - condifer whether I need to add the sleep commands or not
 
 
 # TODO try using activate and keybindings (alt qwaszx) to tile the windows
 # in a way that WM registers as tiles
 # TODO - what if there is more than one instance of the window?
 
-ids_from_wm_class() {
-    gdbus call --session --dest org.gnome.Shell \
-    --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.List \
+win() {
+    local method="$1"
+    shift
+    gdbus call --session \
+        --dest org.gnome.Shell \
+        --object-path /org/gnome/Shell/Extensions/Windows \
+        --method org.gnome.Shell.Extensions.Windows."$method" \
+        "$@"
+}
+
+win_list() {
+    win List \
     | rg -o "\[[^\]]+\]" \
+    | jq .
+}
+
+ids_from_wm_class() {
+    win_list \
     | jq -c ".[] | select (.wm_class == \"$1\") | .id"
 }
 
@@ -58,56 +74,41 @@ done
 # TODO every window calls call could theoretically wait untill the change propagated to gnome
 # i.s. read the window info and spinlock untill the change is not registered
 
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.MoveToWorkspace "${FIREFOX_IDS[0]}" 0
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.MoveToWorkspace "${NAUTILUS_IDS[0]}" 2
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.MoveToWorkspace "${NAUTILUS_IDS[1]}" 2
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.MoveToWorkspace "${NAUTILUS_IDS[2]}" 2
+win MoveToWorkspace "${FIREFOX_IDS[0]}" 0
+win MoveToWorkspace "${NAUTILUS_IDS[0]}" 2
+win MoveToWorkspace "${NAUTILUS_IDS[1]}" 2
+win MoveToWorkspace "${NAUTILUS_IDS[2]}" 2
 
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Close "${TODOIST_IDS[0]}"
 
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Move "${SIGNAL_IDS[0]}" 1944 1125
+# TODO - simplify the sleep might not be needed
+win Close "${TODOIST_IDS[0]}"
+
+win Move "${SIGNAL_IDS[0]}" 1944 1125
 sleep 0.1
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Resize "${SIGNAL_IDS[0]}" 1912 1051
+win Resize "${SIGNAL_IDS[0]}" 1912 1051
 sleep 0.1
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Activate "${SIGNAL_IDS[0]}"
+win Activate "${SIGNAL_IDS[0]}"
 sleep 0.1
 
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Move "${WA_IDS[0]}" 24 1125
+win Move "${WA_IDS[0]}" 24 1125
 sleep 0.1
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Resize "${WA_IDS[0]}" 1912 1051
+win Resize "${WA_IDS[0]}" 1912 1051
 sleep 0.1
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Activate "${WA_IDS[0]}"
+win Activate "${WA_IDS[0]}"
 sleep 0.1
 
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Move "${MESSENGER_IDS[0]}" 1950 68
+win Move "${MESSENGER_IDS[0]}" 1950 68
 sleep 0.1
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Resize "${MESSENGER_IDS[0]}" 1912 1052
+win Resize "${MESSENGER_IDS[0]}" 1912 1052
 sleep 0.1
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Activate "${MESSENGER_IDS[0]}"
+win Activate "${MESSENGER_IDS[0]}"
 sleep 0.1
 
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Move "${MESSAGES_IDS[0]}" 24 65
+win Move "${MESSAGES_IDS[0]}" 24 65
 sleep 0.1
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Resize "${MESSAGES_IDS[0]}" 1912 1052
+win Resize "${MESSAGES_IDS[0]}" 1912 1052
 sleep 0.1
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Activate "${MESSAGES_IDS[0]}"
+win Activate "${MESSAGES_IDS[0]}"
 
 
 # TODO - wait until the windows are open and remove the sleep
@@ -170,8 +171,7 @@ sleep 0.05
 
 ydotool key 56:1 11:1 11:0 56:0
 sleep 0.05
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows \
-    --method org.gnome.Shell.Extensions.Windows.Activate "${GOOGLE_CAL_NEW_IDS[0]}"
+win Activate "${GOOGLE_CAL_NEW_IDS[0]}"
 sleep 0.05
 ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
 sleep 0.05
