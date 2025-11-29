@@ -96,33 +96,23 @@ win MoveToWorkspace "${NAUTILUS_IDS[2]}" 2
 # TODO - simplify the sleep might not be needed
 win Close "${TODOIST_IDS[0]}"
 
-win Move "${SIGNAL_IDS[0]}" 1944 1125
-sleep 0.1
-win Resize "${SIGNAL_IDS[0]}" 1912 1051
-sleep 0.1
+# TODO fix the window positions - now it might work correctly
+# TODO - add note about the race conditions somewhere
+# MoveResize takes 3 parameters: winid x y width height
+win MoveResize "${SIGNAL_IDS[0]}" 1944 1125 1912 1051
 win Activate "${SIGNAL_IDS[0]}"
-sleep 0.1
+sleep 0.05
 
-win Move "${WA_IDS[0]}" 24 1125
-sleep 0.1
-win Resize "${WA_IDS[0]}" 1912 1051
-sleep 0.1
+win MoveResize "${WA_IDS[0]}" 24 1125 1912 1051
 win Activate "${WA_IDS[0]}"
-sleep 0.1
+sleep 0.05
 
-win Move "${MESSENGER_IDS[0]}" 1950 68
-sleep 0.1
-win Resize "${MESSENGER_IDS[0]}" 1912 1052
-sleep 0.1
+win MoveResize "${MESSENGER_IDS[0]}" 1950 68 1912 1052
 win Activate "${MESSENGER_IDS[0]}"
-sleep 0.1
+sleep 0.05
 
-win Move "${MESSAGES_IDS[0]}" 24 65
-sleep 0.1
-win Resize "${MESSAGES_IDS[0]}" 1912 1052
-sleep 0.1
+win MoveResize "${MESSAGES_IDS[0]}" 24 65 1912 1052
 win Activate "${MESSAGES_IDS[0]}"
-
 
 # TODO - wait until the windows are open and remove the sleep
 sleep 5
