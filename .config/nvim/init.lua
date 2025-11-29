@@ -27,6 +27,7 @@ vim.opt.autoindent = true
 
 -- Add line numbers
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- Set an 80 column border for good coding style
 vim.opt.colorcolumn = "80"
