@@ -115,7 +115,7 @@ win MoveResize "${MESSAGES_IDS[0]}" 24 65 1912 1052
 win Activate "${MESSAGES_IDS[0]}"
 
 # TODO - wait until the windows are open and remove the sleep
-sleep 5
+sleep 0.5
 
 # Tile windows on startup
 # TODO make a function out of this and name & comment the code
