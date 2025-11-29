@@ -14,6 +14,7 @@
 # TODO try using activate and keybindings (alt qwaszx) to tile the windows
 # in a way that WM registers as tiles
 # TODO - what if there is more than one instance of the window?
+# TODO - ChatGPT and Claude code review
 
 win() {
     local method="$1"
@@ -26,18 +27,22 @@ win() {
 }
 
 win_list() {
-    win List \
-    | rg -o "\[[^\]]+\]" \
-    | jq .
+    # Extract only the JSON argument returned by GDBus
+    win List | rg -o "\[[^\]]+\]"
+}
+
+win_list_formatted() {
+    win_list | jq .
 }
 
 ids_from_wm_class() {
-    win_list \
-    | jq -c ".[] | select (.wm_class == \"$1\") | .id"
+    jq -c --arg class "$1" '.[] | select(.wm_class == $class) | .id' <<< "${WIN_LIST}"
 }
 
 
-for i in {1..15}; do
+for i in {1..35}; do
+    WIN_LIST=$(win_list)
+
     FIREFOX_IDS=( $(ids_from_wm_class firefox_firefox) )
     TODOIST_IDS=( $(ids_from_wm_class Todoist) )
     MESSAGES_IDS=( $(ids_from_wm_class FFPWA-01K9Q465CXSRDW5E7JT05YB6F6) )
