@@ -50,7 +50,10 @@ for i in {1..35}; do
     WA_IDS=( $(ids_from_wm_class FFPWA-01K9Q307BN2CB01RVV704HZ3AD) )
     SIGNAL_IDS=( $(ids_from_wm_class org.signal.Signal) )
     NAUTILUS_IDS=( $(ids_from_wm_class org.gnome.Nautilus) )
+    SPOTIFY_IDS=( $(ids_from_wm_class Spotify) )
     GOOGLE_KEEP_IDS=( $(ids_from_wm_class FFPWA-01K9Q6Z5KPWRQX54K98TCARNCM) )
+    GOOGLE_DRIVE_IDS=( $(ids_from_wm_class FFPWA-01K9VXM1XNH05FYVKZ47Q43PTJ) )
+    GOOGLE_CAL_IDS=( $(ids_from_wm_class FFPWA-01K9VWZ3YQ3AR6QS81V8NJWXJ3) )
     GOOGLE_CAL_NEW_IDS=( $(ids_from_wm_class FFPWA-01K9VX1TWRMC3E4E48T7YX3AS6) )
 
     if (( ${#FIREFOX_IDS[@]} > 0 )) \
@@ -61,6 +64,9 @@ for i in {1..35}; do
        && (( ${#SIGNAL_IDS[@]} > 0 )) \
        && (( ${#NAUTILUS_IDS[@]} > 2 )) \
        && (( ${#GOOGLE_KEEP_IDS[@]} > 0 )) \
+       && (( ${#SPOTIFY_IDS[@]} > 0 )) \
+       && (( ${#GOOGLE_DRIVE_IDS[@]} > 2 )) \
+       && (( ${#GOOGLE_CAL_IDS[@]} > 0 )) \
        && (( ${#GOOGLE_CAL_NEW_IDS[@]} > 0 )); then
         break
     fi
