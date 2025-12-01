@@ -92,7 +92,7 @@ win MoveToWorkspace "${NAUTILUS_IDS[0]}" 2
 win MoveToWorkspace "${NAUTILUS_IDS[1]}" 2
 win MoveToWorkspace "${NAUTILUS_IDS[2]}" 2
 
-
+ydotool mousemove --absolute -x 0 -y 0
 # TODO - simplify the sleep might not be needed
 win Close "${TODOIST_IDS[0]}"
 
@@ -116,6 +116,7 @@ win Activate "${MESSAGES_IDS[0]}"
 
 # TODO - wait until the windows are open and remove the sleep
 sleep 0.5
+ydotool mousemove --absolute -x 0 -y 0
 
 # Tile windows on startup
 # TODO make a function out of this and name & comment the code
