@@ -127,51 +127,61 @@ ydotool mousemove --absolute -x 0 -y 0
 # Q	16	KEY_Q
 # Enter	28	KEY_ENTER
 # https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h
-ydotool key 56:1 42:1 31:1 56:0 42:0 31:0
+# TODO make this grep&sed more robust so that it is able to parse any or almost
+# any C code (also with // comments, with comments in between etc.)
+grep '^#define[[:space:]]\+KEY_' /usr/include/linux/input-event-codes.h \
+    | sed -E 's/^#define[[:space:]]+([A-Za-z0-9_]+)[[:space:]]+(.+)$/\1=\2/' \
+    | sed 's/\/\*/#/' \
+    | sed 's/\*\///' \
+    > /tmp/ydotool_keycodes.sh
+source /tmp/ydotool_keycodes.sh
+
+ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_S}:1 \
+    ${KEY_S}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
 sleep 0.05
-ydotool key 28:1 28:0
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
-ydotool key 28:1 28:0
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
-ydotool key 28:1 28:0
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
-ydotool key 28:1 28:0
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 
 ydotool key 56:1 2:1 2:0 56:0
 sleep 0.05
 ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
 sleep 0.05
-ydotool key 28:1 28:0
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 
 ydotool key 56:1 4:1 4:0 56:0
 sleep 0.05
 ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
 sleep 0.05
-ydotool key 28:1 28:0
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
-ydotool key 28:1 28:0
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
-ydotool key 28:1 28:0
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 
 ydotool key 56:1 9:1 9:0 56:0
 sleep 0.05
 win Activate "${GOOGLE_KEEP_IDS[0]}"
 ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
 sleep 0.05
-ydotool key 28:1 28:0
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
-ydotool key 28:1 28:0
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 
 ydotool key 56:1 10:1 10:0 56:0
 sleep 0.05
 ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
 sleep 0.05
-ydotool key 28:1 28:0
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
-ydotool key 28:1 28:0
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
-ydotool key 28:1 28:0
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 
 ydotool key 56:1 11:1 11:0 56:0
@@ -180,9 +190,9 @@ win Activate "${GOOGLE_CAL_NEW_IDS[0]}"
 sleep 0.05
 ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
 sleep 0.05
-ydotool key 28:1 28:0
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
-ydotool key 28:1 28:0
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 
 # TODO: rewrite using list of windows, map and for_each function
 # napady na faktorizaciu
