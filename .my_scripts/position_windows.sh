@@ -88,9 +88,9 @@ done
 # i.s. read the window info and spinlock untill the change is not registered
 
 win MoveToWorkspace "${FIREFOX_IDS[0]}" 0
-win MoveToWorkspace "${NAUTILUS_IDS[0]}" 2
-win MoveToWorkspace "${NAUTILUS_IDS[1]}" 2
-win MoveToWorkspace "${NAUTILUS_IDS[2]}" 2
+win MoveToWorkspace "${NAUTILUS_IDS[0]}" 7
+win MoveToWorkspace "${NAUTILUS_IDS[1]}" 7
+win MoveToWorkspace "${NAUTILUS_IDS[2]}" 7
 
 ydotool mousemove --absolute -x 0 -y 0
 # TODO - simplify the sleep might not be needed
@@ -136,8 +136,8 @@ grep '^#define[[:space:]]\+KEY_' /usr/include/linux/input-event-codes.h \
     > /tmp/ydotool_keycodes.sh
 source /tmp/ydotool_keycodes.sh
 
-ydotool key ${KEY_LEFTALT}:1 ${KEY_4}:1 ${KEY_4}:0 ${KEY_LEFTALT}:0
-sleep 0.05
+# ydotool key ${KEY_LEFTALT}:1 ${KEY_4}:1 ${KEY_4}:0 ${KEY_LEFTALT}:0
+# sleep 0.05
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_S}:1 \
     ${KEY_S}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
 sleep 0.05
@@ -154,29 +154,30 @@ sleep 0.05
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
     ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
 sleep 0.05
+# Send more KEY_ENTER events just in case there are more windows open
+# on desktop 1
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
-
-ydotool key ${KEY_LEFTALT}:1 ${KEY_3}:1 ${KEY_3}:0 ${KEY_LEFTALT}:0
-sleep 0.05
-ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
-    ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+# for some reason, longer delay is needed here...
+# otherwise the next shortcut does not work
+sleep 0.25
 
 ydotool key ${KEY_LEFTALT}:1 ${KEY_8}:1 ${KEY_8}:0 ${KEY_LEFTALT}:0
 sleep 0.05
-win Activate "${GOOGLE_KEEP_IDS[0]}"
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
     ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+sleep 0.05
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+sleep 0.05
 
 ydotool key ${KEY_LEFTALT}:1 ${KEY_9}:1 ${KEY_9}:0 ${KEY_LEFTALT}:0
 sleep 0.05
@@ -190,10 +191,20 @@ sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 
-ydotool key ${KEY_LEFTALT}:1 ${KEY_10}:1 ${KEY_10}:0 ${KEY_LEFTALT}:0
+ydotool key ${KEY_LEFTALT}:1 ${KEY_0}:1 ${KEY_0}:0 ${KEY_LEFTALT}:0
 sleep 0.05
 win Activate "${GOOGLE_CAL_NEW_IDS[0]}"
 sleep 0.05
+ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
+    ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
+sleep 0.05
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+sleep 0.05
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+
+ydotool key ${KEY_LEFTALT}:1 ${KEY_EQUAL}:1 ${KEY_EQUAL}:0 ${KEY_LEFTALT}:0
+sleep 0.05
+win Activate "${GOOGLE_KEEP_IDS[0]}"
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
     ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
 sleep 0.05
