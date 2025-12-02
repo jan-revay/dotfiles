@@ -136,6 +136,8 @@ grep '^#define[[:space:]]\+KEY_' /usr/include/linux/input-event-codes.h \
     > /tmp/ydotool_keycodes.sh
 source /tmp/ydotool_keycodes.sh
 
+ydotool key ${KEY_LEFTALT}:1 ${KEY_4}:1 ${KEY_4}:0 ${KEY_LEFTALT}:0
+sleep 0.05
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_S}:1 \
     ${KEY_S}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
 sleep 0.05
@@ -147,16 +149,18 @@ ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 
-ydotool key 56:1 2:1 2:0 56:0
+ydotool key ${KEY_LEFTALT}:1 ${KEY_1}:1 ${KEY_1}:0 ${KEY_LEFTALT}:0
 sleep 0.05
-ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
+ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
+    ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 
-ydotool key 56:1 4:1 4:0 56:0
+ydotool key ${KEY_LEFTALT}:1 ${KEY_3}:1 ${KEY_3}:0 ${KEY_LEFTALT}:0
 sleep 0.05
-ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
+ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
+    ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
@@ -164,18 +168,20 @@ ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 
-ydotool key 56:1 9:1 9:0 56:0
+ydotool key ${KEY_LEFTALT}:1 ${KEY_8}:1 ${KEY_8}:0 ${KEY_LEFTALT}:0
 sleep 0.05
 win Activate "${GOOGLE_KEEP_IDS[0]}"
-ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
+ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
+    ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 
-ydotool key 56:1 10:1 10:0 56:0
+ydotool key ${KEY_LEFTALT}:1 ${KEY_9}:1 ${KEY_9}:0 ${KEY_LEFTALT}:0
 sleep 0.05
-ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
+ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
+    ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
@@ -184,11 +190,12 @@ sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 
-ydotool key 56:1 11:1 11:0 56:0
+ydotool key ${KEY_LEFTALT}:1 ${KEY_10}:1 ${KEY_10}:0 ${KEY_LEFTALT}:0
 sleep 0.05
 win Activate "${GOOGLE_CAL_NEW_IDS[0]}"
 sleep 0.05
-ydotool key 56:1 42:1 16:1 16:0 42:0 56:0
+ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
+    ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
