@@ -87,7 +87,11 @@ done
 # TODO every window calls call could theoretically wait untill the change propagated to gnome
 # i.s. read the window info and spinlock untill the change is not registered
 
-win MoveToWorkspace "${FIREFOX_IDS[0]}" 0
+
+for id in "${FIREFOX_IDS[@]}"; do
+    win MoveToWorkspace "$id" 0
+done
+
 win MoveToWorkspace "${NAUTILUS_IDS[0]}" 7
 win MoveToWorkspace "${NAUTILUS_IDS[1]}" 7
 win MoveToWorkspace "${NAUTILUS_IDS[2]}" 7
@@ -156,6 +160,12 @@ ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
 sleep 0.05
 # Send more KEY_ENTER events just in case there are more windows open
 # on desktop 1
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+sleep 0.05
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+sleep 0.05
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
