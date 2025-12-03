@@ -43,31 +43,15 @@ ids_from_wm_class() {
 for i in {1..35}; do
     WIN_LIST=$(win_list)
 
-    FIREFOX_IDS=( $(ids_from_wm_class firefox_firefox) )
-    TODOIST_IDS=( $(ids_from_wm_class Todoist) )
     MESSAGES_IDS=( $(ids_from_wm_class FFPWA-01K9Q465CXSRDW5E7JT05YB6F6) )
     MESSENGER_IDS=( $(ids_from_wm_class FFPWA-01K9Q3ZXJ98GTZQJ2V0TV72Z24) )
     WA_IDS=( $(ids_from_wm_class FFPWA-01K9Q307BN2CB01RVV704HZ3AD) )
     SIGNAL_IDS=( $(ids_from_wm_class org.signal.Signal) )
-    NAUTILUS_IDS=( $(ids_from_wm_class org.gnome.Nautilus) )
-    SPOTIFY_IDS=( $(ids_from_wm_class Spotify) )
-    GOOGLE_KEEP_IDS=( $(ids_from_wm_class FFPWA-01K9Q6Z5KPWRQX54K98TCARNCM) )
-    GOOGLE_DRIVE_IDS=( $(ids_from_wm_class FFPWA-01K9VXM1XNH05FYVKZ47Q43PTJ) )
-    GOOGLE_CAL_IDS=( $(ids_from_wm_class FFPWA-01K9VWZ3YQ3AR6QS81V8NJWXJ3) )
-    GOOGLE_CAL_NEW_IDS=( $(ids_from_wm_class FFPWA-01K9VX1TWRMC3E4E48T7YX3AS6) )
 
-    if (( ${#FIREFOX_IDS[@]} > 0 )) \
-       && (( ${#TODOIST_IDS[@]} > 0 )) \
-       && (( ${#MESSAGES_IDS[@]} > 0 )) \
+    if (( ${#MESSAGES_IDS[@]} > 0 )) \
        && (( ${#MESSENGER_IDS[@]} > 0 )) \
        && (( ${#WA_IDS[@]} > 0 )) \
-       && (( ${#SIGNAL_IDS[@]} > 0 )) \
-       && (( ${#NAUTILUS_IDS[@]} > 2 )) \
-       && (( ${#GOOGLE_KEEP_IDS[@]} > 0 )) \
-       && (( ${#SPOTIFY_IDS[@]} > 0 )) \
-       && (( ${#GOOGLE_DRIVE_IDS[@]} > 2 )) \
-       && (( ${#GOOGLE_CAL_IDS[@]} > 0 )) \
-       && (( ${#GOOGLE_CAL_NEW_IDS[@]} > 0 )); then
+       && (( ${#SIGNAL_IDS[@]} > 0 )); then
         break
     fi
     
@@ -87,46 +71,13 @@ done
 # TODO every window calls call could theoretically wait untill the change propagated to gnome
 # i.s. read the window info and spinlock untill the change is not registered
 
-win MoveToWorkspace "${FIREFOX_IDS[0]}" 0
-win MoveToWorkspace "${NAUTILUS_IDS[0]}" 7
-win MoveToWorkspace "${NAUTILUS_IDS[1]}" 7
-win MoveToWorkspace "${NAUTILUS_IDS[2]}" 7
+win MoveToWorkspace "${MESSAGES_IDS[0]}" 3
+win MoveToWorkspace "${MESSENGER_IDS[0]}" 3
+win MoveToWorkspace "${WA_IDS[0]}" 3
+win MoveToWorkspace "${SIGNAL_IDS[0]}" 3
 
 ydotool mousemove --absolute -x 0 -y 0
-# TODO - simplify the sleep might not be needed
-win Close "${TODOIST_IDS[0]}"
 
-# TODO fix the window positions - now it might work correctly
-# TODO - add note about the race conditions somewhere
-# MoveResize takes 3 parameters: winid x y width height
-win MoveResize "${SIGNAL_IDS[0]}" 1944 1125 1912 1051
-win Activate "${SIGNAL_IDS[0]}"
-sleep 0.05
-
-win MoveResize "${WA_IDS[0]}" 24 1125 1912 1051
-win Activate "${WA_IDS[0]}"
-sleep 0.05
-
-win MoveResize "${MESSENGER_IDS[0]}" 1950 68 1912 1052
-win Activate "${MESSENGER_IDS[0]}"
-sleep 0.05
-
-win MoveResize "${MESSAGES_IDS[0]}" 24 65 1912 1052
-win Activate "${MESSAGES_IDS[0]}"
-
-# TODO - wait until the windows are open and remove the sleep
-sleep 0.5
-ydotool mousemove --absolute -x 0 -y 0
-
-# Tile windows on startup
-# TODO make a function out of this and name & comment the code
-# Left Alt	56	KEY_LEFTALT
-# Left Shift	42	KEY_LEFTSHIFT
-# 1	2	KEY_1
-# 2	3	KEY_2
-# Q	16	KEY_Q
-# Enter	28	KEY_ENTER
-# https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h
 # TODO make this grep&sed more robust so that it is able to parse any or almost
 # any C code (also with // comments, with comments in between etc.)
 grep '^#define[[:space:]]\+KEY_' /usr/include/linux/input-event-codes.h \
@@ -136,166 +87,27 @@ grep '^#define[[:space:]]\+KEY_' /usr/include/linux/input-event-codes.h \
     > /tmp/ydotool_keycodes.sh
 source /tmp/ydotool_keycodes.sh
 
-# ydotool key ${KEY_LEFTALT}:1 ${KEY_4}:1 ${KEY_4}:0 ${KEY_LEFTALT}:0
-# sleep 0.05
-ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_S}:1 \
-    ${KEY_S}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-
-ydotool key ${KEY_LEFTALT}:1 ${KEY_1}:1 ${KEY_1}:0 ${KEY_LEFTALT}:0
-sleep 0.05
-ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
-    ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
-sleep 0.05
-# Send more KEY_ENTER events just in case there are more windows open
-# on desktop 1
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-# for some reason, longer delay is needed here...
-# otherwise the next shortcut does not work
-sleep 0.25
-
-ydotool key ${KEY_LEFTALT}:1 ${KEY_8}:1 ${KEY_8}:0 ${KEY_LEFTALT}:0
-sleep 0.05
-ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
-    ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
-
-ydotool key ${KEY_LEFTALT}:1 ${KEY_9}:1 ${KEY_9}:0 ${KEY_LEFTALT}:0
-sleep 0.05
-ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
-    ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
-
-ydotool key ${KEY_LEFTALT}:1 ${KEY_0}:1 ${KEY_0}:0 ${KEY_LEFTALT}:0
-sleep 0.05
-win Activate "${GOOGLE_CAL_NEW_IDS[0]}"
-sleep 0.05
-ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
-    ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-
-ydotool key ${KEY_LEFTALT}:1 ${KEY_EQUAL}:1 ${KEY_EQUAL}:0 ${KEY_LEFTALT}:0
-sleep 0.05
-win Activate "${GOOGLE_KEEP_IDS[0]}"
-ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
-    ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
-ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-
-# TODO: rewrite using list of windows, map and for_each function
-# napady na faktorizaciu
-# 1. napisat to v pythone? - netreba
-# 2. fcia getIdFromClass
-# 3. fcia get ids (caka v cykle kym vsetky idcka bidi existovat) - vracoa map - nazov triedy -> id
-# 4. samotne cally co roboa s oknami veci
-#
-# # TOREAD https://en.wikipedia.org/wiki/D-Bus
-#
-# windows=(a b c)
-#
-# getWindowIdFromClass(){ # array parameter and map return value, so that I don't need to call DBus multiple times
-#     # dbus call
-#     # returns map with map[loaded] = false so that I can easily check that all ids were found (that one key is enough)
-# }
-#
-# waitForIds(){
-#     WOMDOWS=$1
-#     declare -A IDS
-#
-#     for i in {1..30}; do
-#         for win in $WINDOWS; do
-#             id=getWondowIdFromClass $wim
-#
-#             if [[ $id == "" ]]; then
-#                 sleep 1
-#                 break
-#             fi
-#
-#             IDS[$win]=$is
-#         done
-#     done
-#
-#     return $IDS
-# }
-#
-# TODO maybe use not "BASH" but BASH - find out differences between quoted and unquoted delimiter
-# for_each "gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows --method org.gnome.Shell.Extensions.Windows." <<"BASH"
-#   MoveToWorkspace "${IDS["Firefox"]}" 0
-#   Close "${IDS["Todoist"]}"
-# BASH
-
-
-
-
-
-
-# TODO Wayland support
-# TODO improve - try sth. that is not dependent on timing so much
-# TODO remove dependence on the put window GNOME extension
-# TODO try writing my own GNOME extension for this stuff
-# TODO ?try to solve this via virtual desktop-specific tiling?
-
-# sleep 120
-
-# use `$ xprop` to find out the properties of the window (e.g. class)
-#
-# eval "$(xdotool search --onlyvisible --desktop 3 --shell --class org.gnome.Nautilus)"
-# xdotool windowsize "${WINDOWS[1]}" 50% 40%
-# xdotool windowsize "${WINDOWS[0]}" 50% 40%
-#
-# xdotool windowmove "${WINDOWS[0]}" 0% 60%
-# xdotool windowmove "${WINDOWS[1]}" 50% 60%
-#
-# eval "$(xdotool search --onlyvisible --shell --name "Google Chrome")"
-# xdotool set_desktop_for_window "${WINDOWS[0]}" 0
-# xdotool windowmove "${WINDOWS[0]}" 0% 16%
-# xdotool windowsize "${WINDOWS[0]}" 102% 86%
-#
-# eval "$(xdotool search --onlyvisible --shell --name "Mozilla Firefox")"
-# xdotool set_desktop_for_window "${WINDOWS[0]}" 2
-# xdotool windowmove "${WINDOWS[0]}" 0% 16%
-# xdotool windowsize "${WINDOWS[0]}" 102% 86%
-#
-# eval "$(xdotool search --onlyvisible --shell --name "Todoist")"
-# xdotool set_desktop_for_window "${WINDOWS[0]}" 1
-# xdotool windowmove "${WINDOWS[0]}" 0% 0%
-# xdotool windowsize "${WINDOWS[0]}" 80% 45%
-#
-# eval "$(xdotool search --onlyvisible --shell --name "Google Keep")"
-# xdotool set_desktop_for_window "${WINDOWS[0]}" 2
-#
-# eval "$(xdotool search --onlyvisible --shell --name "Caprine")"
-# xdotool set_desktop_for_window "${WINDOWS[0]}" 4
-#
-# eval "$(xdotool search --onlyvisible --shell --name "Signal")"
-# xdotool set_desktop_for_window "${WINDOWS[0]}" 4
+win Activate "${SIGNAL_IDS[0]}"
+sleep 0.15
+ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
+sleep 0.15
+ydotool key ${KEY_LEFTALT}:1 ${KEY_S}:1 ${KEY_S}:0 ${KEY_LEFTALT}:0
+sleep 0.15
+win Activate "${WA_IDS[0]}"
+sleep 0.15
+ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
+sleep 0.15
+ydotool key ${KEY_LEFTALT}:1 ${KEY_A}:1 ${KEY_A}:0 ${KEY_LEFTALT}:0
+sleep 0.15
+win Activate "${MESSENGER_IDS[0]}"
+sleep 0.15
+ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
+sleep 0.15
+ydotool key ${KEY_LEFTALT}:1 ${KEY_W}:1 ${KEY_W}:0 ${KEY_LEFTALT}:0
+sleep 0.15
+win Activate "${MESSAGES_IDS[0]}"
+sleep 0.15
+ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
+sleep 0.15
+ydotool key ${KEY_LEFTALT}:1 ${KEY_Q}:1 ${KEY_Q}:0 ${KEY_LEFTALT}:0
+sleep 0.15
