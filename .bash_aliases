@@ -96,6 +96,7 @@ alias i='git add --all --verbose && git commit --verbose'
 alias u='cd ~/initPC/CLI_Ubuntu/'
 alias uu='cd ~/initPC/Ubuntu/'
 alias ag='cd ~/initPC/DistroAgnostic/'
+alias gn='cd ~/initPC/DistroAgnostic/gnome/'
 alias l='exa -F --color=always --group-directories-first' # TODO - set/learn ls colors
 alias la='exa -aF --color=always --group-directories-first'
 alias L='exa -aF --color=always --group-directories-first'
