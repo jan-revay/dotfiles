@@ -235,6 +235,31 @@ ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 # otherwise the next shortcut does not work
 sleep 0.25
 
+sleep 3
+ydotool key ${KEY_LEFTALT}:1 ${KEY_1}:1 ${KEY_1}:0 ${KEY_LEFTALT}:0
+sleep 0.15
+ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
+    ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
+sleep 0.15
+# Send more KEY_ENTER events just in case there are more windows open
+# on desktop 1
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+sleep 0.15
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+sleep 0.15
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+sleep 0.15
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+sleep 0.15
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+sleep 0.15
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+sleep 0.15
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+# for some reason, longer delay is needed here...
+# otherwise the next shortcut does not work
+sleep 0.25
+
 # TODO: rewrite using list of windows, map and for_each function
 # napady na faktorizaciu
 # 1. napisat to v pythone? - netreba
