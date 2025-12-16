@@ -1,5 +1,6 @@
 #!/bin/bash -x
-. ../initPC/prelude.sh
+. ./window_calls_prelude.sh
+
 
 # Use
 #     gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/Windows --method org.gnome.Shell.Extensions.Windows.List | rg -o "\[[^\]]+\]"     | jq .
@@ -15,29 +16,6 @@
 # in a way that WM registers as tiles
 # TODO - what if there is more than one instance of the window?
 # TODO - ChatGPT and Claude code review
-
-win() {
-    local method="$1"
-    shift
-    gdbus call --session \
-        --dest org.gnome.Shell \
-        --object-path /org/gnome/Shell/Extensions/Windows \
-        --method org.gnome.Shell.Extensions.Windows."$method" \
-        "$@"
-}
-
-win_list() {
-    # Extract only the JSON argument returned by GDBus
-    win List | rg -o "\[[^\]]+\]"
-}
-
-win_list_formatted() {
-    win_list | jq .
-}
-
-ids_from_wm_class() {
-    jq -c --arg class "$1" '.[] | select(.wm_class == $class) | .id' <<< "${WIN_LIST}"
-}
 
 
 for i in {1..35}; do
