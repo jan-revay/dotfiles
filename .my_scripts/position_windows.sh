@@ -73,32 +73,14 @@ done
 win MoveToWorkspace "${NAUTILUS_IDS[0]}" 7
 win MoveToWorkspace "${NAUTILUS_IDS[1]}" 7
 win MoveToWorkspace "${NAUTILUS_IDS[2]}" 7
-
-ydotool mousemove --absolute -x 0 -y 0
-# TODO - simplify the sleep might not be needed
 win Close "${TODOIST_IDS[0]}"
-
 # TODO fix the window positions - now it might work correctly
 # TODO - add note about the race conditions somewhere
 # MoveResize takes 3 parameters: winid x y width height
 win MoveResize "${SIGNAL_IDS[0]}" 1944 1125 1912 1051
-win Activate "${SIGNAL_IDS[0]}"
-sleep 0.05
-
 win MoveResize "${WA_IDS[0]}" 24 1125 1912 1051
-win Activate "${WA_IDS[0]}"
-sleep 0.05
-
 win MoveResize "${MESSENGER_IDS[0]}" 1950 68 1912 1052
-win Activate "${MESSENGER_IDS[0]}"
-sleep 0.05
-
 win MoveResize "${MESSAGES_IDS[0]}" 24 65 1912 1052
-win Activate "${MESSAGES_IDS[0]}"
-
-# TODO - wait until the windows are open and remove the sleep
-sleep 0.5
-ydotool mousemove --absolute -x 0 -y 0
 
 # Tile windows on startup
 # TODO make a function out of this and name & comment the code
@@ -118,30 +100,32 @@ grep '^#define[[:space:]]\+KEY_' /usr/include/linux/input-event-codes.h \
     > /tmp/ydotool_keycodes.sh
 source /tmp/ydotool_keycodes.sh
 
+ydotool mousemove --absolute -x 0 -y 0
+
 win Activate "${SIGNAL_IDS[0]}"
-sleep 0.15
+sleep 0.1
 ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
-sleep 0.15
+sleep 0.05
 ydotool key ${KEY_LEFTALT}:1 ${KEY_S}:1 ${KEY_S}:0 ${KEY_LEFTALT}:0
-sleep 0.15
+sleep 0.05
 win Activate "${WA_IDS[0]}"
-sleep 0.15
+sleep 0.1
 ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
-sleep 0.15
+sleep 0.05
 ydotool key ${KEY_LEFTALT}:1 ${KEY_A}:1 ${KEY_A}:0 ${KEY_LEFTALT}:0
-sleep 0.15
+sleep 0.05
 win Activate "${MESSENGER_IDS[0]}"
-sleep 0.15
+sleep 0.1
 ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
-sleep 0.15
+sleep 0.05
 ydotool key ${KEY_LEFTALT}:1 ${KEY_W}:1 ${KEY_W}:0 ${KEY_LEFTALT}:0
-sleep 0.15
+sleep 0.05
 win Activate "${MESSAGES_IDS[0]}"
-sleep 0.15
+sleep 0.1
 ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
-sleep 0.15
+sleep 0.05
 ydotool key ${KEY_LEFTALT}:1 ${KEY_Q}:1 ${KEY_Q}:0 ${KEY_LEFTALT}:0
-sleep 0.15
+sleep 0.05
 
 ydotool key ${KEY_LEFTALT}:1 ${KEY_8}:1 ${KEY_8}:0 ${KEY_LEFTALT}:0
 sleep 0.05
@@ -178,6 +162,15 @@ ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 
+ydotool key ${KEY_LEFTALT}:1 ${KEY_MINUS}:1 ${KEY_MINUS}:0 ${KEY_LEFTALT}:0
+sleep 0.05
+ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
+    ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
+sleep 0.05
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+sleep 0.05
+ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
+
 ydotool key ${KEY_LEFTALT}:1 ${KEY_EQUAL}:1 ${KEY_EQUAL}:0 ${KEY_LEFTALT}:0
 sleep 0.05
 win Activate "${GOOGLE_KEEP_IDS[0]}"
@@ -188,7 +181,7 @@ ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 
-sleep 3
+sleep 1
 ydotool key ${KEY_LEFTALT}:1 ${KEY_1}:1 ${KEY_1}:0 ${KEY_LEFTALT}:0
 sleep 0.15
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
@@ -197,23 +190,23 @@ sleep 0.15
 # Send more KEY_ENTER events just in case there are more windows open
 # on desktop 1
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.15
+sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.15
+sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.15
+sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.15
+sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.15
+sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.15
+sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 # for some reason, longer delay is needed here...
 # otherwise the next shortcut does not work
 sleep 0.25
 
-sleep 3
+sleep 2
 ydotool key ${KEY_LEFTALT}:1 ${KEY_1}:1 ${KEY_1}:0 ${KEY_LEFTALT}:0
 sleep 0.15
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
@@ -222,21 +215,20 @@ sleep 0.15
 # Send more KEY_ENTER events just in case there are more windows open
 # on desktop 1
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.15
+sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.15
+sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.15
+sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.15
+sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.15
+sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.15
+sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 # for some reason, longer delay is needed here...
 # otherwise the next shortcut does not work
-sleep 0.25
 
 # TODO: rewrite using list of windows, map and for_each function
 # napady na faktorizaciu
