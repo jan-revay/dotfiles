@@ -12,7 +12,7 @@ win() {
 
 win_list() {
     # Extract only the JSON argument returned by GDBus
-    win List | rg -o "\[[^\]]+\]"
+    win List | sed 's/^(.//; s/.,)$//'
 }
 
 win_list_formatted() {
