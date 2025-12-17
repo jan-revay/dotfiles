@@ -1,6 +1,9 @@
 #!/bin/bash
 set +x
-. ./window_calls_prelude.sh
+# TODO consider using this trick everywhere
+# resolve the directory where THIS script lives
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+. "${SCRIPT_DIR}/window_calls_prelude.sh"
 
 for i in {1..35}; do
     WIN_LIST=$(win_list)
