@@ -18,5 +18,6 @@ done
 
 
 # MoveResize takes 3 parameters: winid x y width height
-
-win MoveResize "${MS_WHITEBOARD_IDS[0]}" 8 49 3277 2104
+win Unmaximize "${MS_WHITEBOARD_IDS[0]}"
+sleep 0.05
+win MoveResize "${MS_WHITEBOARD_IDS[0]}" 8 49 3282 2104
