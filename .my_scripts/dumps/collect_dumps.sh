@@ -1,6 +1,8 @@
 #!/bin/bash -x
 
 # TODO - create a cron job for this...
+# resp. maybe just use cron weekly folder resp. anacron or sth like that
+# so that it is not power-on time dependent
 
 readonly GNOME_DUMP_FILENAME="GNOME_extensions_and_settings_dump_$(date '+%Y%m%d_%H%M%S').log"
 # TODO
