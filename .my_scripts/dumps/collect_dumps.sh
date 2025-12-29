@@ -9,6 +9,8 @@ pushd backup_config_dumps
 ../print_keybindings.sh &>> "${GNOME_DUMP_FILENAME}"
 dconf dump / &>> "${GNOME_DUMP_FILENAME}"
 ../chromium_extensions.sh &>> "${GNOME_DUMP_FILENAME}"
+echo "--- BASH HISTORY ---" &>> "${GNOME_DUMP_FILENAME}"
+history &>> "${GNOME_DUMP_FILENAME}"
 
 # TODO review (and improve) - encrypt the dumps, just in case
 7z a -p -mx=9 -mhe=on "${GNOME_DUMP_FILENAME}.encrypted" "${GNOME_DUMP_FILENAME}"
