@@ -1,5 +1,7 @@
 #!/bin/bash
+# starts and resizes MS Whiteboard for OBS
 set +x
+/snap/bin/chromium --profile-directory=Default --app-id=fjjhhjjhgaipgagmgnjalbkgadhniebn & disown
 # TODO consider using this trick everywhere
 # resolve the directory where THIS script lives
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
@@ -16,7 +18,7 @@ for i in {1..35}; do
     sleep 1
 done
 
-
+echo WindowID: "${MS_WHITEBOARD_IDS[0]}"
 # MoveResize takes 3 parameters: winid x y width height
 win Unmaximize "${MS_WHITEBOARD_IDS[0]}"
 sleep 0.05
