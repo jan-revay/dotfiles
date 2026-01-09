@@ -4,6 +4,6 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=Microsoft Whiteboard
-Exec=sh -c "/snap/bin/chromium --profile-directory=Default --app-id=fjjhhjjhgaipgagmgnjalbkgadhniebn; sleep 1; /home/jr/.my_scripts/MS_Witeboard_resize_for_OBS.sh"
+Exec=/home/jr/.my_scripts/WB.sh
 Icon=chrome-fjjhhjjhgaipgagmgnjalbkgadhniebn-Default
 StartupWMClass=crx_fjjhhjjhgaipgagmgnjalbkgadhniebn
