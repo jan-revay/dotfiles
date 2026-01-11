@@ -58,10 +58,11 @@ alias .s='dot status --show-stash'
 alias sudo='sudo '
 
 alias upgrade='sudo apt update && sudo apt upgrade'
-alias refresh='pushd ~/initPC && git pull && dot pull && ./run_init.sh ; popd'
+alias refresh='pushd ~/initPC && git pull && dot pull && ./main.sh && popd'
 alias path='echo -e ${PATH//:/\\n}'
 # old: alias hddon='echo 1 | sudo tee /sys/bus/pci/rescan'
 # TODO - make this 9950x machine specific
+# TODO - reference via device id, not just as sda
 alias hddon='sudo echo "- - -" | sudo tee /sys/class/scsi_host/host7/scan'
 alias hddoff='echo 1 | sudo tee /sys/block/sda/device/delete'
 # old: echo 1 | sudo tee /sys/bus/pci/devices/0000:0e:00.0/remove'
