@@ -21,6 +21,8 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 # TODO - what if there is more than one instance of the window?
 # TODO - ChatGPT and Claude code review
 
+# TODO consider whether it makes sense to open todoist just to close it
+todoist & # show Todoist window
 
 for i in {1..35}; do
     WIN_LIST=$(win_list)
@@ -32,7 +34,7 @@ for i in {1..35}; do
     WA_IDS=( $(ids_from_wm_class FFPWA-01K9Q307BN2CB01RVV704HZ3AD) )
     SIGNAL_IDS=( $(ids_from_wm_class org.signal.Signal) )
     NAUTILUS_IDS=( $(ids_from_wm_class org.gnome.Nautilus) )
-    SPOTIFY_IDS=( $(ids_from_wm_class Spotify) )
+    SPOTIFY_IDS=( $(ids_from_wm_class spotify) )
     GOOGLE_KEEP_IDS=( $(ids_from_wm_class FFPWA-01K9Q6Z5KPWRQX54K98TCARNCM) )
     GOOGLE_DRIVE_IDS=( $(ids_from_wm_class FFPWA-01K9VXM1XNH05FYVKZ47Q43PTJ) )
     GOOGLE_CAL_IDS=( $(ids_from_wm_class FFPWA-01K9VWZ3YQ3AR6QS81V8NJWXJ3) )
