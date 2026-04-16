@@ -1,5 +1,12 @@
 #!/bin/bash -x
 
+# TODO - rewrite and refactor in Python
+# - make it so that the positioning itself has its own domain specific language
+# - position a window immediately after ids of the window is available resp.
+#   consider doing it by virtual desktop
+# - window positions and behaviors should be defined in a separate configuration file
+# - set up tilingshell to work with this script
+
 # TODO consider using this trick everywhere
 # resolve the directory where THIS script lives
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
@@ -22,7 +29,7 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 # TODO - ChatGPT and Claude code review
 
 # TODO consider whether it makes sense to open todoist just to close it
-todoist & # show Todoist window
+# todoist & # show Todoist window
 
 for i in {1..35}; do
     WIN_LIST=$(win_list)
