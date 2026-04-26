@@ -1,9 +1,11 @@
 [Desktop Entry]
 Type=Application
-Version=1.0
-Name=pcloud
-Comment=pcloudstartup script
-Exec=/home/jr/localSW/pcloud
-StartupNotify=false
+Name=pCloud Drive
+Comment=Cloud storage service for your files
+Exec="/home/jr/localSW/pCloud.AppImage"
+Icon=appimagekit-pcloud
+StartupWMClass=pcloud
 Terminal=false
-X-GNOME-Autostart-Delay=10
+Categories=Network;FileTransfer;
+StartupNotify=false
+X-GNOME-Autostart-enabled=true
