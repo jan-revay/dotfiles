@@ -23,6 +23,10 @@ ids_from_wm_class() {
     jq -c --arg class "$1" '.[] | select(.wm_class == $class) | .id' <<< "${WIN_LIST}"
 }
 
+id_of_focused() {
+    jq -c '.[] | select(.focus) | .id' <<< "${WIN_LIST}"
+}
+
 win_details_from_id() {
    win Details $1 | sed "s/^('//; s/',)$//" | jq .
 }
