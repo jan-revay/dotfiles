@@ -47,6 +47,7 @@ for i in {1..35}; do
     GOOGLE_CAL_IDS=( $(ids_from_wm_class FFPWA-01K9VWZ3YQ3AR6QS81V8NJWXJ3) )
     GOOGLE_CAL_NEW_IDS=( $(ids_from_wm_class FFPWA-01K9VX1TWRMC3E4E48T7YX3AS6) )
 
+    # TODO split this by wirtual desktop
     if (( ${#FIREFOX_IDS[@]} > 0 )) \
        && (( ${#TODOIST_IDS[@]} > 0 )) \
        && (( ${#MESSAGES_IDS[@]} > 0 )) \
