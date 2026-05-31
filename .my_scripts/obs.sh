@@ -9,6 +9,14 @@ pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK no limitter:in_1"
 
 # TODO also try to connect student audio automatically
 
+obs-cmd fullscreen-projector
+
+# resolve the directory where THIS script lives
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+. "${SCRIPT_DIR}/window_calls_prelude.sh"
+
+PROJECTOR_ID=$(win_list | jq '.[] | select(.wm_class == "com.obsproject.Studio") | select(.title == "Projector - Program") | .id')
+win MoveToWorkspace "${PROJECTOR_ID}" 16
 
 readonly SCENE1="1_my_whiteboard"
 readonly SCENE2="2_student_screen"
