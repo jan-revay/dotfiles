@@ -82,6 +82,7 @@ done
 for id in "${FIREFOX_IDS[@]}"; do
     win MoveToWorkspace "$id" 0
 done
+# TODO use wmctl -s X to switch virtual desktops
 
 win MoveToWorkspace "${NAUTILUS_IDS[0]}" 7
 win MoveToWorkspace "${NAUTILUS_IDS[1]}" 7
