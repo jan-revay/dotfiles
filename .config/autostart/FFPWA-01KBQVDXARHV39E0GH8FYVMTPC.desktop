@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.4
+Name=Gmail2
+Comment=
+Keywords=;
+Categories=GTK;Email;Network;Office;
+Icon=FFPWA-01KBQVDXARHV39E0GH8FYVMTPC
+Exec=/usr/bin/firefoxpwa site launch 01KBQVDXARHV39E0GH8FYVMTPC --protocol %u
+Actions=
+MimeType=
+Terminal=false
+StartupNotify=true
+StartupWMClass=FFPWA-01KBQVDXARHV39E0GH8FYVMTPC
