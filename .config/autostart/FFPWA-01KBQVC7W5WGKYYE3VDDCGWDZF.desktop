@@ -12,3 +12,4 @@ MimeType=
 Terminal=false
 StartupNotify=true
 StartupWMClass=FFPWA-01KBQVC7W5WGKYYE3VDDCGWDZF
+X-GNOME-Autostart-Delay=6
