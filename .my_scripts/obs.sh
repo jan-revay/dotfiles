@@ -3,6 +3,7 @@
 bash -c "__NV_DISABLE_EXPLICIT_SYNC=1 flatpak run com.obsproject.Studio --verbose" &
 sleep 7
 
+# TODO limiter is spelled with a single T
 pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK no effects:in_1"
 pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK effects:in_1"
 pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK no limitter:in_1"
@@ -28,11 +29,11 @@ while true; do
     CURRENT_SCENE=${SCENE_STR##*Current scene: }
 
     if [[ "${WORKSPACE}" == "13" && "${CURRENT_SCENE}" != "${SCENE1}" ]]; then
-        obs-cmd scene switch "$SCENE1"
+        obs-cmd scene switch "${SCENE1}"
     elif [[ "${WORKSPACE}" == "14" && "${CURRENT_SCENE}" != "${SCENE2}" ]]; then
-        obs-cmd scene switch "$SCENE2"
+        obs-cmd scene switch "${SCENE2}"
     elif [[ "${WORKSPACE}" == "15" && "${CURRENT_SCENE}" != "${SCENE3}" ]]; then
-        obs-cmd scene switch "$SCENE3"
+        obs-cmd scene switch "${SCENE3}"
     fi
 
     sleep 0.5
