@@ -117,6 +117,8 @@ source /tmp/ydotool_keycodes.sh
 
 ydotool mousemove --absolute -x 0 -y 0
 
+wmctrl -s 3
+sleep 0.2
 win Activate "${SIGNAL_IDS[0]}"
 sleep 0.1
 ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
@@ -142,7 +144,7 @@ sleep 0.05
 ydotool key ${KEY_LEFTALT}:1 ${KEY_Q}:1 ${KEY_Q}:0 ${KEY_LEFTALT}:0
 sleep 0.05
 
-ydotool key ${KEY_LEFTALT}:1 ${KEY_8}:1 ${KEY_8}:0 ${KEY_LEFTALT}:0
+wmctrl -s 7
 sleep 0.05
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
     ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
@@ -154,7 +156,7 @@ sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 
-ydotool key ${KEY_LEFTALT}:1 ${KEY_9}:1 ${KEY_9}:0 ${KEY_LEFTALT}:0
+wmctrl -s 8
 sleep 0.05
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
     ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
@@ -166,7 +168,7 @@ sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 
-ydotool key ${KEY_LEFTALT}:1 ${KEY_0}:1 ${KEY_0}:0 ${KEY_LEFTALT}:0
+wmctrl -s 9
 sleep 0.05
 win Activate "${GOOGLE_CAL_NEW_IDS[0]}"
 sleep 0.05
@@ -177,7 +179,7 @@ ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 
-ydotool key ${KEY_LEFTALT}:1 ${KEY_MINUS}:1 ${KEY_MINUS}:0 ${KEY_LEFTALT}:0
+wmctrl -s 10
 sleep 0.05
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
     ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
@@ -186,7 +188,7 @@ ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 
-ydotool key ${KEY_LEFTALT}:1 ${KEY_EQUAL}:1 ${KEY_EQUAL}:0 ${KEY_LEFTALT}:0
+wmctrl -s 11
 sleep 0.05
 win Activate "${GOOGLE_KEEP_IDS[0]}"
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
@@ -197,7 +199,7 @@ sleep 0.05
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 
 sleep 1
-ydotool key ${KEY_LEFTALT}:1 ${KEY_1}:1 ${KEY_1}:0 ${KEY_LEFTALT}:0
+wmctrl -s 0
 sleep 0.15
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
     ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
@@ -222,7 +224,7 @@ ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 sleep 0.25
 
 sleep 2
-ydotool key ${KEY_LEFTALT}:1 ${KEY_1}:1 ${KEY_1}:0 ${KEY_LEFTALT}:0
+wmctrl -s 0
 sleep 0.15
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
     ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
