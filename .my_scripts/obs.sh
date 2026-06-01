@@ -6,7 +6,7 @@ sleep 7
 # TODO limiter is spelled with a single T
 pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK no effects:in_1"
 pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK effects:in_1"
-pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK no limitter:in_1"
+pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK no limiter:in_1"
 
 # TODO also try to connect student audio automatically
 
