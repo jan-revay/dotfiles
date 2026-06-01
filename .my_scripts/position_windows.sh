@@ -35,7 +35,7 @@ for i in {1..35}; do
     WIN_LIST=$(win_list)
 
     FIREFOX_IDS=( $(ids_from_wm_class firefox_firefox) )
-    TODOIST_IDS=( $(ids_from_wm_class Todoist) )
+    TODOIST_IDS=( $(ids_from_wm_class todoist) )
     MESSAGES_IDS=( $(ids_from_wm_class FFPWA-01K9Q465CXSRDW5E7JT05YB6F6) )
     MESSENGER_IDS=( $(ids_from_wm_class FFPWA-01K9Q3ZXJ98GTZQJ2V0TV72Z24) )
     WA_IDS=( $(ids_from_wm_class FFPWA-01K9Q307BN2CB01RVV704HZ3AD) )
