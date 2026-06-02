@@ -54,7 +54,12 @@ for i in {1..35}; do
     GOOGLE_CAL_IDS=( $(ids_from_wm_class FFPWA-01K9VWZ3YQ3AR6QS81V8NJWXJ3) )
     GOOGLE_CAL_NEW_IDS=( $(ids_from_wm_class FFPWA-01K9VX1TWRMC3E4E48T7YX3AS6) )
 
-    # TODO split this by wirtual desktop
+    # TODO split this by wirtual desktop and
+    # add all positioning logic here
+    # TODO also  check that there are no other wondows on the particular
+    # workspace & only send as many returns to desktop 0 as many wondows
+    # there are on ot
+    # TODO put unlisted windows to desktop 1
     if (( ${#FIREFOX_IDS[@]} > 0 )) \
        && (( ${#TODOIST_IDS[@]} > 0 )) \
        && (( ${#MESSAGES_IDS[@]} > 0 )) \
