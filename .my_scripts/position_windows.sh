@@ -210,6 +210,9 @@ ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 
+
+# TODO only press enter as many times as there are windows, so that I don't accidentally
+# put newlines in documents and text fields or press enter to sth. I don't want to...
 sleep 1
 wmctrl -s 0
 sleep 0.15
