@@ -1,5 +1,9 @@
 #!/bin/bash -x
 
+delay() {
+    sleep 0.05
+}
+
 # TODO - rewrite and refactor in Python
 # - make it so that the positioning itself has its own domain specific language
 # - position a window immediately after ids of the window is available resp.
@@ -30,6 +34,9 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
 # TODO consider whether it makes sense to open todoist just to close it
 # todoist & # show Todoist window
+#
+# TODO also check whether there are no other windows on the
+# workspace and move them somewhere before the positioning
 
 for i in {1..35}; do
     WIN_LIST=$(win_list)
@@ -122,80 +129,80 @@ sleep 0.2
 win Activate "${SIGNAL_IDS[0]}"
 sleep 0.1
 ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
-sleep 0.05
+delay
 ydotool key ${KEY_LEFTALT}:1 ${KEY_S}:1 ${KEY_S}:0 ${KEY_LEFTALT}:0
-sleep 0.05
+delay
 win Activate "${WA_IDS[0]}"
 sleep 0.1
 ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
-sleep 0.05
+delay
 ydotool key ${KEY_LEFTALT}:1 ${KEY_A}:1 ${KEY_A}:0 ${KEY_LEFTALT}:0
-sleep 0.05
+delay
 win Activate "${MESSENGER_IDS[0]}"
 sleep 0.1
 ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
-sleep 0.05
+delay
 ydotool key ${KEY_LEFTALT}:1 ${KEY_W}:1 ${KEY_W}:0 ${KEY_LEFTALT}:0
-sleep 0.05
+delay
 win Activate "${MESSAGES_IDS[0]}"
 sleep 0.1
 ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
-sleep 0.05
+delay
 ydotool key ${KEY_LEFTALT}:1 ${KEY_Q}:1 ${KEY_Q}:0 ${KEY_LEFTALT}:0
-sleep 0.05
+delay
 
 wmctrl -s 7
-sleep 0.05
+delay
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
     ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 
 wmctrl -s 8
-sleep 0.05
+delay
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
     ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 
 wmctrl -s 9
-sleep 0.05
+delay
 win Activate "${GOOGLE_CAL_NEW_IDS[0]}"
-sleep 0.05
+delay
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
     ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 
 wmctrl -s 10
-sleep 0.05
+delay
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
     ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 
 wmctrl -s 11
-sleep 0.05
+delay
 win Activate "${GOOGLE_KEEP_IDS[0]}"
 ydotool key ${KEY_LEFTALT}:1 ${KEY_LEFTSHIFT}:1 ${KEY_Q}:1 \
     ${KEY_Q}:0 ${KEY_LEFTALT}:0 ${KEY_LEFTSHIFT}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 
 sleep 1
@@ -207,17 +214,17 @@ sleep 0.15
 # Send more KEY_ENTER events just in case there are more windows open
 # on desktop 1
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 # for some reason, longer delay is needed here...
 # otherwise the next shortcut does not work
@@ -232,17 +239,17 @@ sleep 0.15
 # Send more KEY_ENTER events just in case there are more windows open
 # on desktop 1
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
-sleep 0.05
+delay
 ydotool key ${KEY_ENTER}:1 ${KEY_ENTER}:0
 # for some reason, longer delay is needed here...
 # otherwise the next shortcut does not work
