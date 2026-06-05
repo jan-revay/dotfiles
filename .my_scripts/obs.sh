@@ -7,6 +7,8 @@ sleep 7
 pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK no effects:in_1"
 pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK effects:in_1"
 pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK no limiter:in_1"
+pw-link "alsa_output.usb-Focusrite_Scarlett_2i2_4th_Gen_S2JYTQ63508147-00.pro-output-0:monitor_AUX0" \
+        "OBS Studio: Student JCK:in_1"
 
 # TODO also try to connect student audio automatically
 
