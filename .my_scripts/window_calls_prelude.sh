@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# TODO move completely to dbus-send
 win() {
     local method="$1"
     shift
@@ -11,8 +12,10 @@ win() {
 }
 
 win_list() {
-    # Extract only the JSON argument returned by GDBus
-    win List | sed 's/^(.//; s/.,)$//'
+    dbus-send --session --print-reply=literal \
+                        --dest=org.gnome.Shell \
+                        /org/gnome/Shell/Extensions/Windows \
+                        org.gnome.Shell.Extensions.Windows.List
 }
 
 win_list_formatted() {
@@ -33,5 +36,8 @@ focused_workspace() {
 }
 
 win_details_from_id() {
-   win Details $1 | sed "s/^('//; s/',)$//" | jq .
+    dbus-send --session --print-reply=literal \
+                        --dest=org.gnome.Shell \
+                        /org/gnome/Shell/Extensions/Windows \
+                        org.gnome.Shell.Extensions.Windows.Details uint32:$1
 }
