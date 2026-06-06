@@ -40,5 +40,5 @@ while true; do
         obs-cmd scene switch "${SCENE3}"
     fi
 
-    sleep 0.5
+    sleep 0.4
 done
