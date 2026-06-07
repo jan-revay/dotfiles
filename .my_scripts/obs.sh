@@ -1,5 +1,32 @@
 #!/bin/bash -x
 
+# resolve the directory where THIS script lives
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+. "${SCRIPT_DIR}/window_calls_prelude.sh"
+
+./WB.sh &
+sleep 3
+
+wmctrl -s 16
+kitty --title "Tutoring" &
+firefox --private-window "https://theproductivedeveloper.com/" &
+
+sleep 4
+
+kitty=$(win_list | jq -c '.[] | select(.title == "Tutoring") | .id')
+firefox=$(win_list | jq -c '.[] | select(.title == "Hyperspace by HTML5 UP — Mozilla Firefox Private Browsing") | .id')
+
+win Activate "${kitty[0]}"
+sleep 0.1
+ydotool key ${KEY_LEFTALT}:1 ${KEY_Z}:1 ${KEY_Z}:0 ${KEY_LEFTALT}:0
+sleep 0.1
+win Activate "${firefox[0]}"
+sleep 0.1
+ydotool key ${KEY_LEFTALT}:1 ${KEY_X}:1 ${KEY_X}:0 ${KEY_LEFTALT}:0
+sleep 1
+
+wmctrl -s 2
+
 bash -c "__NV_DISABLE_EXPLICIT_SYNC=1 flatpak run com.obsproject.Studio --verbose" &
 sleep 7
 
