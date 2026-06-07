@@ -111,26 +111,9 @@ win MoveResize "${WA_IDS[0]}" 24 1125 1912 1051
 win MoveResize "${MESSENGER_IDS[0]}" 1950 68 1912 1052
 win MoveResize "${MESSAGES_IDS[0]}" 24 65 1912 1052
 
-# Tile windows on startup
-# TODO make a function out of this and name & comment the code
-# Left Alt	56	KEY_LEFTALT
-# Left Shift	42	KEY_LEFTSHIFT
-# 1	2	KEY_1
-# 2	3	KEY_2
-# Q	16	KEY_Q
-# Enter	28	KEY_ENTER
-# https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h
-# TODO make this grep&sed more robust so that it is able to parse any or almost
-# any C code (also with // comments, with comments in between etc.)
-grep '^#define[[:space:]]\+KEY_' /usr/include/linux/input-event-codes.h \
-    | sed -E 's/^#define[[:space:]]+([A-Za-z0-9_]+)[[:space:]]+(.+)$/\1=\2/' \
-    | sed 's/\/\*/#/' \
-    | sed 's/\*\///' \
-    > /tmp/ydotool_keycodes.sh
-source /tmp/ydotool_keycodes.sh
-
 ydotool mousemove --absolute -x 0 -y 0
 
+# Tile windows on startup
 wmctrl -s 3
 sleep 0.2
 win Activate "${SIGNAL_IDS[0]}"

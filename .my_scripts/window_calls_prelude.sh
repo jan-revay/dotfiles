@@ -1,5 +1,23 @@
 #!/bin/bash
 
+# TODO make a function out of this and name & comment the code
+# TODO consider moving this somewhere else
+# Left Alt	56	KEY_LEFTALT
+# Left Shift	42	KEY_LEFTSHIFT
+# 1	2	KEY_1
+# 2	3	KEY_2
+# Q	16	KEY_Q
+# Enter	28	KEY_ENTER
+# https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h
+# TODO make this grep&sed more robust so that it is able to parse any or almost
+# any C code (also with // comments, with comments in between etc.)
+grep '^#define[[:space:]]\+KEY_' /usr/include/linux/input-event-codes.h \
+    | sed -E 's/^#define[[:space:]]+([A-Za-z0-9_]+)[[:space:]]+(.+)$/\1=\2/' \
+    | sed 's/\/\*/#/' \
+    | sed 's/\*\///' \
+    > /tmp/ydotool_keycodes.sh
+source /tmp/ydotool_keycodes.sh
+
 # TODO move completely to dbus-send
 win() {
     local method="$1"
