@@ -71,6 +71,7 @@ while true; do
         pw-play ~/Music/Napalm_Death_You_Suffer.flac
         echo "$(date) OBS: Sharing entire screen on workspace ${WORKSPACE}" \
             >> ~/tmp/obs_screenshare.log
+        obs-cmd scene switch "${SCENE1}"
     fi
 
     sleep 0.4
