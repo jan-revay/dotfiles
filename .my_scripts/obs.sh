@@ -8,7 +8,7 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 sleep 3
 
 wmctrl -s 16
-kitty --title "Tutoring" &
+kitty --title "Tutoring" --config "${SCRIPT_DIR}/kitty_tutoring.conf" &
 firefox --private-window "https://theproductivedeveloper.com/" &
 
 sleep 3
