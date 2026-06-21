@@ -43,6 +43,13 @@ pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK no limiter:in_1"
         # "OBS Studio: Student JCK:in_1"
 pw-link "Discord_virtual_sink:monitor_FL" "OBS Studio: Student JCK:in_1"
 
+# Set the default sink to the monitoring headphones & lower the volume so that
+# there is no significant headphone bleed in the recording.
+pactl set-default-sink alsa_output.usb-Focusrite_Scarlett_2i2_4th_Gen_S2JYTQ63508147-00.pro-output-0
+# I also set the volume on my 2i2 to 50%, system volume is set to 50% just as a
+# fail-safe. I can always increase the volume if it will be too quiet.
+pactl set-sink-volume @DEFAULT_SINK@ 50%
+
 obs-cmd fullscreen-projector
 sleep 0.7
 
