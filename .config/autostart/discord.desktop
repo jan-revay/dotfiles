@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Exec=/home/jr/.config/discord/app-1.0.141/Discord
+Exec=/home/jr/.config/discord/app-1.0.144/Discord
 Hidden=false
 NoDisplay=false
 Name=Discord
-Icon=/home/jr/.config/discord/app-1.0.141/discord.png
+Icon=/home/jr/.config/discord/app-1.0.144/discord.png
 Comment=Text and voice chat for gamers.
 X-GNOME-Autostart-enabled=true
