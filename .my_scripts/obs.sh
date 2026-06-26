@@ -82,6 +82,9 @@ pactl set-default-sink alsa_output.usb-Focusrite_Scarlett_2i2_4th_Gen_S2JYTQ6350
 # fail-safe. I can always increase the volume if it will be too quiet.
 pactl set-sink-volume @DEFAULT_SINK@ 50%
 
+# TODO remove this sleep if it does not help with buffer size in OBS
+sleep 1 # wait until audio sources are connected
+
 readonly SCENE1="1_my_whiteboard"
 readonly SCENE2="2_student_screen"
 readonly SCENE3="3_my_screen"
