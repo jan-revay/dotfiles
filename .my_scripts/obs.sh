@@ -4,6 +4,30 @@
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 . "${SCRIPT_DIR}/window_calls_prelude.sh"
 
+discord &> /dev/null &
+# Open Discord - audio part. This is a workaround around broken audio source
+# processing in the Discord desktop app (the audio was stuttering and the latency
+# was also terrible otherwise). I connect audio via the PWA in Google Chrome
+# and screen-share/video via the Discord desktop app). This is the Discord app
+# launched as PWA in chrome.
+gtk-launch chrome-magkoliahgffibhgfkmoealggombgknl-Default.desktop &> /dev/null &
+sleep 5
+discord=$(win_list | jq -c '.[] | select(.title == "discord") | .id')
+discord_pwa=$(win_list | jq -c '.[] | select(.wm_class == "chrome-magkoliahgffibhgfkmoealggombgknl-Default") | .id')
+
+win Activate "${discord[0]}"
+sleep 0.1
+ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
+sleep 0.1
+ydotool key ${KEY_LEFTALT}:1 ${KEY_Z}:1 ${KEY_Z}:0 ${KEY_LEFTALT}:0
+sleep 0.1
+win Activate "${discord_pwa[0]}"
+sleep 0.1
+ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
+sleep 0.1
+ydotool key ${KEY_LEFTALT}:1 ${KEY_X}:1 ${KEY_X}:0 ${KEY_LEFTALT}:0
+sleep 1
+
 ./WB.sh &
 sleep 3
 
