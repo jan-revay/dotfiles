@@ -66,6 +66,7 @@ pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK no limiter:in_1"
 # pw-link "alsa_output.usb-Focusrite_Scarlett_2i2_4th_Gen_S2JYTQ63508147-00.pro-output-0:monitor_AUX0" \
         # "OBS Studio: Student JCK:in_1"
 pw-link "Discord_virtual_sink:monitor_FL" "OBS Studio: Student JCK:in_1"
+pw-link "Discord_virtual_sink:monitor_FL" "OBS Studio: Student JCK no ducking:in_1"
 
 # Set the default sink to the monitoring headphones & lower the volume so that
 # there is no significant headphone bleed in the recording.
