@@ -79,7 +79,7 @@ obs-cmd fullscreen-projector
 sleep 0.7
 
 PROJECTOR_ID=$(win_list | jq '.[] | select(.wm_class == "com.obsproject.Studio") | select(.title == "Projector - Program") | .id')
-win MoveToWorkspace "${PROJECTOR_ID}" 17
+win MoveToWorkspace "${PROJECTOR_ID}" 15
 
 readonly SCENE1="1_my_whiteboard"
 readonly SCENE2="2_student_screen"
@@ -98,6 +98,8 @@ while true; do
         obs-cmd scene switch "${SCENE2}"
     elif [[ "${WORKSPACE}" == "16" && "${CURRENT_SCENE}" != "${SCENE3}" ]]; then
         obs-cmd scene switch "${SCENE3}"
+    elif [[ "${WORKSPACE}" == "17" && "${CURRENT_SCENE}" != "${SCENE2}" ]]; then
+        obs-cmd scene switch "${SCENE2}"
     fi
 
     if [[ "${WORKSPACE}" -lt "13" && "${CURRENT_SCENE}" == "ENTIRE_SCREEN" ]]; then
