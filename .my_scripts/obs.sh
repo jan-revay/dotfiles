@@ -56,9 +56,16 @@ sleep 1
 wmctrl -s 2
 
 bash -c "__NV_DISABLE_EXPLICIT_SYNC=1 flatpak run com.obsproject.Studio --verbose" &
-sleep 6
+sleep 10
 
-# TODO limiter is spelled with a single T
+
+obs-cmd fullscreen-projector
+sleep 0.7
+
+PROJECTOR_ID=$(win_list | jq '.[] | select(.wm_class == "com.obsproject.Studio") | select(.title == "Projector - Program") | .id')
+win MoveToWorkspace "${PROJECTOR_ID}" 15
+
+sleep 1
 pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK no effects:in_1"
 pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK effects:in_1"
 pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK no limiter:in_1"
@@ -74,12 +81,6 @@ pactl set-default-sink alsa_output.usb-Focusrite_Scarlett_2i2_4th_Gen_S2JYTQ6350
 # I also set the volume on my 2i2 to 50%, system volume is set to 50% just as a
 # fail-safe. I can always increase the volume if it will be too quiet.
 pactl set-sink-volume @DEFAULT_SINK@ 50%
-
-obs-cmd fullscreen-projector
-sleep 0.7
-
-PROJECTOR_ID=$(win_list | jq '.[] | select(.wm_class == "com.obsproject.Studio") | select(.title == "Projector - Program") | .id')
-win MoveToWorkspace "${PROJECTOR_ID}" 15
 
 readonly SCENE1="1_my_whiteboard"
 readonly SCENE2="2_student_screen"
