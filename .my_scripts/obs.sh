@@ -92,7 +92,7 @@ obs_scene_switcher() {
 
     obs-cmd scene switch "${SCENE1}"
 
-    while true; do
+    while (( ! stop )); do
         WORKSPACE=$(wmctrl -d | grep '\*' | awk '{print $1}')
         SCENE_STR=$(obs-cmd scene current)
         CURRENT_SCENE=${SCENE_STR##*Current scene: }
@@ -154,7 +154,12 @@ log_session_end() {
 }
 
 on_exit() {
+    trap '' INT TERM HUP EXIT
+    (( stop )) && return
+    stop=1
+
     log_session_end
+
     # TODO
     # transcode_video
     # upload_video
