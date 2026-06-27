@@ -156,8 +156,10 @@ log_session_end() {
 on_exit() {
     # TODO add locking to orevent race conditions
     trap '' INT TERM HUP EXIT
+    mkdir .obs_lock || return
     (( stop )) && return
     stop=1
+    rmdir .obs_lock
 
     log_session_end
 
