@@ -154,6 +154,7 @@ log_session_end() {
 }
 
 on_exit() {
+    # TODO add locking to orevent race conditions
     trap '' INT TERM HUP EXIT
     (( stop )) && return
     stop=1
