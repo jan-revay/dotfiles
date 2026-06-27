@@ -162,8 +162,23 @@ on_exit() {
     rmdir .obs_lock
 
     log_session_end
+    # TODO detect whether obs was recording
+    obs-cmd recording stop
+
+    # TODO rename the newest file, but only if the recording was actually started
+    # TODO try to find out a way to get the filename of the recording directly
+    # from OBS
+    # shopt -s nullglob
+    # files=(/path/to/dir/*)
+    # newest_file=
+    # for f in "${files[@]}"; do
+    #   [[ -f $f && ( -z $newest_file || $f -nt $newest_file ) ]] && newest_file=$f
+    # done
+    #
+    # mv "${newest_file}" "${CLIENT}_${newest_file}"
 
     # TODO
+    # add session name to the video name
     # transcode_video
     # upload_video
     # close_apps
