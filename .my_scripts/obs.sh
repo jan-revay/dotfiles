@@ -150,6 +150,7 @@ log_session_end() {
     fi
 
     echo "Ending session with ${CLIENT} $(date)" >> "${SESSION_LOG_PATH}"
+    echo "" >> "${SESSION_LOG_PATH}"
 }
 
 on_exit() {
