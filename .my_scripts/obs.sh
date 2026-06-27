@@ -1,4 +1,6 @@
-#!/bin/bash -x
+#!/bin/bash -
+
+#TODO try whether disabling pro audio mode fixes the obs buffering issues
 
 apps(){
 
