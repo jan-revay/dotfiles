@@ -181,7 +181,8 @@ on_exit() {
 
     # TODO
     # add session name to the video name
-    # transcode_video
+    # transcode_video_for_youtube with limiting in ffmpeg
+    # transcode_video_for_archivation (so that it is smaller)
     # upload_video
     # close_apps
     # close_obs
