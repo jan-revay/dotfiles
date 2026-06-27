@@ -163,7 +163,9 @@ on_exit() {
 
     log_session_end
     # TODO detect whether obs was recording
-    obs-cmd recording stop
+    # TODO - obs will receive sigterm before this handler is executed?
+    # obs-cmd recording stop
+    # sleep 100
 
     # TODO rename the newest file, but only if the recording was actually started
     # TODO try to find out a way to get the filename of the recording directly
