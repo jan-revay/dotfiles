@@ -1,8 +1,8 @@
-#!/bin/bash -
+#!/bin/bash -x
 
 #TODO try whether disabling pro audio mode fixes the obs buffering issues
 
-apps(){
+apps() {
 
     # resolve the directory where THIS script lives
     SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
@@ -58,7 +58,7 @@ apps(){
     sleep 1
 }
 
-obs(){
+obs() {
     wmctrl -s 2
 
     bash -c "__NV_DISABLE_EXPLICIT_SYNC=1 flatpak run com.obsproject.Studio --verbose" &
@@ -85,7 +85,7 @@ obs(){
     sleep 1 # wait until audio sources are connected
 }
 
-obs_scene_switcher(){
+obs_scene_switcher() {
     readonly SCENE1="1_my_whiteboard"
     readonly SCENE2="2_student_screen"
     readonly SCENE3="3_my_screen"
@@ -121,7 +121,7 @@ obs_scene_switcher(){
     done
 }
 
-default_sink(){
+default_sink() {
     # Set the default sink to the monitoring headphones & lower the volume so that
     # there is no significant headphone bleed in the recording.
     pactl set-default-sink alsa_output.usb-Focusrite_Scarlett_2i2_4th_Gen_S2JYTQ63508147-00.pro-output-0
@@ -130,45 +130,46 @@ default_sink(){
     pactl set-sink-volume @DEFAULT_SINK@ 50%
 }
 
-log_session_start(){
-    readonly CLIENT=$1
+log_session_start() {
     if [[ "${CLIENT}" == "" ]]; then
         echo "Client is empty string"
         exit 1
-    elif [[ "${CLIENT}" == "skip" ]]; then 
+    elif [[ "${CLIENT}" == "skip" ]]; then
         return
     fi
 
-    echo "Starting session with ${CLIENT} $(date)" >> \
-        ~/Documents/OBS_SESSION_LOG.txt
+    echo "Starting session with ${CLIENT} $(date)" >> "${SESSION_LOG_PATH}"
 }
 
-log_session_end(){
-    readonly CLIENT=$1
-
-    if [[ "${CLIENT}" == "skip" ]]; then 
+log_session_end() {
+    if [[ "${CLIENT}" == "" ]]; then
+        echo "Client is empty string"
+        exit 1
+    elif [[ "${CLIENT}" == "skip" ]]; then
         return
     fi
 
-    echo "Ending session with ${CLIENT} $(date)" >> \
-        ~/Documents/OBS_SESSION_LOG.txt
+    echo "Ending session with ${CLIENT} $(date)" >> "${SESSION_LOG_PATH}"
 }
 
-on_exit(){
-    log_session_end()
+on_exit() {
+    log_session_end
     # TODO
-    # transcode_video()
-    # upload_video()
-    # close_apps()
-    # close_obs()
+    # transcode_video
+    # upload_video
+    # close_apps
+    # close_obs
     exit 0
 }
 
 trap on_exit INT TERM HUP EXIT
 
-log_session_start()
-default_sink()
-apps()
-obs()
-obs_scene_switcher()
+readonly CLIENT=$1
+readonly SESSION_LOG_PATH="~/Documents/OBS_SESSION_LOG.txt"
+
+log_session_start
+default_sink
+apps
+obs
+obs_scene_switcher
 
