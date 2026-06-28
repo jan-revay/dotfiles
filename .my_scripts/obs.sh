@@ -1,6 +1,8 @@
 #!/bin/bash -x
 
-#TODO try whether disabling pro audio mode fixes the obs buffering issues
+# TODO try whether disabling pro audio mode fixes the obs and Discord buffering
+# issues
+# TODO measure latency woth pro audio mode on vs. off
 
 apps() {
 
