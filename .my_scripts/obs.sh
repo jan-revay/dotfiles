@@ -118,6 +118,8 @@ obs_scene_switcher() {
             echo "$(date) OBS: Sharing entire screen on workspace ${WORKSPACE}" \
                 >> ~/tmp/obs_screenshare.log
             obs-cmd scene switch "${SCENE1}"
+            # TODO if I used a replay buffer, I could just cut the last 0.8sec
+            # out of the video and that would solve the problem with the recording
         fi
 
         sleep 0.4
