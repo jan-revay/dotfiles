@@ -106,7 +106,8 @@ obs_scene_switcher() {
         elif [[ "${WORKSPACE}" == "16" && "${CURRENT_SCENE}" != "${SCENE3}" ]]; then
             obs-cmd scene switch "${SCENE3}"
         elif [[ "${WORKSPACE}" == "17" && "${CURRENT_SCENE}" != "${SCENE2}" ]]; then
-            obs-cmd scene switch "${SCENE2}"
+            # obs-cmd scene switch "${SCENE2}"
+            # TODO remove?
         fi
 
         if [[ "${WORKSPACE}" -lt "13" && "${CURRENT_SCENE}" == "ENTIRE_SCREEN" ]]; then
