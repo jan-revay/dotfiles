@@ -191,7 +191,7 @@ on_exit() {
 
 trap on_exit INT TERM HUP EXIT
 
-readonly CLIENT=$1
+readonly CLIENT="$1"
 readonly SESSION_LOG_PATH="${HOME}/Documents/OBS_SESSION_LOG.txt"
 stop=0
 
