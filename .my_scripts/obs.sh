@@ -132,6 +132,8 @@ default_sink() {
     pactl set-sink-volume @DEFAULT_SINK@ 50%
 }
 
+# TODO - choose from a drop down menu - so that the student name is always
+# valid and always grepable
 log_session_start() {
     if [[ "${CLIENT}" == "" ]]; then
         echo "Client is empty string"
