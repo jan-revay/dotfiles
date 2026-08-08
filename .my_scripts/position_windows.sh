@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 delay() {
-    sleep 0.05
+    sleep 0.20
 }
 
 # TODO - rewrite and refactor in Python
