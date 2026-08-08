@@ -62,8 +62,10 @@ apps() {
 
 obs() {
     wmctrl -s 2
-
-    bash -c "__NV_DISABLE_EXPLICIT_SYNC=1 flatpak run com.obsproject.Studio --verbose" &
+    LOGFILE="$(pwd)/Logs/$(date '+%Y%m%d_%H%M%S').log"
+    readonly LOGFILE
+    mkdir -p "$(dirname "${LOGFILE}")"
+    bash -c "__NV_DISABLE_EXPLICIT_SYNC=1 flatpak run com.obsproject.Studio --verbose &> ${LOGFILE}" &
     sleep 10
 
 
