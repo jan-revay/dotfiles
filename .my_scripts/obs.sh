@@ -70,6 +70,8 @@ obs() {
         --target alsa_input.usb-Focusrite_Scarlett_2i2_4th_Gen_S2JYTQ63508147-00.pro-input-0:capture_AUX0 \
         --format=s16 --rate=48000 --channels=1 \
         "${LOGFILE}.flac"
+    # TODO also record student audio resp. discord sink individually
+    # here
     sleep 10
 
 
