@@ -66,12 +66,14 @@ obs() {
     readonly LOGFILE
     mkdir -p "$(dirname "${LOGFILE}")"
     bash -c "__NV_DISABLE_EXPLICIT_SYNC=1 flatpak run com.obsproject.Studio --verbose &> ${LOGFILE}.log" &
-    pw-record \
-        --target alsa_input.usb-Focusrite_Scarlett_2i2_4th_Gen_S2JYTQ63508147-00.pro-input-0:capture_AUX0 \
-        --format=s16 --rate=48000 --channels=1 \
-        "${LOGFILE}.flac"
-    # TODO also record student audio resp. discord sink individually
-    # here
+    bash -c \
+        "pw-record \
+        --target="alsa_input.usb-Focusrite_Scarlett_2i2_4th_Gen_S2JYTQ63508147-00.pro-input-0:capture_AUX0" \
+        --format=s32 --rate=48000 --channels=1 --volume=1.0 \
+        ${LOGFILE}_s32_48k.wav" &
+    bash -c \
+        "pw-record --target="Discord_out" --rate=48000 \
+        ${LOGFILE}_48k_student.flac" &
     sleep 10
 
 
