@@ -62,10 +62,14 @@ apps() {
 
 obs() {
     wmctrl -s 2
-    LOGFILE="$(pwd)/Logs/$(date '+%Y%m%d_%H%M%S').log"
+    LOGFILE="$(pwd)/Logs/$(date '+%Y%m%d_%H%M%S')"
     readonly LOGFILE
     mkdir -p "$(dirname "${LOGFILE}")"
-    bash -c "__NV_DISABLE_EXPLICIT_SYNC=1 flatpak run com.obsproject.Studio --verbose &> ${LOGFILE}" &
+    bash -c "__NV_DISABLE_EXPLICIT_SYNC=1 flatpak run com.obsproject.Studio --verbose &> ${LOGFILE}.log" &
+    pw-record \
+        --target alsa_input.usb-Focusrite_Scarlett_2i2_4th_Gen_S2JYTQ63508147-00.pro-input-0:capture_AUX0 \
+        --format=s16 --rate=48000 --channels=1 \
+        "${LOGFILE}.flac"
     sleep 10
 
 
