@@ -17,3 +17,5 @@ shopt -s cdspell
 # <https://www.geeksforgeeks.org/shell-scripting-shopt-command/>
 # bash reference...
 # TODO make cd and complation case insensitive <https://askubuntu.com/questions/87061/can-i-make-tab-auto-completion-case-insensitive-in-bash>
+#
+export PATH="$HOME/go/bin:$PATH"
