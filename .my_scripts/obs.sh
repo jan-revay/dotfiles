@@ -170,6 +170,7 @@ log_session_end() {
 }
 
 on_exit() {
+    set -x
     # TODO add locking to orevent race conditions
     trap '' INT TERM HUP EXIT
     mkdir .obs_lock || return
@@ -215,5 +216,6 @@ log_session_start
 default_sink
 apps
 obs
+set +x
 obs_scene_switcher
 
