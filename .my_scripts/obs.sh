@@ -6,204 +6,209 @@
 
 apps() {
 
-    # resolve the directory where THIS script lives
-    SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-    . "${SCRIPT_DIR}/window_calls_prelude.sh"
+  # resolve the directory where THIS script lives
+  SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+  . "${SCRIPT_DIR}/window_calls_prelude.sh"
 
-    discord &> /dev/null &
-    # Open Discord - audio part. This is a workaround around broken audio source
-    # processing in the Discord desktop app (the audio was stuttering and the latency
-    # was also terrible otherwise). I connect audio via the PWA in Google Chrome
-    # and screen-share/video via the Discord desktop app). This is the Discord app
-    # launched as PWA in chrome.
-    gtk-launch chrome-magkoliahgffibhgfkmoealggombgknl-Default.desktop &> /dev/null &
-    sleep 5
-    discord=$(win_list | jq -c '.[] | select(.title == "discord") | .id')
-    discord_pwa=$(win_list | jq -c '.[] | select(.wm_class == "chrome-magkoliahgffibhgfkmoealggombgknl-Default") | .id')
+  discord &>/dev/null &
+  # Open Discord - audio part. This is a workaround around broken audio source
+  # processing in the Discord desktop app (the audio was stuttering and the latency
+  # was also terrible otherwise). I connect audio via the PWA in Google Chrome
+  # and screen-share/video via the Discord desktop app). This is the Discord app
+  # launched as PWA in chrome.
+  gtk-launch chrome-magkoliahgffibhgfkmoealggombgknl-Default.desktop &>/dev/null &
+  sleep 5
+  discord=$(win_list | jq -c '.[] | select(.title == "discord") | .id')
+  discord_pwa=$(win_list | jq -c '.[] | select(.wm_class == "chrome-magkoliahgffibhgfkmoealggombgknl-Default") | .id')
 
-    win Activate "${discord[0]}"
-    sleep 0.1
-    ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
-    sleep 0.1
-    ydotool key ${KEY_LEFTALT}:1 ${KEY_Z}:1 ${KEY_Z}:0 ${KEY_LEFTALT}:0
-    sleep 0.1
-    win Activate "${discord_pwa[0]}"
-    sleep 0.1
-    ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
-    sleep 0.1
-    ydotool key ${KEY_LEFTALT}:1 ${KEY_X}:1 ${KEY_X}:0 ${KEY_LEFTALT}:0
-    sleep 1
+  win Activate "${discord[0]}"
+  sleep 0.1
+  ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
+  sleep 0.1
+  ydotool key ${KEY_LEFTALT}:1 ${KEY_Z}:1 ${KEY_Z}:0 ${KEY_LEFTALT}:0
+  sleep 0.1
+  win Activate "${discord_pwa[0]}"
+  sleep 0.1
+  ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
+  sleep 0.1
+  ydotool key ${KEY_LEFTALT}:1 ${KEY_X}:1 ${KEY_X}:0 ${KEY_LEFTALT}:0
+  sleep 1
 
-    ./WB.sh &
-    sleep 3
+  wmctrl -s 14
+  ./WB.sh &
+  sleep 3
 
-    wmctrl -s 16
-    kitty --title "Tutoring" --config "${SCRIPT_DIR}/kitty_tutoring.conf" &
-    firefox --private-window "https://theproductivedeveloper.com/" &
+  wmctrl -s 16
+  kitty --title "Tutoring" --config "${SCRIPT_DIR}/kitty_tutoring.conf" &
+  firefox --private-window "https://theproductivedeveloper.com/" &
 
-    sleep 3
+  sleep 3
 
-    kitty=$(win_list | jq -c '.[] | select(.title == "Tutoring") | .id')
-    firefox=$(win_list | jq -c '.[] | select(.title == "Hyperspace by HTML5 UP — Mozilla Firefox Private Browsing") | .id')
+  kitty=$(win_list | jq -c '.[] | select(.title == "Tutoring") | .id')
+  firefox=$(win_list | jq -c '.[] | select(.title == "Hyperspace by HTML5 UP — Mozilla Firefox Private Browsing") | .id')
 
-    win Activate "${kitty[0]}"
-    sleep 0.1
-    ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
-    sleep 0.1
-    ydotool key ${KEY_LEFTALT}:1 ${KEY_Z}:1 ${KEY_Z}:0 ${KEY_LEFTALT}:0
-    sleep 0.1
-    win Activate "${firefox[0]}"
-    sleep 0.1
-    ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
-    sleep 0.1
-    ydotool key ${KEY_LEFTALT}:1 ${KEY_X}:1 ${KEY_X}:0 ${KEY_LEFTALT}:0
-    sleep 1
+  win Activate "${kitty[0]}"
+  sleep 0.1
+  ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
+  sleep 0.1
+  ydotool key ${KEY_LEFTALT}:1 ${KEY_Z}:1 ${KEY_Z}:0 ${KEY_LEFTALT}:0
+  sleep 0.1
+  win Activate "${firefox[0]}"
+  sleep 0.1
+  ydotool key ${KEY_LEFTMETA}:1 ${KEY_DOWN}:1 ${KEY_DOWN}:0 ${KEY_LEFTMETA}:0
+  sleep 0.1
+  ydotool key ${KEY_LEFTALT}:1 ${KEY_X}:1 ${KEY_X}:0 ${KEY_LEFTALT}:0
+  sleep 0.1
+
+  wmctrl -s 13
+  firefox -P "tutoring-profile" --no-remote &
+  sleep 3
+  gsettings set org.gnome.desktop.notifications show-banners "false"
 }
 
 obs() {
-    wmctrl -s 2
-    LOGFILE="$(pwd)/Logs/$(date '+%Y%m%d_%H%M%S')"
-    readonly LOGFILE
-    mkdir -p "$(dirname "${LOGFILE}")"
-    bash -c "__NV_DISABLE_EXPLICIT_SYNC=1 flatpak run com.obsproject.Studio --verbose &> ${LOGFILE}.log" &
-    bash -c \
-        "pw-record \
+  wmctrl -s 2
+  LOGFILE="$(pwd)/Logs/$(date '+%Y%m%d_%H%M%S')"
+  readonly LOGFILE
+  mkdir -p "$(dirname "${LOGFILE}")"
+  bash -c "__NV_DISABLE_EXPLICIT_SYNC=1 flatpak run com.obsproject.Studio --verbose &> ${LOGFILE}.log" &
+  bash -c \
+    "pw-record \
         --target="alsa_input.usb-Focusrite_Scarlett_2i2_4th_Gen_S2JYTQ63508147-00.pro-input-0:capture_AUX0" \
         --format=s32 --rate=48000 --channels=1 --volume=1.0 \
         ${LOGFILE}_s32_48k.wav" &
-    bash -c \
-        "pw-record --target="Discord_out" --rate=48000 \
+  bash -c \
+    "pw-record --target="Discord_out" --rate=48000 \
         ${LOGFILE}_48k_student.flac" &
-    sleep 10
+  sleep 10
 
+  obs-cmd fullscreen-projector
+  sleep 0.7
 
-    obs-cmd fullscreen-projector
-    sleep 0.7
+  PROJECTOR_ID=$(win_list | jq '.[] | select(.wm_class == "com.obsproject.Studio") | select(.title == "Projector - Program") | .id')
+  win MoveToWorkspace "${PROJECTOR_ID}" 15
 
-    PROJECTOR_ID=$(win_list | jq '.[] | select(.wm_class == "com.obsproject.Studio") | select(.title == "Projector - Program") | .id')
-    win MoveToWorkspace "${PROJECTOR_ID}" 15
+  sleep 1
+  pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK no effects:in_1"
+  pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK effects:in_1"
+  pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK no limiter:in_1"
+  # NOTE: This records all desktop audio output
+  # pw-link "alsa_output.usb-Focusrite_Scarlett_2i2_4th_Gen_S2JYTQ63508147-00.pro-output-0:monitor_AUX0" \
+  # "OBS Studio: Student JCK:in_1"
+  pw-link "Discord_virtual_sink:monitor_FL" "OBS Studio: Student JCK:in_1"
+  pw-link "Discord_virtual_sink:monitor_FL" "OBS Studio: Student JCK no ducking:in_1"
 
-    sleep 1
-    pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK no effects:in_1"
-    pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK effects:in_1"
-    pw-link "My 2i2_MONO:capture_MONO" "OBS Studio: sm7 JCK no limiter:in_1"
-    # NOTE: This records all desktop audio output
-    # pw-link "alsa_output.usb-Focusrite_Scarlett_2i2_4th_Gen_S2JYTQ63508147-00.pro-output-0:monitor_AUX0" \
-            # "OBS Studio: Student JCK:in_1"
-    pw-link "Discord_virtual_sink:monitor_FL" "OBS Studio: Student JCK:in_1"
-    pw-link "Discord_virtual_sink:monitor_FL" "OBS Studio: Student JCK no ducking:in_1"
-
-    # TODO remove this sleep if it does not help with buffer size in OBS
-    sleep 1 # wait until audio sources are connected
+  # TODO remove this sleep if it does not help with buffer size in OBS
+  sleep 1 # wait until audio sources are connected
 }
 
 obs_scene_switcher() {
-    readonly SCENE1="1_my_whiteboard"
-    readonly SCENE2="2_student_screen"
-    readonly SCENE3="3_my_screen"
+  readonly SCENE1="1_my_whiteboard"
+  readonly SCENE2="2_student_screen"
+  readonly SCENE3="3_my_screen"
 
-    obs-cmd scene switch "${SCENE1}"
+  obs-cmd scene switch "${SCENE1}"
 
-    while (( ! stop )); do
-        WORKSPACE=$(wmctrl -d | grep '\*' | awk '{print $1}')
-        SCENE_STR=$(obs-cmd scene current)
-        CURRENT_SCENE=${SCENE_STR##*Current scene: }
+  while ((!stop)); do
+    WORKSPACE=$(wmctrl -d | grep '\*' | awk '{print $1}')
+    SCENE_STR=$(obs-cmd scene current)
+    CURRENT_SCENE=${SCENE_STR##*Current scene: }
 
-        if [[ "${WORKSPACE}" == "14" && "${CURRENT_SCENE}" != "${SCENE1}" ]]; then
-            obs-cmd scene switch "${SCENE1}"
-        elif [[ "${WORKSPACE}" == "15" && "${CURRENT_SCENE}" != "${SCENE2}" ]]; then
-            obs-cmd scene switch "${SCENE2}"
-        elif [[ "${WORKSPACE}" == "16" && "${CURRENT_SCENE}" != "${SCENE3}" ]]; then
-            obs-cmd scene switch "${SCENE3}"
-        elif [[ "${WORKSPACE}" == "17" && "${CURRENT_SCENE}" != "${SCENE2}" ]]; then
-            obs-cmd scene switch "${SCENE2}"
-        fi
+    if [[ "${WORKSPACE}" == "14" && "${CURRENT_SCENE}" != "${SCENE1}" ]]; then
+      obs-cmd scene switch "${SCENE1}"
+    elif [[ "${WORKSPACE}" == "15" && "${CURRENT_SCENE}" != "${SCENE2}" ]]; then
+      obs-cmd scene switch "${SCENE2}"
+    elif [[ "${WORKSPACE}" == "16" && "${CURRENT_SCENE}" != "${SCENE3}" ]]; then
+      obs-cmd scene switch "${SCENE3}"
+    elif [[ "${WORKSPACE}" == "17" && "${CURRENT_SCENE}" != "${SCENE2}" ]]; then
+      obs-cmd scene switch "${SCENE2}"
+    fi
 
-        if [[ "${WORKSPACE}" -lt "13" && "${CURRENT_SCENE}" == "ENTIRE_SCREEN" ]]; then
-            # I have set up a keybinding to switch to this scene, but I want to
-            # only allow it on workspace 13, so that I don't stream my private msgs
-            # and stuff an by accident.
-            pw-play ~/Music/Napalm_Death_You_Suffer.flac
-            echo "$(date) OBS: Sharing entire screen on workspace ${WORKSPACE}" \
-                >> ~/tmp/obs_screenshare.log
-            obs-cmd scene switch "${SCENE1}"
-            # TODO if I used a replay buffer, I could just cut the last 0.8sec
-            # out of the video and that would solve the problem with the recording
-        fi
+    if [[ "${WORKSPACE}" -lt "13" && "${CURRENT_SCENE}" == "ENTIRE_SCREEN" ]]; then
+      # I have set up a keybinding to switch to this scene, but I want to
+      # only allow it on workspace 13, so that I don't stream my private msgs
+      # and stuff an by accident.
+      pw-play ~/Music/Napalm_Death_You_Suffer.flac
+      echo "$(date) OBS: Sharing entire screen on workspace ${WORKSPACE}" \
+        >>~/tmp/obs_screenshare.log
+      obs-cmd scene switch "${SCENE1}"
+      # TODO if I used a replay buffer, I could just cut the last 0.8sec
+      # out of the video and that would solve the problem with the recording
+    fi
 
-        sleep 0.4
-    done
+    sleep 0.4
+  done
 }
 
 default_sink() {
-    # Set the default sink to the monitoring headphones & lower the volume so that
-    # there is no significant headphone bleed in the recording.
-    pactl set-default-sink alsa_output.usb-Focusrite_Scarlett_2i2_4th_Gen_S2JYTQ63508147-00.pro-output-0
-    # I also set the volume on my 2i2 to 50%, system volume is set to 50% just as a
-    # fail-safe. I can always increase the volume if it will be too quiet.
-    pactl set-sink-volume @DEFAULT_SINK@ 50%
+  # Set the default sink to the monitoring headphones & lower the volume so that
+  # there is no significant headphone bleed in the recording.
+  pactl set-default-sink alsa_output.usb-Focusrite_Scarlett_2i2_4th_Gen_S2JYTQ63508147-00.pro-output-0
+  # I also set the volume on my 2i2 to 50%, system volume is set to 50% just as a
+  # fail-safe. I can always increase the volume if it will be too quiet.
+  pactl set-sink-volume @DEFAULT_SINK@ 50%
 }
 
 # TODO - choose from a drop down menu - so that the student name is always
 # valid and always grepable
 log_session_start() {
-    if [[ "${CLIENT}" == "" ]]; then
-        echo "Client is empty string"
-        exit 1
-    elif [[ "${CLIENT}" == "skip" ]]; then
-        return
-    fi
+  if [[ "${CLIENT}" == "" ]]; then
+    echo "Client is empty string"
+    exit 1
+  elif [[ "${CLIENT}" == "skip" ]]; then
+    return
+  fi
 
-    echo "Starting session with ${CLIENT} $(date)" >> "${SESSION_LOG_PATH}"
+  echo "Starting session with ${CLIENT} $(date)" >>"${SESSION_LOG_PATH}"
 }
 
 log_session_end() {
-    if [[ "${CLIENT}" == "" ]]; then
-        echo "Client is empty string"
-        exit 1
-    elif [[ "${CLIENT}" == "skip" ]]; then
-        return
-    fi
+  if [[ "${CLIENT}" == "" ]]; then
+    echo "Client is empty string"
+    exit 1
+  elif [[ "${CLIENT}" == "skip" ]]; then
+    return
+  fi
 
-    echo "Ending session with ${CLIENT} $(date)" >> "${SESSION_LOG_PATH}"
-    echo "" >> "${SESSION_LOG_PATH}"
+  echo "Ending session with ${CLIENT} $(date)" >>"${SESSION_LOG_PATH}"
+  echo "" >>"${SESSION_LOG_PATH}"
 }
 
 on_exit() {
-    set -x
-    # TODO add locking to orevent race conditions
-    trap '' INT TERM HUP EXIT
-    mkdir .obs_lock || return
-    (( stop )) && return
-    stop=1
-    rmdir .obs_lock
+  set -x
+  # TODO add locking to orevent race conditions
+  trap '' INT TERM HUP EXIT
+  mkdir .obs_lock || return
+  ((stop)) && return
+  stop=1
+  rmdir .obs_lock
+  gsettings set org.gnome.desktop.notifications show-banners "true"
+  log_session_end
+  # TODO detect whether obs was recording
+  # TODO - obs will receive sigterm before this handler is executed?
+  # obs-cmd recording stop
+  # sleep 100
 
-    log_session_end
-    # TODO detect whether obs was recording
-    # TODO - obs will receive sigterm before this handler is executed?
-    # obs-cmd recording stop
-    # sleep 100
+  # TODO rename the newest file, but only if the recording was actually started
+  # TODO try to find out a way to get the filename of the recording directly
+  # from OBS
+  # shopt -s nullglob
+  # files=(/path/to/dir/*)
+  # newest_file=
+  # for f in "${files[@]}"; do
+  #   [[ -f $f && ( -z $newest_file || $f -nt $newest_file ) ]] && newest_file=$f
+  # done
+  #
+  # mv "${newest_file}" "${CLIENT}_${newest_file}"
 
-    # TODO rename the newest file, but only if the recording was actually started
-    # TODO try to find out a way to get the filename of the recording directly
-    # from OBS
-    # shopt -s nullglob
-    # files=(/path/to/dir/*)
-    # newest_file=
-    # for f in "${files[@]}"; do
-    #   [[ -f $f && ( -z $newest_file || $f -nt $newest_file ) ]] && newest_file=$f
-    # done
-    #
-    # mv "${newest_file}" "${CLIENT}_${newest_file}"
-
-    # TODO
-    # add session name to the video name
-    # transcode_video_for_youtube with limiting in ffmpeg
-    # transcode_video_for_archivation (so that it is smaller)
-    # upload_video
-    # close_apps
-    # close_obs
-    exit 0
+  # TODO
+  # add session name to the video name
+  # transcode_video_for_youtube with limiting in ffmpeg
+  # transcode_video_for_archivation (so that it is smaller)
+  # upload_video
+  # close_apps
+  # close_obs
+  exit 0
 }
 
 trap on_exit INT TERM HUP EXIT
@@ -218,4 +223,3 @@ apps
 obs
 set +x
 obs_scene_switcher
-
