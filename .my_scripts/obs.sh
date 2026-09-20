@@ -102,10 +102,12 @@ obs() {
   sleep 1 # wait until audio sources are connected
 }
 
+# TODO review obs_scene_switcher with LLMs
 obs_scene_switcher() {
   readonly SCENE1="1_my_whiteboard"
   readonly SCENE2="2_student_screen"
   readonly SCENE3="3_my_screen"
+  ENTIRE_SCREEN_TIMER=0
 
   obs-cmd scene switch "${SCENE1}"
 
@@ -113,6 +115,19 @@ obs_scene_switcher() {
     WORKSPACE=$(wmctrl -d | grep '\*' | awk '{print $1}')
     SCENE_STR=$(obs-cmd scene current)
     CURRENT_SCENE=${SCENE_STR##*Current scene: }
+
+    if [[ "${WORKSPACE}" == "13" && "${CURRENT_SCENE}" != "ENTIRE_SCREEN" ]]; then
+      ((ENTIRE_SCREEN_TIMER++))
+      if ((ENTIRE_SCREEN_TIMER % 20 == 0)); then
+        gsettings set org.gnome.desktop.notifications show-banners "true"
+        notify-send "OBS: NOT SHARING ENTIRE SCREEN" "Workspace 13 focused but scene is ${CURRENT_SCENE}."
+        sleep 0.5
+        pw-play ~/Music/En-au-screen.ogx
+        gsettings set org.gnome.desktop.notifications show-banners "false"
+      fi
+    else
+      ENTIRE_SCREEN_TIMER=0
+    fi
 
     if [[ "${WORKSPACE}" == "14" && "${CURRENT_SCENE}" != "${SCENE1}" ]]; then
       obs-cmd scene switch "${SCENE1}"
