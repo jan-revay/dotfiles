@@ -161,7 +161,7 @@ default_sink() {
   pactl set-default-sink alsa_output.usb-Focusrite_Scarlett_2i2_4th_Gen_S2JYTQ63508147-00.pro-output-0
   # I also set the volume on my 2i2 to 50%, system volume is set to 50% just as a
   # fail-safe. I can always increase the volume if it will be too quiet.
-  pactl set-sink-volume @DEFAULT_SINK@ 50%
+  pactl set-sink-volume @DEFAULT_SINK@ 40%
 }
 
 # TODO - choose from a drop down menu - so that the student name is always
