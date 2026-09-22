@@ -34,16 +34,16 @@ alias .glo='dot log --oneline --decorate --color'
 alias .o='dot stash pop'
 alias .p='dot stash push'
 function .ph {
-    local BRANCH=$(dot symbolic-ref --short HEAD)
-    readonly BRANCH
+  local BRANCH=$(dot symbolic-ref --short HEAD)
+  readonly BRANCH
 
-    if [ ${BRANCH} = "devel" ]; then
-        dot push
-    else
-        echo "Your current branch is: ${BRANCH}."
-        echo 'Direct push is only recommended to branch "devel".'
-        echo 'Use `dot push` to override.'
-    fi
+  if [ ${BRANCH} = "devel" ]; then
+    dot push
+  else
+    echo "Your current branch is: ${BRANCH}."
+    echo 'Direct push is only recommended to branch "devel".'
+    echo 'Use `dot push` to override.'
+  fi
 }
 alias .pl='dot pull'
 alias .r='dot reset'
@@ -105,7 +105,7 @@ alias ll='exa -alF --color=always --group-directories-first'
 alias lsd='exa -DF --color=always --group-directories-first'
 alias m='man'
 alias ms='cd ~/.my_scripts'
-alias n='cd ~/n'
+alias n='cd ~/n/6'
 alias o='git stash pop'
 alias p='git stash push'
 alias ph='git push'
@@ -120,10 +120,10 @@ alias rgi='rg --smart-case -C 1'
 alias s='git status --show-stash'
 # alias ss='git status --short' todo conflict on Ubuntu
 alias sss='. ~/.bashrc'
-if batcat --version &> /dev/null; then
-    alias t='batcat'
+if batcat --version &>/dev/null; then
+  alias t='batcat'
 else
-    alias t='bat'
+  alias t='bat'
 fi
 alias v='nvim'
 
@@ -158,24 +158,24 @@ alias open="xdg-open"
 # "repeat" command.
 # e.g. repeat 10 echo foo
 repeat() {
-    local count="$1" i
-    shift
-    for i in $(seq 1 "$count"); do
-        eval "$@"
-    done
+  local count="$1" i
+  shift
+  for i in $(seq 1 "$count"); do
+    eval "$@"
+  done
 }
 
 # Subfunction needed by `repeat'.
 seq() {
-    local lower upper output
-    lower=$1 upper=$2
+  local lower upper output
+  lower=$1 upper=$2
 
-    if [ $lower -ge $upper ]; then return; fi
-    while [ $lower -le $upper ]; do
-        echo -n "$lower "
-        lower=$(($lower + 1))
-    done
-    echo "$lower"
+  if [ $lower -ge $upper ]; then return; fi
+  while [ $lower -le $upper ]; do
+    echo -n "$lower "
+    lower=$(($lower + 1))
+  done
+  echo "$lower"
 }
 
 # Unused commands:
